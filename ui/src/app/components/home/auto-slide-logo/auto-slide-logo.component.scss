@@ -1,0 +1,45 @@
+@import "../../../../styles.scss";
+@keyframes scrollToRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.slider-wraper {
+  .silder-header {
+    color: $color_primary--700;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1.7px;
+  }
+
+  .slider {
+    white-space: nowrap;
+    .silde-track_right {
+      display: inline-block;
+      animation: 35s scrollToRight linear infinite;
+      img {
+        margin: 0 32px;
+      }
+    }
+    .silde-track_left {
+      display: inline-block;
+      animation: 35s scrollToLeft linear infinite;
+      img {
+        margin: 0 32px;
+      }
+    }
+  }
+}

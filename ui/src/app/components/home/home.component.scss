@@ -1,0 +1,131 @@
+@import "../../../styles.scss";
+
+.home-banner {
+  background: url("../../../assets/imgs/Home-banner-1.png") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  .home-banner_content {
+    padding: 32px 48px;
+    background: rgba(255, 255, 255, 0.9);
+
+    gap: 32px;
+    .home-banner_header {
+    }
+    .home-banner_btn {
+      padding: 16px 28px;
+      color: #fff;
+      border: 1px solid $color_primary--600;
+      background: $color_primary--600;
+      /* Shadow/xs */
+      box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    }
+  }
+}
+
+.content-container {
+  padding: 48px 32px;
+  .content-description {
+    color: $color_primary--900;
+  }
+  .content-container-box {
+    height: 400px;
+  }
+  .content-list {
+    list-style-type: none;
+    .content-list_item {
+      line-height: 170%;
+      font-weight: 300;
+      font-size: 14px;
+      font-family: Poppins;
+      color: $color_primary--900;
+    }
+  }
+
+  .content-container_btn {
+    padding: 12px 20px;
+    border: 1px solid $color_primary--300;
+    background: var(--base-white, #fff);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+}
+
+.advantage-banner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0;
+  .advantage-banner_header {
+    color: $color_primary--700;
+    letter-spacing: 1.7px;
+    line-height: 150%;
+    margin-bottom: 24px;
+  }
+
+  .advantage-banner_description {
+    color: $color_primary--800;
+    max-width: 800px;
+    font-weight: 300;
+    line-height: 170%;
+    margin-bottom: 32px;
+  }
+
+  .advantage-item {
+    width: 325px;
+    flex: 1 1 0px;
+    .advantage-banner_card {
+      padding: 32px 24px;
+      background-color: $color_primary--600;
+      p,
+      .price {
+        color: #eaecf0;
+        font-weight: 400;
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: 30px;
+        line-height: 38px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.aboutus-banner {
+  background: url("../../../assets/imgs/Home-banner-2.png") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 461px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  .aboutus-heading {
+    color: $color_primary--700;
+    letter-spacing: 1.7px;
+    line-height: 150%;
+    font-size: 34px;
+    font-weight: 400;
+  }
+
+  .aboutus-text {
+    font-weight: 300;
+    line-height: 170%;
+  }
+
+  .aboutus-btn {
+    color: $color_primary--600;
+    background-color: transparent;
+    font-weight: 500;
+    line-height: 170%;
+    padding: 12px 20px;
+    border: 1px solid var(--primary-300, #bbc8d2);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+}

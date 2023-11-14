@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="pricing-container">
+    <h1 class="text-center pricing-header">GROWTH AND INNOVATION PLANS</h1>
+    <p class="text-center pricing-description">
+      We help businesses improve their performance through innovation in
+      products, services, and strategy.
+    </p>
+    <div class="row">
+      <div *ngFor="let item of Pricing" class="col-lg-4 card-wrapper">
+        <div class="pricingTier-card">
+          <div class="card-header">
+            <div class="card-header_badge">Best Value</div>
+            <h3 class="card-header_heading m-0">{{ item.header }}</h3>
+            <p class="card-header_price position-relative">
+              <span class="dollar position-absolute fs-30px">$</span>
+              <span class="ammount">{{ item.price }}</span>
+            </p>
+            <p class="card-header_text">
+              {{ item.text }}
+            </p>
+            <div class="card-header_supportingText">Valid for one month</div>
+            <button class="card-header_btn w-100 fw-medium">Select</button>
+          </div>
+          <div class="card-content">
+            <ul class="p-0 m-0 list-unstyled card-content_list">
+              <li
+                *ngFor="let item of item.listItems"
+                class="list-items d-flex flex-gap-12px"
+              >
+                <img
+                  src="assets/icons/icon-circle-check.svg"
+                  alt=""
+                  class="list-items_icon"
+                />
+                <p class="list-items_text">
+                  {{ item }}
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

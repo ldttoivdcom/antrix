@@ -1,0 +1,22 @@
+//Screen Size
+$screen_sizes: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+@each $key, $screen_size in $screen_sizes {
+    @media (max-width: $screen_size) {
+        @for $size from 1 to 101 {
+            .fs-#{$key}-#{$size}px {
+                font-size: rem($size) !important;
+            }
+        }
+    }
+}
+
+@for $size from 1 to 101 {
+    .fs-#{$size}px {
+        font-size: rem($size) !important;
+    }
+}

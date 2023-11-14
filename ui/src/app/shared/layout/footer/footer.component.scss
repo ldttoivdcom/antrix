@@ -1,0 +1,26 @@
+@import "../../../../styles.scss";
+
+.footer-wrapper {
+  padding: 64px 0 24px 0;
+  background-color: $color_primary--800;
+}
+
+.text-menu {
+  color: var(--gray-300, #d0d5dd);
+  font-size: 18px;
+  line-height: 28px; /* 155.556% */
+}
+
+.text-small {
+  color: var(--gray-200, #eaecf0);
+  max-width: 400px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 170%;
+}
+
+.signature {
+  color: var(--gray-300, #d0d5dd);
+  font-size: 12px;
+  line-height: 18px;
+}

@@ -1,0 +1,71 @@
+@import "../../../styles.scss";
+
+.about-banner {
+  background: url("../../../assets/imgs/About-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-banner_header {
+  color: $color_primary--700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: -0.96px;
+}
+
+.about-content {
+  padding: 48px 0;
+
+  &_text {
+    color: $color_primary--700;
+    font-weight: 300;
+    line-height: 170%;
+    flex: 1 1;
+  }
+
+  &_img {
+    flex: 1 1;
+    max-width: 480px;
+    max-height: 720px;
+  }
+}
+
+.team-section {
+  padding: 48px 0;
+
+  &_text {
+    color: $color_primary--700;
+    font-weight: 300;
+    line-height: 170%;
+  }
+}
+
+.about-banner-2 {
+  background: url("../../../assets/imgs/About-banner-2.png") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &_header {
+    color: $color_primary--700;
+    text-align: center;
+    font-size: 34px;
+    line-height: 150%;
+    letter-spacing: 1.7px;
+  }
+
+  &_text {
+    color: $color_primary--800;
+    font-weight: 300;
+    line-height: 170%;
+    width: 70%;
+  }
+}
