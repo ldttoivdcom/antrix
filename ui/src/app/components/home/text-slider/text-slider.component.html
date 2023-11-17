@@ -1,13 +1,11 @@
 <div class="slider-wraper">
   <div class="container">
-    <div class="slider-container">
+    <div class="slider-container position-relative">
       <swiper-container
+        navigation-next-el=".custom-next-button"
+        navigation-prev-el=".custom-prev-button"
         class="mySwiper"
-        pagination="true"
-        [navigation]="{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }"
+        #swiper
       >
         <swiper-slide class="swiper-slide">
           <div class="d-flex flex-column w-50 flex-gap-48px align-items-center">
@@ -37,10 +35,13 @@
             <p class="slider-subText">Quality and Operations Manager</p>
           </div>
         </swiper-slide>
-        <!-- 
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
       </swiper-container>
+      <button class="custom-next-button">
+        <img src="assets/icons/icon-chevron-right.svg" alt="" />
+      </button>
+      <div class="custom-prev-button">
+        <img src="assets/icons/icon-chevron-left.svg" alt="" />
+      </div>
     </div>
   </div>
 </div>

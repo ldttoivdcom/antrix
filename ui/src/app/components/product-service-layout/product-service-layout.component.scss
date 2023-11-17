@@ -1,0 +1,11 @@
+.youtube-wrapper {
+  background-color: #000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .youtube-iframe {
+    width: 800px;
+    height: 450px;
+    margin: auto;
+  }
+}

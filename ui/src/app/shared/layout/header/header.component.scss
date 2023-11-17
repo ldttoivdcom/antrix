@@ -2,7 +2,10 @@
 .header-container {
   height: 80px;
   background-color: $color_primary--600;
-
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 999;
   .header-navbar {
     gap: 32px;
     &_link {

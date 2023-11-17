@@ -40,10 +40,94 @@
 
   <div class="team-section">
     <h1 class="text-center mb-16px about-banner_header">OUR TEAM</h1>
-    <p class="text-center w-50 m-auto team-section_text">
+    <p class="text-center w-50 team-section_text">
       Our team consists of highly skilled and experienced professionals who are
       dedicated to providing the best possible services to our clients.
     </p>
+
+    <div class="row">
+      <div
+        *ngFor="let item of data; let i = index"
+        class="col-lg-4 col-md-6 mb-48px pl-16px pr-16px"
+      >
+        <div class="team-member">
+          <img
+            class="team-member_img"
+            src="assets/imgs/member/{{ item.imgPath }}"
+            alt=""
+          />
+          <div class="team-member_info">
+            <h3 class="team-member_info-name">{{ item.name }}</h3>
+            <p class="team-member_info-title">
+              {{ item.title }}
+            </p>
+            <p class="team-member_info-description">
+              {{ item.description }}
+            </p>
+          </div>
+          <button (click)="showModal(i)" class="team-member_btn text-start">
+            Learn more >
+          </button>
+          <!-- OPEN MODAL -->
+          <div [hidden]="activeItemIndex !== i" class="details-modal-overlay">
+            <div class="details-modal">
+              <div (click)="closeModal()" class="details-modal-close">
+                <img class="z-1" src="assets/icons/icon-x-close.svg" alt="" />
+              </div>
+              <div class="details-modal-header">
+                <h1 class="details-modal-header_name">{{ item.name }}</h1>
+                <p class="details modal-header_title">{{ item.title }}</p>
+              </div>
+              <div class="details-modal-content">
+                <img
+                  class="details-modal-content_img"
+                  src="assets/imgs/member/{{ item.imgPath }}"
+                  alt=""
+                />
+                <p class="details-modal-content_description">
+                  {{ item.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- CLOSE MODAL -->
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="team-member-container">
+      <div class="team-member">
+        <img class="team-member_img" src="assets/imgs/member-1.png" alt="" />
+        <div class="team-member_info">
+          <h3 class="team-member_info-name">USHA SHRIMANKER</h3>
+          <p class="team-member_info-title">
+            Chief Clinical and Quality Officer
+          </p>
+          <p class="team-member_info-description">
+            Helen Teichman offers the Pharmaceutical and allied industries her
+            practical experience, technical knowledge, and powerful leadership
+            skills to help them develop global strategies and implement tactical
+            solutions in an environment of rapid change. She specializes in
+            electronic document management and the eCTD. Helen has worked as a
+            regulatory affair professional for 20 years. She spent many years
+            with the Johnson & Johnson family of companies at which she held
+            senior management positions in Canada, the U.S and Europe. ​Helen
+            was posted at the Janssen Research Foundation in Beerse, Belgium as
+            Senior Director, International Regulatory Affairs & Global
+            Operations. At Janssen, Helen was the enterprise-wide business
+            leader for the implementation of document management technology and
+            processes. This activity spanned two sites, U.S. and Europe, as well
+            as the integration of operating company activities. After Johnson &
+            Johnson, Helen, joined a Washington-based management consulting firm
+            as Vice President, Pharmaceutical. There she specialized in
+            strategic and process-related consulting for the pharmaceutical
+            industry. Helen has carried out numerous assignments in these areas
+            at all scales- from promising start-up companies to established
+            multi-national enterprises
+          </p>
+        </div>
+      </div>
+    </div> -->
   </div>
 </div>
 

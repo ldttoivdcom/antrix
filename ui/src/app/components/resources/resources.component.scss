@@ -1,0 +1,47 @@
+@import "../../../styles.scss";
+.resources-wrapper {
+  padding: 48px 0;
+
+  .resources-header {
+    color: $color_primary--700;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+    margin-bottom: 12px;
+  }
+
+  .resources-link {
+    color: var(--gray-700, #344054);
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration-line: underline;
+    display: block;
+  }
+
+  .table {
+    &-header {
+      color: $color_primary--700;
+      background: #d0d5dd;
+      font-size: 16px;
+      line-height: 170%;
+    }
+
+    &-link {
+      background: var(--gray-50, #f9fafb);
+      a {
+        color: $color_primary--700;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 170%;
+        text-decoration-line: underline;
+      }
+
+      &_text {
+        color: $color_primary--700;
+        font-size: 16px;
+        line-height: 170%;
+      }
+    }
+  }
+}

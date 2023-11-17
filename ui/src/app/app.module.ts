@@ -1,6 +1,9 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { register } from 'swiper/element/bundle';
@@ -13,6 +16,8 @@ import { TextSliderComponent } from './components/home/text-slider/text-slider.c
 import { ContactFormComponent } from './shared/layout/footer/contact-form/contact-form.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { AboutComponent } from './components/about/about.component';
+import { FAQComponent } from './components/faq/faq.component';
+import { ResourcesComponent } from './components/resources/resources.component';
 
 register();
 
@@ -27,6 +32,8 @@ register();
     ContactFormComponent,
     PricingComponent,
     AboutComponent,
+    FAQComponent,
+    ResourcesComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,10 @@ register();
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule,
+    SharedModule,
     RecaptchaFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

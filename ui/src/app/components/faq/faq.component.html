@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="faq">
+    <h1 class="faq_header">FAQ</h1>
+    <p class="faq_text">Frequent Asked Questions - FAQ</p>
+    <ul class="faq-list">
+      <li class="faq-list_item" *ngFor="let data of FAQList; let i = index">
+        <span class="faq-list_item-index">0{{ i + 1 }}.</span>
+        <h1 class="faq-list_item-question">
+          {{ data.question }}
+        </h1>
+        <p class="faq-list_item-answer">
+          {{ data.answer }}
+        </p>
+        <ul *ngIf="data.answerList.length > 1" class="faq-subList">
+          <li class="faq-subList_item" *ngFor="let item of data.answerList">
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+        <hr />
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="resources-wrapper">
+    <h1 class="resources-header">RESOURCES</h1>
+    <a routerLink="/faq" class="resources-link mb-24px">FAQ</a>
+    <a routerLink="Careers" class="resources-link mb-32px">Careers</a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="table-header w-25" scope="col">Web Links</th>
+          <th class="table-header" scope="col">Regulation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of regulations">
+          <td class="table-link">
+            <a href="">{{ item.WebLinks }}</a>
+          </td>
+          <td class="table-link table-link_text">
+            {{ item.Regulations }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -53,7 +53,9 @@
       <div *ngFor="let advan of Advantages" class="advantage-item">
         <div class="advantage-banner_card text-center text-white">
           <img class="mb-20px" src="assets/icons/{{ advan.icon }}" alt="" />
-          <h4 class="lh-32px mb-12px">{{ advan.header }}</h4>
+          <h4 class="advantage-banner_card-header mb-12px">
+            {{ advan.header }}
+          </h4>
           <p class="fs-20px lh-30px">Save</p>
           <div class="price">
             >

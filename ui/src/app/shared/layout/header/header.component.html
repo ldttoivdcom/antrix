@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg header-container">
   <div class="container">
-    <a class="navbar-brand" href="#"
+    <a class="navbar-brand" routerLink="/"
       ><img src="assets/imgs/Logo-antrix.png" alt=""
     /></a>
     <button
@@ -31,24 +31,33 @@
       <div class="offcanvas-body">
         <ul class="header-navbar navbar-nav justify-content-center flex-grow-1">
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" aria-current="page" href=""
+            <a
+              class="header-navbar_link nav-link"
+              aria-current="page"
+              routerLink="/info/services"
               >Services</a
             >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" href="#about">Products</a>
+            <a class="header-navbar_link nav-link" routerLink="/info/products"
+              >Products</a
+            >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" href="pricing">Pricing</a>
+            <a class="header-navbar_link nav-link" routerLink="pricing"
+              >Pricing</a
+            >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" href="#contact">Resources</a>
+            <a class="header-navbar_link nav-link" routerLink="resources"
+              >Resources</a
+            >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" href="/about">About</a>
+            <a class="header-navbar_link nav-link" routerLink="about">About</a>
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" href="/menu">Contact</a>
+            <a class="header-navbar_link nav-link" href="#contact">Contact</a>
           </li>
         </ul>
         <button
