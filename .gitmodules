@@ -1,3 +1,4 @@
 [submodule "ui/release"]
 	path = ui/release
-	url = git@bitbucket.org:neo-prototype/antrix.git
+	url = git@bitbucket.org-namphan_neop:neo-prototype/antrix.git
+	branch = build
