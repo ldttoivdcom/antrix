@@ -7,8 +7,8 @@
         (ngSubmit)="onSubmit()"
         class="contactUs-form w-50"
       >
-        <div class="form-container">
-          <div class="form-input">
+        <div class="form-container row">
+          <div class="form-input col-lg-6 col-sm-12">
             <label class="input-label">Frist name</label>
             <div class="input-text_wraper">
               <input
@@ -19,7 +19,7 @@
               />
             </div>
           </div>
-          <div class="form-input">
+          <div class="form-input col-lg-6 col-sm-12">
             <label class="input-label">Last name</label>
             <div class="input-text_wraper">
               <input
@@ -100,7 +100,7 @@
                 type="text"
                 class="input-text"
                 name="Select Product and Services"
-                formControlName="Product&Services"
+                formControlName="ProductServices"
               >
                 <option value="" disabled selected>
                   Select Product and Services
@@ -142,9 +142,12 @@
           (resolved)="resolved($event)"
           siteKey="6LfIKg8pAAAAAMaCv2AwZPDmCum9a5q3ZoBhFBmC"
         ></re-captcha>
-        <button class="form-submit_btn">Submit</button>
+        <button class="form-submit_btn" [disabled]="!contactForm.valid">
+          Submit
+        </button>
       </form>
       <iframe
+        class="google-iframe"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25369.655053790288!2d-122.0470862522431!3d37.36128141678851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68faba6aaab%3A0x964753a81a5cecc0!2sAntrix!5e0!3m2!1svi!2s!4v1699977411518!5m2!1svi!2s"
         width="800"
         height="350"

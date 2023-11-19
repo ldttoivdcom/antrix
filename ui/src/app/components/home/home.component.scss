@@ -13,6 +13,17 @@
 
     gap: 32px;
     .home-banner_header {
+      color: $color_primary--700;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 50.4px; /* 193.846% */
+    }
+    .home-banner_text {
+      color: $color_primary--700;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px; /* 150% */
     }
     .home-banner_btn {
       padding: 16px 28px;
@@ -29,9 +40,19 @@
   padding: 48px 32px;
   .content-description {
     color: $color_primary--900;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &_header {
+    color: $color_primary--700;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1.7px;
+    margin-bottom: 0;
   }
   .content-container-box {
-    height: 400px;
+    min-height: 400px;
   }
   .content-list {
     list-style-type: none;
@@ -49,6 +70,12 @@
     border: 1px solid $color_primary--300;
     background: var(--base-white, #fff);
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: $color_primary--600;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 170%;
+    width: 50%;
+    margin: auto;
   }
 }
 
@@ -79,7 +106,7 @@
     .advantage-banner_card {
       padding: 32px 24px;
       background-color: $color_primary--600;
-
+      height: 100%;
       &-header {
         color: var(--base-white, #fff);
         font-size: 24px;
@@ -107,11 +134,11 @@
   background: url("../../../assets/imgs/Home-banner-2.png") no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 461px;
+  min-height: 461px;
   display: flex;
   align-items: center;
   text-align: center;
-
+  padding: 64px 0;
   .aboutus-heading {
     color: $color_primary--700;
     letter-spacing: 1.7px;
@@ -133,5 +160,37 @@
     padding: 12px 20px;
     border: 1px solid var(--primary-300, #bbc8d2);
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+}
+
+@include mobile {
+  .home-banner_content {
+    padding: 24px 12px !important;
+  }
+  .home-banner_header {
+    font-size: 18px !important;
+    line-height: 150% !important;
+  }
+
+  .home-banner_text {
+    font-size: 14px !important;
+    line-height: 170% !important;
+  }
+
+  .home-banner_btn {
+    padding: 10px 18px !important;
+  }
+
+  .content-container {
+    padding: 24px 8px !important;
+    &-box {
+      height: 355px !important;
+      gap: 16px !important;
+    }
+    &_header {
+    }
+    &_btn:last-child {
+      margin-top: 12px !important;
+    }
   }
 }

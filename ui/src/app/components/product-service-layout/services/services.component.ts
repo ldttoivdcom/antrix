@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { Papa } from 'ngx-papaparse';
 import { CsvDataService } from 'src/app/shared/services/csv-data.service';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
@@ -9,7 +10,9 @@ import { CsvDataService } from 'src/app/shared/services/csv-data.service';
 })
 export class ServicesComponent implements OnInit {
   data: Products[] = [];
-
+  filteredProducts: Products[] = [];
+  searchQuery: string = '';
+  unsubscription$: Subject<void> = new Subject<void>();
   constructor(private _csvService: CsvDataService, private _papa: Papa) {}
   ngOnInit(): void {
     const csvFileUrl = '../../../../assets/csv/Antrix Service List.csv';
@@ -25,8 +28,28 @@ export class ServicesComponent implements OnInit {
               imgPath: row.imgPath,
               Description: row.Description,
             }));
+          this.filteredProducts = [...this.data];
         },
       });
     });
+  }
+
+  onSubmit() {
+    this.searchFilter();
+  }
+
+  searchFilter() {
+    const searchLower = this.searchQuery.toLowerCase();
+    this.filteredProducts = this.data.filter(
+      (product: Products) =>
+        product.Name.toLowerCase().includes(searchLower) ||
+        product.Description.toLowerCase().includes(searchLower) ||
+        product.PartNumber.toLowerCase().includes(searchLower)
+    );
+  }
+
+  ngOnDestroy() {
+    this.unsubscription$.next();
+    this.unsubscription$.complete();
   }
 }

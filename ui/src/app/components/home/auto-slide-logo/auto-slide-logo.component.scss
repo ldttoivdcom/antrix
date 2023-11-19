@@ -43,3 +43,30 @@
     }
   }
 }
+
+.image-list {
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px var(--spacing-3xl, 24px);
+  align-self: stretch;
+  flex-wrap: wrap;
+
+  &_item {
+    flex: 1 1 0px;
+  }
+}
+
+@include mobile {
+  .slider {
+    display: none !important;
+  }
+  .hr {
+    display: none !important;
+  }
+
+  .image-list {
+    display: flex;
+  }
+}

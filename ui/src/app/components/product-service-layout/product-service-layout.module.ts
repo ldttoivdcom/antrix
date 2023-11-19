@@ -7,19 +7,23 @@ import {
 import { ProductServiceLayoutRoutingModule } from './product-service-routing.module';
 import { ProductServiceLayoutComponent } from './product-service-layout.component';
 import { ProductsComponent } from './products/products.component';
-import { SearchBarComponent } from '../../shared/components/search-bar/search-bar.component';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ServicesComponent } from './services/services.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ProductServiceLayoutComponent,
     ProductsComponent,
     ServicesComponent,
     CardComponent,
-    SearchBarComponent,
   ],
-  imports: [CommonModule, SharedModule, ProductServiceLayoutRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    ProductServiceLayoutRoutingModule,
+    FormsModule,
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class ProductServiceLayoutModule {}

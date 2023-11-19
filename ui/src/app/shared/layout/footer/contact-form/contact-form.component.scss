@@ -63,6 +63,25 @@
       padding: 12px 20px;
       margin: 0 auto;
       width: 55%;
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: default;
+      }
     }
+  }
+}
+
+@include mobile {
+  .google-iframe {
+    width: 100% !important;
+  }
+
+  .contactUs-form {
+    width: 100% !important;
+  }
+
+  .form-input {
+    flex: none !important;
   }
 }
