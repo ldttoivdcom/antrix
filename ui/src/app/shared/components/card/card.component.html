@@ -74,10 +74,10 @@
           {{ data.Description }}
         </p>
         <div class="d-flex flex-gap-24px">
-          <button (click)="showModal(i)" class="first-btn">
+          <button class="first-btn">
             {{ FirstBtnText }}
           </button>
-          <button class="second-btn">Learn more</button>
+          <button (click)="showModal(i)" class="second-btn">Learn more</button>
         </div>
         <p class="card-subText text-center">
           {{ SubText }}
@@ -95,7 +95,7 @@
             <div class="details-modal-header">
               <h1 class="details-modal-header_name">{{ data.Name }}</h1>
               <span class="card-subTitle mr-12px">Part Number:</span>
-              <span class="card-subTitle fw-medium">{{ data.PartNumber }}</span>
+              <span class="card-subTitle fw-bold">{{ data.PartNumber }}</span>
             </div>
             <div class="details-modal-content">
               <img

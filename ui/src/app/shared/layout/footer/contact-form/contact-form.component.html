@@ -2,7 +2,11 @@
   <div class="container">
     <div class="d-flex flex-column align-items-center flex-gap-48px">
       <h2 class="footer-header text-white">CONTACT US</h2>
-      <form action="" class="contactUs-form w-50">
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="contactUs-form w-50"
+      >
         <div class="form-container">
           <div class="form-input">
             <label class="input-label">Frist name</label>
@@ -11,7 +15,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Frist name"
-                formControlName="yourName"
+                formControlName="firstName"
               />
             </div>
           </div>
@@ -22,7 +26,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Last name"
-                formControlName="yourName"
+                formControlName="name"
               />
             </div>
           </div>
@@ -35,7 +39,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Email"
-                formControlName="yourName"
+                formControlName="email"
               />
             </div>
           </div>
@@ -46,7 +50,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Telephone no"
-                formControlName="yourName"
+                formControlName="phoneNumber"
               />
             </div>
           </div>
@@ -59,7 +63,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Company name"
-                formControlName="yourName"
+                formControlName="CompanyName"
               />
             </div>
           </div>
@@ -70,7 +74,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Job title"
-                formControlName="yourName"
+                formControlName="JobTitle"
               />
             </div>
           </div>
@@ -83,7 +87,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Company website"
-                formControlName="yourName"
+                formControlName="CompanyWebsite"
               />
             </div>
           </div>
@@ -96,7 +100,7 @@
                 type="text"
                 class="input-text"
                 name="Select Product and Services"
-                formControlName="yourName"
+                formControlName="Product&Services"
               >
                 <option value="" disabled selected>
                   Select Product and Services
@@ -113,7 +117,7 @@
                 type="text"
                 class="input-text"
                 name="Select Part No"
-                formControlName="yourName"
+                formControlName="PartNo"
               >
                 <option value="" disabled selected>Select Part No</option>
               </select>
@@ -128,7 +132,7 @@
                 type="text"
                 class="input-text"
                 placeholder="Leave us a message..."
-                formControlName="yourName"
+                formControlName="Message"
               ></textarea>
             </div>
           </div>
