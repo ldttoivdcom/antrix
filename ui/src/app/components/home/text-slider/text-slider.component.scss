@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 1;
 }
 
 .custom-next-button {
@@ -51,6 +51,7 @@ swiper-container::part(bullet-active) {
       font-weight: 400;
       line-height: 150%;
       letter-spacing: 1.7px;
+      margin: 0;
     }
 
     .slider-text {
@@ -62,6 +63,29 @@ swiper-container::part(bullet-active) {
       color: $color_primary--600;
       line-height: 24px;
       font-weight: 600;
+      text-align: center;
     }
+  }
+}
+
+@include mobile {
+  .slider-text {
+    min-width: 300px;
+  }
+
+  .slider-subText {
+    min-width: 300px;
+  }
+
+  .custom-next-button {
+    bottom: -15px;
+    top: unset;
+    right: 20%;
+  }
+
+  .custom-prev-button {
+    bottom: -15px;
+    top: unset;
+    left: 20%;
   }
 }

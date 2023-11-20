@@ -1,4 +1,9 @@
 @import "../../../../styles.scss";
+.navbar-toggler {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 0;
+}
 .header-container {
   height: 80px;
   background-color: $color_primary--600;

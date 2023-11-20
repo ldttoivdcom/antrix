@@ -1,11 +1,30 @@
 <div class="container">
-  <app-search-bar
-    placeHolder="Search our services"
-    header="OUR SERVICES"
-  ></app-search-bar>
+  <div class="d-flex flex-column flex-gap-24px align-items-center mb-32px">
+    <h1 class="header m-0">OUR SERVICES</h1>
+    <form
+      class="search-container d-flex justify-content-center w-50"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="search-box">
+        <img
+          class="search-box_icon"
+          src="assets/icons/icon-search.svg"
+          alt=""
+        />
+        <input
+          [(ngModel)]="searchQuery"
+          name="searchQuery"
+          class="search-box_input"
+          placeholder="Search our services"
+          type="text"
+        />
+      </div>
+      <button type="submit" class="search-container_btn">Search</button>
+    </form>
+  </div>
   <app-card
     SubText="*First half an hour FREE Consultation"
-    [ProductsData]="data"
+    [ProductsData]="filteredProducts"
     FirstBtnText="Book Consultation"
   ></app-card>
 </div>

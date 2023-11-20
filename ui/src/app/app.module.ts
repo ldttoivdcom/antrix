@@ -18,6 +18,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
 import { AboutComponent } from './components/about/about.component';
 import { FAQComponent } from './components/faq/faq.component';
 import { ResourcesComponent } from './components/resources/resources.component';
+import { CareersComponent } from './components/careers/careers.component';
 
 register();
 
@@ -34,6 +35,7 @@ register();
     AboutComponent,
     FAQComponent,
     ResourcesComponent,
+    CareersComponent,
   ],
   imports: [
     BrowserModule,

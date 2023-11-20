@@ -6,6 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { FAQComponent } from './components/faq/faq.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { ProductServiceLayoutComponent } from './components/product-service-layout/product-service-layout.component';
+import { CareersComponent } from './components/careers/careers.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'resources',
     component: ResourcesComponent,
+  },
+  {
+    path: 'careers',
+    component: CareersComponent,
   },
   {
     path: 'info',

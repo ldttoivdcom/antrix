@@ -1,0 +1,56 @@
+@import "../../../styles.scss";
+.careers-wrapper {
+  padding: 48px 0;
+  width: 80%;
+  margin: auto;
+  .careers-header {
+    color: $color_primary--700;
+    font-size: 48px;
+    line-height: 60px; /* 125% */
+    letter-spacing: -0.96px;
+    margin-bottom: 32px;
+  }
+
+  .careers-content {
+    padding: 24px;
+    background-color: var(--gray-50, #f9fafb);
+    margin-bottom: 32px;
+    &_header {
+      color: var(--gray-900, #101828);
+      font-size: 18px;
+      font-style: normal;
+      line-height: 28px;
+      margin-bottom: 16px;
+    }
+
+    &_text-box {
+      color: var(--gray-800, #1d2939);
+      font-weight: 400;
+      line-height: 170%;
+      margin-bottom: 16px;
+    }
+  }
+
+  .box {
+    color: var(--gray-800, #1d2939);
+    font-weight: 400;
+    line-height: 170%;
+    margin-bottom: 16px;
+    &-text {
+      margin-bottom: 8px;
+    }
+    &-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      &_item {
+      }
+    }
+  }
+
+  .text {
+    color: var(--gray-800, #1d2939);
+    font-weight: 400;
+    line-height: 170%;
+  }
+}
