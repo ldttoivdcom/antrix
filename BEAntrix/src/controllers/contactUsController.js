@@ -4,7 +4,7 @@ const mailServices = require('../services/mailService');
 exports.contactUs = async (req, res) => {
    try {
         const reqData = req.body;
-        await mailServices.sendMail(reqData.email, reqData.name, reqData.message)
+        await mailServices.sendMail(reqData);
         return res.status(200).json({code: "200", message: "Thank you for contacting us"});
    }catch (e) {
        return res.status(400).json({code: "400", message: "Contact us failed", error: e.toString()});

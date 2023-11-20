@@ -4,25 +4,27 @@ dotenv.config({
 });
 
 
-exports.mailTemplate = (name="", email="", message="",phone="", job="") => {
+exports.mailTemplate = (reqData) => {
+
+   const { firstName, lastName, email, prodService, phone, company, jobTitle, companyWeb, message, subject, partNo } = reqData;
+
     return `
+
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Contact Us</title>
   </head>
   <body
     style="
       margin: 0;
-      font-family: 'Inter', sans-serif ;
+      font-family: Poppins,serif ;
       background-color: #f5f5f5;
     ">
     <table
@@ -31,7 +33,7 @@ exports.mailTemplate = (name="", email="", message="",phone="", job="") => {
       cellpadding="0"
       border="0"
       align="center"
-      width="580px"
+      width="640px"
       style="padding-top: 32px; padding-bottom: 32px">
       <tr>
         <td>
@@ -46,14 +48,12 @@ exports.mailTemplate = (name="", email="", message="",phone="", job="") => {
               <td
                 style="
                   text-align: center;
-                  margin: 15px 0;
-                  height: 120px;
+                  margin: 0;
+                  height: 80px;
                   color: white;
-                  align-items: center;
-                  padding: 30px 0;
                 ">
                 <img
-                  src=""
+                  src="${process.env.IMAGE_BASE_URL}dropdown_header_navigation.png"
                   alt="header"
                   style="width: 100%; height: 100%; object-fit: cover;pointer-events: none;" />
               </td>
@@ -61,11 +61,10 @@ exports.mailTemplate = (name="", email="", message="",phone="", job="") => {
 
             <tr>
               <td>
-
                   <table
                   style="
-                    padding: 0 32px;
-                    font-family: 'Inter', sans-serif;
+                    padding: 0 32px 30px 32px;
+                    font-family: 'Poppins', sans-serif;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
@@ -73,125 +72,110 @@ exports.mailTemplate = (name="", email="", message="",phone="", job="") => {
                     width:100%;
 
                   ">
-                      
+                      <tr >
+                          <td style="align-items: center;text-align: center; padding: 35px 0;">
+                              <img src="${process.env.IMAGE_BASE_URL}check_circle.png" alt="tick" style="padding-bottom: 16px; width: 32px; height: 32px; object-fit: cover;pointer-events: none;">
+                                <p style="font-weight: 600; text-align: center; font-size: 24px; color: #0C3C60;margin: 0">Thank you for submitting the form.</p>
+                          </td>
+                      </tr>
                   <tr>
-                    <td style="border-top: 1px solid #EAECF0; padding-top: 10px">
-                        <p style="font-weight: 700; text-align: left">
-                          Hi, ${name}
-                        </p>
+                    <td style="border-top: 1px solid #EAECF0; padding-top: 16px">
+                        <span style="font-weight: 400; text-align: left">
+                          Dear, ${firstName}
+                        </span>
                     </td>
                   </tr>
                   <tr>
-                      <td style="text-align: center; padding-top: 15px">
-                          <span>Thank you for reaching out to Antrix. We have received your query from email address ${email}. Someone from our team will contact you regarding your inquiry shortly. </span>
+                      <td style="text-align: left; padding-top: 15px">
+                          <span>Thank you for reaching out to us. We appreciate your interest in Antrix. Your inquiry about Product / Service: ${prodService} is important to us, and we will make every effort to respond as quickly as possible. </span>
                       </td>
                   </tr>
                   <tr>
-                          <td style="text-align: center; padding-top: 15px"><span>Please be patient.</span></td>
+                          <td style="text-align: left; padding-top: 15px"><span>Here are the details you provided:</span></td>
                   </tr>
-                  <tr>
-                          <td style="text-align: center; padding-top: 15px"><span>Thanks, Antrix team</span></td>
-                  <tr style="height: 44px"></tr>
-                  <tr>
-                    <td
-                      style="
-                        height: auto;
-                        padding-top: 32px;
-                        padding-bottom: 32px;
-                        border-top: 1px solid #eaecf0;
-                      ">
-                      <table
-                        align="center"
-                        style="
-                          color: #475467;
-                          font-size: 14px;
-                          font-style: normal;
-                          font-weight: 400;
-                          line-height: 20px;
-                        ">
-                        <tr>
-                          <td colspan="2" style="text-align: center;font-weight: 700;font-size: 16px">
-                            <a
-                              href="#"
-                              style="margin-right: 16px; color: #475467;font-family: 'Inter', sans-serif;text-decoration: none"
-                              >Home</a>
-                            <a
-                              href="#"
-                              style="margin-right: 16px; color: #475467;font-family: 'Inter', sans-serif;text-decoration: none"
-                              >About us</a>
-                            <a
-                              href="#"
-                              style="margin-right: 16px; color: #475467;font-family: 'Inter', sans-serif;text-decoration: none"
-                              >Canada Visa</a>
-                            <a href="#" style="color: #475467;font-family: 'Inter', sans-serif;margin-right: 16px;text-decoration: none"
-                            >Blog</a>
-                            <a href="#" style="color: #475467;font-family: 'Inter', sans-serif;text-decoration: none"
-                            >Contact</a>
-                          </td>
-                        </tr>
-                        <tr style="height: 24px"></tr>
-
-                        <tr>
-                          <td
-                            colspan="2"
-                            style="text-align: center; vertical-align: middle;font-family: 'Inter', sans-serif">
-                            <span>12830 80 Ave #209, Surrey, BC V3W 3A8</span>
-                              <p>Front Desk: +1-89-636-48018</p>
-                          </td>
-                        </tr>
-                        <tr style="height: 12px"></tr>
-                        <tr>
-                          <td
-                            style="
-                              text-align: center;
-                              width: 100%;
+                  <tr style="background-color: #F9FAFB; width: 100%;">
+                        <td>
+                            <table style="
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 24px;
+                            width: 100%;
+                            padding: 12px;
                             ">
-                            <a href="#" style="cursor: pointer;text-decoration: none">
-                            <img
-                              src="${process.env.IMAGE_BASE_URL}/tw.png"
-                              alt="icon_mail"
-                              style="
-                                width: 20px;
-                                height: 20px;
-                                vertical-align: middle;
-                              " />
-                                </a>
-                            <a href="#" style="cursor: pointer;text-decoration: none;  margin: 0 16px;">
-                            <img
-                              src="${process.env.IMAGE_BASE_URL}fb.png"
-                              alt="icon_mail"
-                              style="
-                                width: 20px;
-                                height: 20px;
-                                vertical-align: middle;
-                              " />
-                              </a>
-                              <a href="#" style="cursor: pointer;text-decoration: none;">
-                              <img
-                              src="${process.env.IMAGE_BASE_URL}ig.png"
-                              alt="icon_mail"
-                              style="
-                                width: 20px;
-                                height: 20px;
-                                vertical-align: middle;
-                              " />
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
+                              <tr style="">
+                                    <td style="text-align: left; width: 100%"><span>First Name: ${firstName}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Last Name: ${lastName}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Email: ${email}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Telephone: ${phone}</span></td>
+                                </tr>
+                              <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Company: ${company}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Job Title: ${jobTitle}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Company Website: ${companyWeb}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${prodService}</span></td>
+                                </tr>
+                                ${partNo ? `<tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo}</span></td>
+                                </tr>` : ""}
+                                 <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Subject: ${subject}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-top: 15px"><span>Message: ${message}</span></td>
+                                </tr>
+                          </table>
+
+                        </td>
                   </tr>
+                      <tr>
+                      <td style="text-align: left; padding-top: 16px"><span>Our team will review your message and get back to you shortly. If your
+                          inquiry is urgent, please feel free to contact us directly at ${email}.</span></td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: left; padding-top: 15px"><span>Thank you for considering Antrix. We look forward to assisting you.</span></td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: left; padding-top: 15px"><span>Best Regards,</span></td>
+                    </tr>
 
                 </table>
 
               </td>
             </tr>
+               <tr style="background-color: #EAECF0;">
+                    <td
+                      style="
+                        height: auto;
+                        padding: 12px;
+                        text-align: center;
+                        font-size: 14px;
+                      ">
+                        <p style="margin: 9px 0">@ 2023 Antrix</p>
+                        <p style="margin: 9px 0">Antrix, Inc819 Peekskill DrSunnyvale,CA 94087</p>
+                        <p style="margin: 9px 0">www.antrix.com</p>
+                    </td>
+                  </tr>
           </table>
         </td>
       </tr>
     </table>
   </body>
 </html>
+
 
 
     `;
