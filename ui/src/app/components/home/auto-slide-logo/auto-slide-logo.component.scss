@@ -54,11 +54,10 @@
   flex-wrap: wrap;
 
   &_item {
-    flex: 1 1 0px;
   }
 }
 
-@include mobile {
+@media (max-width: 768px) {
   .slider {
     display: none !important;
   }

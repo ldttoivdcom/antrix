@@ -4,7 +4,7 @@
   background: url("../../../assets/imgs/Home-banner-1.png") no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   .home-banner_content {
@@ -74,8 +74,8 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 170%;
-    width: 50%;
     margin: auto;
+    white-space: nowrap;
   }
 }
 
@@ -155,7 +155,7 @@
   .aboutus-btn {
     color: $color_primary--600;
     background-color: transparent;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 170%;
     padding: 12px 20px;
     border: 1px solid var(--primary-300, #bbc8d2);
@@ -192,5 +192,29 @@
     &_btn:last-child {
       margin-top: 12px !important;
     }
+  }
+}
+
+@include mobile {
+  .content-container-box {
+    min-height: 0 !important;
+  }
+}
+
+@include tablet {
+  .content-container-box {
+    min-height: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .content-container-box {
+    min-height: 505px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .advantage-banner_card-header {
+    min-height: 64px !important;
   }
 }

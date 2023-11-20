@@ -22,7 +22,6 @@ export class ResourcesComponent implements OnInit {
               WebLinks: row.WebLinks,
               Regulations: row.Regulations,
             }));
-          console.log(this.regulations);
         },
       });
     });

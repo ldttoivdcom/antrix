@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { Papa } from 'ngx-papaparse';
 import { CsvDataService } from 'src/app/shared/services/csv-data.service';
@@ -8,13 +8,17 @@ import { Subject } from 'rxjs';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent implements OnInit, OnDestroy {
   data: Products[] = [];
   filteredProducts: Products[] = [];
   searchQuery: string = '';
   unsubscription$: Subject<void> = new Subject<void>();
   constructor(private _csvService: CsvDataService, private _papa: Papa) {}
   ngOnInit(): void {
+    this.initCsvData();
+  }
+
+  initCsvData(): void {
     const csvFileUrl = '../../../../assets/csv/Antrix Service List.csv';
     this._csvService.getCsvData(csvFileUrl).subscribe((csvData) => {
       this._papa.parse(csvData, {
