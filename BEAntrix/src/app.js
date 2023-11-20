@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: ["*"],
+  origin: ["http://34.72.99.64"],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };

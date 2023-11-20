@@ -2,7 +2,7 @@ const nodeMailer = require("nodemailer");
 const mailTemplate = require("../template/mailTemplate");
 require('dotenv').config();
 
-exports.sendMail = async (email, name, message) => {
+exports.sendMail = async (reqData) => {
     const transporter = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
@@ -13,9 +13,9 @@ exports.sendMail = async (email, name, message) => {
     });
         await transporter.sendMail({
         from: 'no-reply@neoprototype.ca',
-        to: `${email}`,
+        to: `${reqData.email}`,
         subject: 'Contact us',
-        html: mailTemplate.mailTemplate(name,email)
+        html: mailTemplate.mailTemplate(reqData)
         });
 
 }
