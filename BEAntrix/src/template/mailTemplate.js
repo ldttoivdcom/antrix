@@ -81,13 +81,13 @@ exports.mailTemplate = (reqData) => {
                   <tr>
                     <td style="border-top: 1px solid #EAECF0; padding-top: 16px">
                         <span style="font-weight: 400; text-align: left">
-                          Dear, ${firstName}
+                          Dear, ${firstName || ""}
                         </span>
                     </td>
                   </tr>
                   <tr>
                       <td style="text-align: left; padding-top: 15px">
-                          <span>Thank you for reaching out to us. We appreciate your interest in Antrix. Your inquiry about Product / Service: ${prodService} is important to us, and we will make every effort to respond as quickly as possible. </span>
+                          <span>Thank you for reaching out to us. We appreciate your interest in Antrix. Your inquiry about Product / Service: ${prodService || ""} is important to us, and we will make every effort to respond as quickly as possible. </span>
                       </td>
                   </tr>
                   <tr>
@@ -105,37 +105,37 @@ exports.mailTemplate = (reqData) => {
                             padding: 12px;
                             ">
                               <tr style="">
-                                    <td style="text-align: left; width: 100%"><span>First Name: ${firstName}</span></td>
+                                    <td style="text-align: left; width: 100%"><span>First Name: ${firstName || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Last Name: ${lastName}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Last Name: ${lastName || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Email: ${email}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Email: ${email || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Telephone: ${phone}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Telephone: ${phone || ""}</span></td>
                                 </tr>
                               <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Company: ${company}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Company: ${company || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Job Title: ${jobTitle}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Job Title: ${jobTitle || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Company Website: ${companyWeb}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Company Website: ${companyWeb || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${prodService}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${prodService || ""}</span></td>
                                 </tr>
                                 ${partNo ? `<tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
                                 </tr>` : ""}
                                  <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Subject: ${subject}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Subject: ${subject || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Message: ${message}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Message: ${message|| ""}</span></td>
                                 </tr>
                           </table>
 
@@ -143,7 +143,7 @@ exports.mailTemplate = (reqData) => {
                   </tr>
                       <tr>
                       <td style="text-align: left; padding-top: 16px"><span>Our team will review your message and get back to you shortly. If your
-                          inquiry is urgent, please feel free to contact us directly at ${email}.</span></td>
+                          inquiry is urgent, please feel free to contact us directly at ${email || ""}.</span></td>
                     </tr>
                     <tr>
                       <td style="text-align: left; padding-top: 15px"><span>Thank you for considering Antrix. We look forward to assisting you.</span></td>
