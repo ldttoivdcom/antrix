@@ -19,15 +19,6 @@
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
     >
-      <!-- <div class="offcanvas-header bg-light">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div> -->
       <div class="offcanvas-body">
         <ul
           class="header-navbar navbar-nav align-items-center justify-content-center flex-grow-1"
@@ -35,31 +26,56 @@
           <li class="nav-item">
             <a
               class="header-navbar_link nav-link"
+              data-bs-dismiss="offcanvas"
               aria-current="page"
               routerLink="/info/services"
+              routerLinkActive="header-navbar_link-active"
               >Services</a
             >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" routerLink="/info/products"
+            <a
+              class="header-navbar_link nav-link"
+              data-bs-dismiss="offcanvas"
+              routerLink="/info/products"
+              routerLinkActive="header-navbar_link-active"
               >Products</a
             >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" routerLink="pricing"
+            <a
+              class="header-navbar_link nav-link"
+              data-bs-dismiss="offcanvas"
+              routerLink="pricing"
+              routerLinkActive="header-navbar_link-active"
               >Pricing</a
             >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" routerLink="resources"
+            <a
+              class="header-navbar_link nav-link"
+              data-bs-dismiss="offcanvas"
+              routerLink="resources"
+              routerLinkActive="header-navbar_link-active"
               >Resources</a
             >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" routerLink="about">About</a>
+            <a
+              class="header-navbar_link nav-link"
+              data-bs-dismiss="offcanvas"
+              routerLink="about"
+              routerLinkActive="header-navbar_link-active"
+              >About</a
+            >
           </li>
           <li class="nav-item">
-            <a class="header-navbar_link nav-link" href="#contact">Contact</a>
+            <a
+              class="header-navbar_link nav-link"
+              data-bs-dismiss="offcanvas"
+              href="#contact"
+              >Contact</a
+            >
           </li>
         </ul>
         <button

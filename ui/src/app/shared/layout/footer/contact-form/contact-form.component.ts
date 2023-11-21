@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -6,9 +6,9 @@ import {
   AbstractControl,
   ValidationErrors,
 } from '@angular/forms';
-import { Papa } from 'ngx-papaparse';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, takeUntil } from 'rxjs';
+import { required } from '@popeyelab/ngx-validator';
 
 interface ProductsServices {
   name: string;
@@ -29,7 +29,7 @@ function captchaValidator(control: AbstractControl): ValidationErrors | null {
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss'],
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent implements OnInit, OnDestroy {
   ngUnsubscribe$ = new Subject<void>();
   captcha: string;
   ProductService: string[] = [];
@@ -44,7 +44,7 @@ export class ContactFormComponent implements OnInit {
   initContactForm(): void {
     this.contactForm = this._formBuilder.group({
       firstName: '',
-      name: '',
+      name: ['', [required('Please enter your name')]],
       email: '',
       phoneNumber: '',
       CompanyName: '',
@@ -56,6 +56,7 @@ export class ContactFormComponent implements OnInit {
       captcha: ['', [captchaValidator]],
     });
   }
+
   onSubmit(): void {
     const submitForm = this.contactForm.value;
     this._http

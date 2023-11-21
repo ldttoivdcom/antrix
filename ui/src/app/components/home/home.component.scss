@@ -4,7 +4,7 @@
   background: url("../../../assets/imgs/Home-banner-1.png") no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   .home-banner_content {
@@ -30,8 +30,8 @@
       color: #fff;
       border: 1px solid $color_primary--600;
       background: $color_primary--600;
-      /* Shadow/xs */
       box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+      font-weight: 500;
     }
   }
 }
@@ -41,7 +41,7 @@
   .content-description {
     color: $color_primary--900;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
   }
   &_header {
     color: $color_primary--700;
@@ -72,10 +72,10 @@
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
     color: $color_primary--600;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 170%;
-    width: 50%;
     margin: auto;
+    white-space: nowrap;
   }
 }
 
@@ -87,6 +87,7 @@
   padding: 32px 0;
   .advantage-banner_header {
     color: $color_primary--700;
+    font-weight: 400;
     letter-spacing: 1.7px;
     line-height: 150%;
     margin-bottom: 24px;
@@ -111,6 +112,8 @@
         color: var(--base-white, #fff);
         font-size: 24px;
         line-height: 32px;
+        font-weight: 500;
+        white-space: nowrap;
       }
       p,
       .price {
@@ -155,7 +158,7 @@
   .aboutus-btn {
     color: $color_primary--600;
     background-color: transparent;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 170%;
     padding: 12px 20px;
     border: 1px solid var(--primary-300, #bbc8d2);
@@ -192,5 +195,29 @@
     &_btn:last-child {
       margin-top: 12px !important;
     }
+  }
+}
+
+@include mobile {
+  .content-container-box {
+    min-height: 0 !important;
+  }
+}
+
+@include tablet {
+  .content-container-box {
+    min-height: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .content-container-box {
+    min-height: 505px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .advantage-banner_card-header {
+    min-height: 64px !important;
   }
 }

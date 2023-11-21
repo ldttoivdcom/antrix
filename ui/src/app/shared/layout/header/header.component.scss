@@ -15,14 +15,21 @@
     gap: 32px;
     &_link {
       color: #fff;
+      font-weight: 500;
+      line-height: 170%;
+
+      &-active {
+        color: var(--blue-400, #53b1fd);
+      }
     }
     &_btn {
       font-size: 16px;
-      font-family: Poppins;
       padding: 10px 18px;
       background-color: #fff;
       color: $color_primary--700;
       border: 1px solid var(--gray-300, #d0d5dd);
+      font-weight: 500;
+      line-height: 170%;
     }
   }
 }

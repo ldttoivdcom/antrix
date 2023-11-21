@@ -7,12 +7,14 @@
     font-size: 48px;
     line-height: 60px;
     letter-spacing: -0.96px;
+    margin-bottom: 12px;
   }
 
   &_text {
     color: $color_primary--700;
     font-weight: 400;
     line-height: 170%;
+    margin-bottom: 32px;
   }
 
   .faq-list {
@@ -20,6 +22,9 @@
       &-index {
         color: $color_primary--700;
         padding: 10px 10px 0 10px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
       }
 
       &-question {
@@ -36,14 +41,14 @@
         font-weight: 400;
         line-height: 170%;
         margin-bottom: 16px;
-        padding-left: 38px;
+        padding-left: 48px;
       }
     }
   }
 
   .faq-subList {
     list-style-type: disc;
-    padding-left: 38px;
+    padding-left: 78px;
 
     &_item span {
       color: var(--gray-700, #344054);
