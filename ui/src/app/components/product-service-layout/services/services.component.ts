@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Products } from 'src/app/models/products.model';
-import { Papa } from 'ngx-papaparse';
-import { CsvDataService } from 'src/app/shared/services/csv-data.service';
-import { Subject } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Products} from 'src/app/models/products.model';
+import {Papa} from 'ngx-papaparse';
+import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {debounceTime, distinctUntilChanged, Subject, takeUntil} from 'rxjs';
+
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
@@ -12,10 +13,22 @@ export class ServicesComponent implements OnInit, OnDestroy {
   data: Products[] = [];
   filteredProducts: Products[] = [];
   searchQuery: string = '';
+  searchSubject = new Subject<string>();
   unsubscription$: Subject<void> = new Subject<void>();
-  constructor(private _csvService: CsvDataService, private _papa: Papa) {}
+
+  constructor(private _csvService: CsvDataService, private _papa: Papa) {
+  }
+
   ngOnInit(): void {
     this.initCsvData();
+    this.searchSubject.pipe(
+      debounceTime(500),
+      distinctUntilChanged(), //only search when value is different from last
+      takeUntil(this.unsubscription$)
+    ).subscribe((value) => {
+        this.TrackValueChange(value);
+      }
+    )
   }
 
   initCsvData(): void {
@@ -40,6 +53,15 @@ export class ServicesComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     this.searchFilter();
+  }
+
+  TrackValueChange(value: string): void {
+    this.filteredProducts = this.data.filter(
+      (product: Products) =>
+        product.Name.includes(value) ||
+        product.Description.includes(value) ||
+        product.PartNumber.includes(value)
+    );
   }
 
   searchFilter() {

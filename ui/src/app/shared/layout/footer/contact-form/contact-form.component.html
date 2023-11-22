@@ -15,8 +15,12 @@
                 type="text"
                 class="input-text"
                 placeholder="Frist name"
-                formControlName="firstName"
+                formControlName="name"
               />
+              <img *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('name')?.errors?.['required']">Please enter you first name</p>
             </div>
           </div>
           <div class="form-input col-lg-6 col-sm-12">
@@ -24,10 +28,15 @@
             <div class="input-text_wraper">
               <input
                 type="text"
+                id="name"
                 class="input-text"
                 placeholder="Last name"
-                formControlName="name"
+                formControlName="lastName"
               />
+              <img *ngIf="contactForm.get('lastName')?.invalid && (contactForm.get('lastName')?.dirty || contactForm.get('lastName')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('lastName')?.invalid && (contactForm.get('lastName')?.dirty || contactForm.get('lastName')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('lastName')?.errors?.['required']">Please enter you last name</p>
             </div>
           </div>
         </div>
@@ -41,6 +50,11 @@
                 placeholder="Email"
                 formControlName="email"
               />
+              <img *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('email')?.errors?.['required']">Please enter you email</p>
+              <p *ngIf="contactForm.get('email')?.errors?.['email']">Please enter valid email</p>
             </div>
           </div>
           <div class="form-input">
@@ -52,6 +66,10 @@
                 placeholder="Telephone no"
                 formControlName="phoneNumber"
               />
+              <img *ngIf="contactForm.get('phoneNumber')?.invalid && (contactForm.get('phoneNumber')?.dirty || contactForm.get('phoneNumber')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('phoneNumber')?.invalid && (contactForm.get('phoneNumber')?.dirty || contactForm.get('phoneNumber')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('phoneNumber')?.errors?.['required']">Please enter your phonenumber</p>
             </div>
           </div>
         </div>
@@ -65,6 +83,10 @@
                 placeholder="Company name"
                 formControlName="CompanyName"
               />
+              <img *ngIf="contactForm.get('CompanyName')?.invalid && (contactForm.get('CompanyName')?.dirty || contactForm.get('CompanyName')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('CompanyName')?.invalid && (contactForm.get('CompanyName')?.dirty || contactForm.get('CompanyName')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('CompanyName')?.errors?.['required']">Please enter your company name</p>
             </div>
           </div>
           <div class="form-input">
@@ -76,6 +98,10 @@
                 placeholder="Job title"
                 formControlName="JobTitle"
               />
+              <img *ngIf="contactForm.get('JobTitle')?.invalid && (contactForm.get('JobTitle')?.dirty || contactForm.get('JobTitle')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('JobTitle')?.invalid && (contactForm.get('JobTitle')?.dirty || contactForm.get('JobTitle')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('JobTitle')?.errors?.['required']">Please enter your job title</p>
             </div>
           </div>
         </div>
@@ -89,6 +115,29 @@
                 placeholder="Company website"
                 formControlName="CompanyWebsite"
               />
+              <img *ngIf="contactForm.get('CompanyWebsite')?.invalid && (contactForm.get('CompanyWebsite')?.dirty || contactForm.get('CompanyWebsite')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('CompanyWebsite')?.invalid && (contactForm.get('CompanyWebsite')?.dirty || contactForm.get('CompanyWebsite')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('CompanyWebsite')?.errors?.['required']">Please enter your company website</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="form-input">
+            <label class="input-label">Pricing</label>
+            <div class="input-text_wraper">
+              <select
+                class="input-text"
+                name="Select Price"
+                formControlName="Pricing"
+              >
+                <option class="input-text_option" value="" disabled>
+                  Select Price
+                </option>
+                <option *ngFor="let price of Pricings" [value]=price>
+                  {{price}}
+                </option>
+              </select>
             </div>
           </div>
         </div>
@@ -105,7 +154,27 @@
                 <option value="" disabled selected>
                   Select Products and Services
                 </option>
+                <optgroup label="Products">
+                  <option
+                    *ngFor="let product of Products"
+                    value="{{ product.Name }}"
+                  >
+                    {{ product.Name }}
+                  </option>
+                </optgroup>
+                <optgroup label="Services">
+                  <option
+                    *ngFor="let service of Services"
+                    value="{{ service.Name }}"
+                  >
+                    {{ service.Name }}
+                  </option>
+                </optgroup>
               </select>
+              <img *ngIf="contactForm.get('ProductServices')?.invalid && (contactForm.get('ProductServices')?.dirty || contactForm.get('ProductServices')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('ProductServices')?.invalid && (contactForm.get('ProductServices')?.dirty || contactForm.get('ProductServices')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('ProductServices')?.errors?.['required']">Please enter products or services</p>
             </div>
           </div>
         </div>
@@ -120,6 +189,22 @@
                 formControlName="PartNo"
               >
                 <option value="" disabled selected>Select Part No</option>
+                <optgroup label="Products">
+                  <option
+                    *ngFor="let product of Products"
+                    value="{{ product.PartNumber }}"
+                  >
+                    {{ product.PartNumber }}
+                  </option>
+                </optgroup>
+                <optgroup label="Services">
+                  <option
+                    *ngFor="let service of Services"
+                    value="{{ service.PartNumber }}"
+                  >
+                    {{ service.PartNumber }}
+                  </option>
+                </optgroup>
               </select>
             </div>
           </div>
@@ -134,6 +219,10 @@
                 placeholder="Leave us a message..."
                 formControlName="Message"
               ></textarea>
+              <img *ngIf="contactForm.get('Message')?.invalid && (contactForm.get('Message')?.dirty || contactForm.get('Message')?.touched)" src="assets/icons/icon-alert-circle.svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('Message')?.invalid && (contactForm.get('Message')?.dirty || contactForm.get('Message')?.touched)" class="error-text">
+              <p *ngIf="contactForm.get('Message')?.errors?.['required']">Please enter your message</p>
             </div>
           </div>
         </div>
@@ -142,12 +231,11 @@
           (resolved)="resolved($event)"
           siteKey="6LfIKg8pAAAAAMaCv2AwZPDmCum9a5q3ZoBhFBmC"
         ></re-captcha>
-        <button class="form-submit_btn">Submit</button>
+        <button [disabled]="contactForm.invalid" class="form-submit_btn">Submit</button>
       </form>
       <iframe
-        class="google-iframe"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25369.655053790288!2d-122.0470862522431!3d37.36128141678851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68faba6aaab%3A0x964753a81a5cecc0!2sAntrix!5e0!3m2!1svi!2s!4v1699977411518!5m2!1svi!2s"
-        width="800"
+        class="w-70"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.7994946887602!2d-122.04824770080262!3d37.361492100000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68faba6aaab%3A0x964753a81a5cecc0!2sAntrix!5e0!3m2!1sen!2s!4v1700565139969!5m2!1sen!2s"
         height="350"
         style="border: 0"
         allowfullscreen=""

@@ -15,6 +15,7 @@
         />
         <input
           [(ngModel)]="searchQuery"
+          (ngModelChange)="searchSubject.next($event)"
           name="searchQuery"
           class="search-box_input"
           placeholder="Search our products"
@@ -27,6 +28,6 @@
 
   <app-card
     [ProductsData]="filteredProducts"
-    FirstBtnText="Get a Free Quote"
+    FirstBtnText="Purchase Now"
   ></app-card>
 </div>

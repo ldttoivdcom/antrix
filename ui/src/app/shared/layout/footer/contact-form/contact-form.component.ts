@@ -4,12 +4,13 @@ import {
   FormGroup,
   Validators,
   AbstractControl,
-  ValidationErrors,
+  ValidationErrors, FormControl,
 } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, takeUntil } from 'rxjs';
-import { required } from '@popeyelab/ngx-validator';
-
+import { Papa } from 'ngx-papaparse';
+import { CsvDataService } from 'src/app/shared/services/csv-data.service';
+import { Products } from 'src/app/models/products.model';
 interface ProductsServices {
   name: string;
   partnumber: string;
@@ -32,27 +33,41 @@ function captchaValidator(control: AbstractControl): ValidationErrors | null {
 export class ContactFormComponent implements OnInit, OnDestroy {
   ngUnsubscribe$ = new Subject<void>();
   captcha: string;
-  ProductService: string[] = [];
+  Products: Products[] = [];
+  Services: Products[] = [];
   contactForm: FormGroup;
-  constructor(private _formBuilder: FormBuilder, private _http: HttpClient) {
+  Pricings: string[] =[
+    'Consulting Service - 200$',
+    'Consulting Service - 0$',
+    'Product Purchase - 200$'
+  ]
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _http: HttpClient,
+    private _papa: Papa,
+    private _csvDataService: CsvDataService
+  ) {
     this.captcha = '';
   }
   ngOnInit(): void {
     this.initContactForm();
+    this.initCsvProductsData();
+    this.initCsvServicesData();
   }
 
   initContactForm(): void {
     this.contactForm = this._formBuilder.group({
-      firstName: '',
-      name: ['', [required('Please enter your name')]],
-      email: '',
-      phoneNumber: '',
-      CompanyName: '',
-      JobTitle: '',
-      CompanyWebsite: '',
-      ProductServices: '',
+      name: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required]],
+      CompanyName: ['', [Validators.required]],
+      JobTitle: ['', [Validators.required]],
+      Pricing: '',
+      CompanyWebsite: ['', [Validators.required]],
+      ProductServices: ['', [Validators.required]],
       PartNo: '',
-      Message: '',
+      Message: ['', [Validators.required]],
       captcha: ['', [captchaValidator]],
     });
   }
@@ -80,6 +95,44 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   errored() {
     console.warn(`reCAPTCHA error encountered`);
+  }
+
+  initCsvProductsData(): void {
+    const csvFileUrl = '../../../../assets/csv/Antrix Product List.csv';
+    this._csvDataService.getCsvData(csvFileUrl).subscribe((csvData) => {
+      this._papa.parse(csvData, {
+        header: true,
+        complete: (result) => {
+          this.Products = result.data
+            .filter((row: Products) => row.PartNumber && row.Name)
+            .map((row: Products) => ({
+              PartNumber: row.PartNumber,
+              Name: row.Name,
+              imgPath: row.imgPath,
+              Description: row.Description,
+            }));
+        },
+      });
+    });
+  }
+
+  initCsvServicesData(): void {
+    const csvFileUrl = '../../../../assets/csv/Antrix Service List.csv';
+    this._csvDataService.getCsvData(csvFileUrl).subscribe((csvData) => {
+      this._papa.parse(csvData, {
+        header: true,
+        complete: (result) => {
+          this.Services = result.data
+            .filter((row: Products) => row.PartNumber && row.Name)
+            .map((row: Products) => ({
+              PartNumber: row.PartNumber,
+              Name: row.Name,
+              imgPath: row.imgPath,
+              Description: row.Description,
+            }));
+        },
+      });
+    });
   }
 
   ngOnDestroy() {
