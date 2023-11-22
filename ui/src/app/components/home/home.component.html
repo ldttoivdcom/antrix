@@ -7,7 +7,7 @@
         Services and Products Powered by AI, ML and NLP
       </h3>
       <p class="home-banner_text m-0 fs-20px">
-        We Guarantee 0 Major Inspection Findings
+        *We Guarantee 0 Major Inspection Findings
       </p>
       <button class="home-banner_btn">Book a Consultation</button>
     </div>
@@ -17,31 +17,6 @@
 <div class="container">
   <!--Services And Products banner-->
   <div class="mt-3">
-    <!-- <div class="d-flex flex-wrap flex-gap-32px">
-      <div *ngFor="let content of Contents" class="test">
-        <div class="content-container justify-content-between d-flex flex-column flex-gap-24px">
-          <h2 class="content-container_header text-center">
-            {{ content.header }}
-          </h2>
-          <div
-            class="wraper d-flex flex-column flex-gap-24px content-container-box"
-          >
-            <p class="text-center content-description">
-              {{ content.description }}
-            </p>
-            <ul class="content-list p-0 m-0">
-              <li
-                *ngFor="let item of content.list; let idx = index"
-                class="content-list_item"
-              >
-                {{ idx + 1 }}. {{ item }}
-              </li>
-            </ul>
-          </div>
-          <button class="content-container_btn">Learn more</button>
-        </div>
-      </div>
-    </div> -->
     <div class="row">
       <div *ngFor="let content of Contents" class="col-lg-4 col-md-12">
         <div class="content-container d-flex flex-column flex-gap-24px">
@@ -54,7 +29,10 @@
             <p class="text-center content-description">
               {{ content.description }}
             </p>
-            <ul class="content-list p-0 m-0">
+            <ul
+              *ngIf="content.list && content.list.length > 0"
+              class="content-list p-0 m-0"
+            >
               <li
                 *ngFor="let item of content.list; let idx = index"
                 class="content-list_item"
@@ -62,8 +40,24 @@
                 {{ idx + 1 }}. {{ item }}
               </li>
             </ul>
+            <p *ngIf="content.text" class="content-list-text">
+              {{ content.text }}
+            </p>
           </div>
-          <button class="content-container_btn">Learn more</button>
+          <button
+            *ngIf="content.list && content.list.length > 0"
+            routerLink="{{ content.link }}"
+            class="content-container_btn"
+          >
+            Learn more
+          </button>
+          <a
+            *ngIf="content.list && content.list.length < 1"
+            pageScroll
+            href="#clients"
+            class="content-container_btn"
+            >Learn more</a
+          >
         </div>
       </div>
     </div>

@@ -112,6 +112,7 @@
 .card-wrapper:nth-child(2) {
   .pricingTier-card {
     border: 1px solid $color_primary--500 !important;
+    background-color: #f9fafb !important;
   }
   .card-header_badge {
     display: block !important;
@@ -124,7 +125,7 @@
   }
 }
 
-@media  (max-width: 991px) {
+@media (max-width: 991px) {
   .pricingTier-card {
     margin-bottom: 24px;
   }

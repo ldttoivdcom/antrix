@@ -44,7 +44,10 @@
 
 .team-section {
   padding: 48px 0;
-
+  &_wrapper {
+    max-width: 1000px;
+    margin: auto;
+  }
   &_text {
     color: $color_primary--700;
     font-weight: 300;
@@ -212,5 +215,23 @@
     font-weight: 300;
     line-height: 170%;
     width: 70%;
+  }
+}
+
+@include mobile {
+  .about-content_img {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-content_img {
+    width: 100% !important;
+  }
+}
+
+@include bigtablet {
+  .about-content_img {
+    width: 360px !important;
   }
 }

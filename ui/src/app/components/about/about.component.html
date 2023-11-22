@@ -46,56 +46,62 @@
         Our team consists of highly skilled and experienced professionals who
         are dedicated to providing the best possible services to our clients.
       </p>
-      <div class="row">
-        <div
-          *ngFor="let item of data; let i = index"
-          class="col-lg-4 col-md-6 mb-48px pl-16px pr-16px"
-        >
-          <div class="team-member">
-            <img
-              class="team-member_img"
-              src="assets/imgs/member/{{ item.imgPath }}"
-              alt=""
-            />
-            <div class="team-member_info">
-              <h3 class="team-member_info-name">{{ item.name }}</h3>
-              <p class="team-member_info-title">
-                {{ item.title }}
-              </p>
-              <p class="team-member_info-description">
-                {{ item.description }}
-              </p>
-            </div>
-            <button (click)="showModal(i)" class="team-member_btn text-start">
-              Learn more >
-            </button>
-            <!-- OPEN MODAL -->
-            <div
-              [hidden]="activeItemIndex !== i"
-              (click)="closeModal()"
-              class="details-modal-overlay"
-            >
-              <div class="details-modal">
-                <div (click)="closeModal()" class="details-modal-close">
-                  <img class="z-1" src="assets/icons/icon-x-close.svg" alt="" />
-                </div>
-                <div class="details-modal-header">
-                  <h1 class="details-modal-header_name">{{ item.name }}</h1>
-                  <p class="details modal-header_title">{{ item.title }}</p>
-                </div>
-                <div class="details-modal-content">
-                  <img
-                    class="details-modal-content_img"
-                    src="assets/imgs/member/{{ item.imgPath }}"
-                    alt=""
-                  />
-                  <p class="details-modal-content_description">
-                    {{ item.description }}
-                  </p>
+      <div class="team-section_wrapper">
+        <div class="row">
+          <div
+            *ngFor="let item of data; let i = index"
+            class="col-lg-4 col-md-6 mb-48px pl-16px pr-16px"
+          >
+            <div class="team-member">
+              <img
+                class="team-member_img"
+                src="assets/imgs/member/{{ item.imgPath }}"
+                alt=""
+              />
+              <div class="team-member_info">
+                <h3 class="team-member_info-name">{{ item.name }}</h3>
+                <p class="team-member_info-title">
+                  {{ item.title }}
+                </p>
+                <p class="team-member_info-description">
+                  {{ item.description }}
+                </p>
+              </div>
+              <button (click)="showModal(i)" class="team-member_btn text-start">
+                Learn more >
+              </button>
+              <!-- OPEN MODAL -->
+              <div
+                [hidden]="activeItemIndex !== i"
+                (click)="closeModal()"
+                class="details-modal-overlay"
+              >
+                <div class="details-modal">
+                  <div (click)="closeModal()" class="details-modal-close">
+                    <img
+                      class="z-1"
+                      src="assets/icons/icon-x-close.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="details-modal-header">
+                    <h1 class="details-modal-header_name">{{ item.name }}</h1>
+                    <p class="details modal-header_title">{{ item.title }}</p>
+                  </div>
+                  <div class="details-modal-content">
+                    <img
+                      class="details-modal-content_img"
+                      src="assets/imgs/member/{{ item.imgPath }}"
+                      alt=""
+                    />
+                    <p class="details-modal-content_description">
+                      {{ item.description }}
+                    </p>
+                  </div>
                 </div>
               </div>
+              <!-- CLOSE MODAL -->
             </div>
-            <!-- CLOSE MODAL -->
           </div>
         </div>
       </div>

@@ -4,10 +4,12 @@
     <p class="faq_text">Frequent Asked Questions - FAQ</p>
     <ul class="faq-list">
       <li class="faq-list_item" *ngFor="let data of FAQList; let i = index">
-        <span class="faq-list_item-index">0{{ i + 1 }}.</span>
-        <h1 class="faq-list_item-question">
-          {{ data.question }}
-        </h1>
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">0{{ i + 1 }}.</span>
+          <h1 class="m-0 faq-list_item-question">
+            {{ data.question }}
+          </h1>
+        </div>
         <div>
           <p class="faq-list_item-answer">
             {{ data.answer }}

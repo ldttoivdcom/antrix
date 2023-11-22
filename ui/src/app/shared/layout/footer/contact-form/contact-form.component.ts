@@ -4,7 +4,8 @@ import {
   FormGroup,
   Validators,
   AbstractControl,
-  ValidationErrors, FormControl,
+  ValidationErrors,
+  FormControl,
 } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, takeUntil } from 'rxjs';
@@ -14,6 +15,11 @@ import { Products } from 'src/app/models/products.model';
 interface ProductsServices {
   name: string;
   partnumber: string;
+}
+
+interface ApiResponse {
+  code: string;
+  message: string;
 }
 
 const httpOptions = {
@@ -36,11 +42,12 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   Products: Products[] = [];
   Services: Products[] = [];
   contactForm: FormGroup;
-  Pricings: string[] =[
+  isConfirmRequestPopupOpened: boolean = false;
+  Pricings: string[] = [
     'Consulting Service - 200$',
     'Consulting Service - 0$',
-    'Product Purchase - 200$'
-  ]
+    'Product Purchase - 200$',
+  ];
   constructor(
     private _formBuilder: FormBuilder,
     private _http: HttpClient,
@@ -55,19 +62,23 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.initCsvServicesData();
   }
 
+  handleCancel(): void {
+    this.isConfirmRequestPopupOpened = false;
+  }
+
   initContactForm(): void {
     this.contactForm = this._formBuilder.group({
-      name: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required]],
-      CompanyName: ['', [Validators.required]],
-      JobTitle: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      company: ['', [Validators.required]],
+      jobTitle: ['', [Validators.required]],
       Pricing: '',
-      CompanyWebsite: ['', [Validators.required]],
-      ProductServices: ['', [Validators.required]],
-      PartNo: '',
-      Message: ['', [Validators.required]],
+      companyWeb: ['', [Validators.required]],
+      probService: ['', [Validators.required]],
+      partNo: '',
+      message: ['', [Validators.required]],
       captcha: ['', [captchaValidator]],
     });
   }
@@ -75,15 +86,19 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   onSubmit(): void {
     const submitForm = this.contactForm.value;
     this._http
-      .post(
+      .post<ApiResponse>(
         'http://34.72.99.64:8080/api/v1/contact-us',
         submitForm,
         httpOptions
       )
       .pipe(takeUntil(this.ngUnsubscribe$))
       .subscribe((res) => {
-        if (res === 200) {
-          console.log(res);
+        console.log(res);
+        if (res.code === '200') {
+          this.isConfirmRequestPopupOpened = true;
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
         }
       });
   }

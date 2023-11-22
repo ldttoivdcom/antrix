@@ -5,6 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+
 import { AppComponent } from './app.component';
 import { register } from 'swiper/element/bundle';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
@@ -43,6 +46,8 @@ register();
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule,
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule,
     SharedModule,
     RecaptchaFormsModule,
     HttpClientModule,
