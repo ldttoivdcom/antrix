@@ -31,19 +31,18 @@ export class PricingComponent {
       text: 'Add value and maximize your competitive advantage',
       listItems: [
         '1 FREE Goal setting meeting for half hour',
-        '2 Product specification and requirements meeting',
+        '1 FREE Goal setting through email or chat for half an hour',
+        '2 Statement of work sessions',
         'Online resources',
-        'Phone support',
-        'Priority support',
       ],
     },
     {
       header: 'Product Purchase',
       price: 200,
-      text: 'Get a customized company specific consulting service quote',
+      text: 'Get a customized company specific product purchase quote',
       listItems: [
         '1 Goal setting consultation for an hour',
-        '2 Follow up statement of work sessions',
+        '2 Product specification and requirements meeting',
         'Online resources',
         'Phone support',
         'Priority support',

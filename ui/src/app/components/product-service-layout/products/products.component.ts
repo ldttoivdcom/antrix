@@ -1,9 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Products } from 'src/app/models/products.model';
-import { Papa } from 'ngx-papaparse';
-import { CsvDataService } from 'src/app/shared/services/csv-data.service';
-import { Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Products} from 'src/app/models/products.model';
+import {Papa} from 'ngx-papaparse';
+import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {Subject, debounceTime, distinctUntilChanged, takeUntil, take} from 'rxjs';
+import {FormControl} from '@angular/forms';
+import {query} from "@angular/animations";
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -13,14 +15,24 @@ export class ProductsComponent implements OnInit, OnDestroy {
   data: Products[] = [];
   filteredProducts: Products[] = [];
   searchQuery: string = '';
-  searchInput = new FormControl();
+  searchSubject = new Subject<string>();
   unsubscription$: Subject<void> = new Subject<void>();
 
-  constructor(private _csvService: CsvDataService, private _papa: Papa) {}
+  constructor(private _csvService: CsvDataService, private _papa: Papa) {
+  }
+
   ngOnInit(): void {
     this.initCsvData();
-    this.trackSearchValueChanged();
+    this.searchSubject.pipe(
+      debounceTime(500),
+      distinctUntilChanged(), //only search when value is different from last
+      takeUntil(this.unsubscription$)
+    ).subscribe((value) => {
+        this.TrackValueChange(value);
+      }
+    )
   }
+
   initCsvData(): void {
     const csvFileUrl = '../../../../assets/csv/Antrix Product List.csv';
     this._csvService
@@ -48,17 +60,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.searchFilter();
   }
 
-  trackSearchValueChanged(): void {
-    this.searchInput.valueChanges
-      .pipe(
-        debounceTime(500),
-        distinctUntilChanged(), // only search when input changes
-        takeUntil(this.unsubscription$)
-      )
-      .subscribe((query) => {
-        this.searchQuery = query;
-        this.searchFilter();
-      });
+  TrackValueChange(value: string): void {
+    this.filteredProducts = this.data.filter(
+      (product: Products) =>
+        product.Name.includes(value) ||
+        product.Description.includes(value) ||
+        product.PartNumber.includes(value)
+    );
   }
 
   searchFilter() {
@@ -75,4 +83,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.unsubscription$.next();
     this.unsubscription$.complete();
   }
+
+  protected readonly query = query;
 }
