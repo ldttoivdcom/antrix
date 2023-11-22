@@ -14,7 +14,7 @@ exports.sendMail = async (reqData) => {
         await transporter.sendMail({
         from: 'no-reply@neoprototype.ca',
         to: `${reqData.email}`,
-        subject: 'Contact us',
+        subject: 'Thank You for Contacting Antrix',
         html: mailTemplate.mailTemplate(reqData)
         });
 
