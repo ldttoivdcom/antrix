@@ -24,7 +24,7 @@ exports.mailTemplate = (reqData) => {
   <body
     style="
       margin: 0;
-      font-family: Poppins,serif ;
+      font-family: 'Poppins',sans-serif ;
       background-color: #f5f5f5;
     ">
     <table
@@ -163,7 +163,7 @@ exports.mailTemplate = (reqData) => {
                         padding: 12px;
                         text-align: center;
                         font-size: 14px;
-                        font-family: Poppins,serif;
+                        font-family: 'Poppins',sans-serif;
                       ">
                         <p style="margin: 9px 0">@ 2023 Antrix</p>
                         <p style="margin: 9px 0">Antrix, Inc819 Peekskill DrSunnyvale,CA 94087</p>
