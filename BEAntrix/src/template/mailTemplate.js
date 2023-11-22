@@ -163,6 +163,7 @@ exports.mailTemplate = (reqData) => {
                         padding: 12px;
                         text-align: center;
                         font-size: 14px;
+                        font-family: Poppins,serif;
                       ">
                         <p style="margin: 9px 0">@ 2023 Antrix</p>
                         <p style="margin: 9px 0">Antrix, Inc819 Peekskill DrSunnyvale,CA 94087</p>
