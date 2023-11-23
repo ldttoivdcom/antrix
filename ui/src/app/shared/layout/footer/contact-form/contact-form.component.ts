@@ -159,6 +159,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     const selectElement = event.target as HTMLSelectElement;
     const selectedProductName = selectElement.value;
 
+    //check if pricings will hidden Part number
     if (this.Pricings.includes(selectedProductName)) {
       this.isHidden = true;
     } else {
