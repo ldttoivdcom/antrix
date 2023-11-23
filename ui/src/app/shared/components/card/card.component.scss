@@ -1,10 +1,13 @@
 @import "../../../../styles.scss";
+
 .card {
   border: 0;
   flex-basis: 385px;
+
   .card-img-top {
     border-radius: 0;
   }
+
   .card-body {
     display: flex;
     flex-direction: column;
@@ -12,6 +15,7 @@
     padding: 20px;
     background: var(--gray-50, #f9fafb);
   }
+
   .card-title {
     color: var(--gray-900, #101828);
     font-family: Poppins;
@@ -87,19 +91,32 @@
   z-index: 1000;
 }
 
+//background: #ffffff;
+//border-radius: 0.5em;
+//box-shadow: 0 10px 20px rgba(black, 0.2);
+//left: 50%;
+//max-width: 90%;
+//max-height: 80%;
+//position: absolute;
+//top: 50%;
+//transform: translate(-50%, -50%);
+//text-align: left;
+//display: flex;
+//flex-direction: column;
+
 .details-modal {
-  background: #ffffff;
-  border-radius: 0.5em;
-  box-shadow: 0 10px 20px rgba(black, 0.2);
-  left: 50%;
-  max-width: 90%;
-  max-height: 80%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+  //background: #ffffff;
+  //border-radius: 0.5em;
+  //box-shadow: 0 10px 20px rgba(black, 0.2);
+  //left: 50%;
+  //max-width: 90%;
+  //max-height: 80%;
+  //position: absolute;
+  //top: 50%;
+  //transform: translate(-50%, -50%);
+  //text-align: left;
+  //display: flex;
+  //flex-direction: column;
 
   // -------------- CLOSE
 
@@ -139,6 +156,7 @@
       line-height: 28px;
     }
   }
+
   .details-modal-content {
     border-top: 1px solid #e0e0e0;
     padding: 24px;

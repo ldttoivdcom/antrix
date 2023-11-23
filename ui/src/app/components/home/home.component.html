@@ -53,10 +53,9 @@
           </button>
           <a
             *ngIf="content.list && content.list.length < 1"
-            pageScroll
-            href="#clients"
+            (click)="onClick('clients')"
             class="content-container_btn"
-            >Learn more</a
+          >Learn more</a
           >
         </div>
       </div>
@@ -75,7 +74,7 @@
     <div class="d-flex flex-wrap flex-gap-32px">
       <div *ngFor="let advan of Advantages" class="advantage-item">
         <div class="advantage-banner_card text-center text-white">
-          <img class="mb-20px" src="assets/icons/{{ advan.icon }}" alt="" />
+          <img class="mb-20px" src="assets/icons/{{ advan.icon }}" alt=""/>
           <h4 class="advantage-banner_card-header mb-12px">
             {{ advan.header }}
           </h4>
@@ -108,7 +107,7 @@
         clients. Contact us today to learn more about how we can help you
         achieve success in the market.
       </p>
-      <button class="aboutus-btn">Learn More</button>
+      <button routerLink="about" class="aboutus-btn">Learn More</button>
     </div>
   </div>
 </div>

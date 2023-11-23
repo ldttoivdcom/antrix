@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg header-container">
   <div class="container">
     <a class="navbar-brand" routerLink="/"
-      ><img src="assets/imgs/Logo-antrix.png" alt=""
+    ><img src="assets/imgs/Logo-antrix.png" alt=""
     /></a>
     <button
       class="navbar-toggler border-0"
@@ -11,7 +11,7 @@
       aria-controls="offcanvasNavbar"
       aria-label="Toggle navigation"
     >
-      <img src="assets/icons/icon-menu.svg" alt="" />
+      <img src="assets/icons/icon-menu.svg" alt=""/>
     </button>
     <div
       class="offcanvas bg-dark offcanvas-end"
@@ -30,7 +30,7 @@
               aria-current="page"
               routerLink="/info/services"
               routerLinkActive="header-navbar_link-active"
-              >Services</a
+            >Services</a
             >
           </li>
           <li class="nav-item">
@@ -39,7 +39,7 @@
               data-bs-dismiss="offcanvas"
               routerLink="/info/products"
               routerLinkActive="header-navbar_link-active"
-              >Products</a
+            >Products</a
             >
           </li>
           <li class="nav-item">
@@ -48,7 +48,7 @@
               data-bs-dismiss="offcanvas"
               routerLink="pricing"
               routerLinkActive="header-navbar_link-active"
-              >Pricing</a
+            >Pricing</a
             >
           </li>
           <li class="nav-item">
@@ -57,7 +57,7 @@
               data-bs-dismiss="offcanvas"
               routerLink="resources"
               routerLinkActive="header-navbar_link-active"
-              >Resources</a
+            >Resources</a
             >
           </li>
           <li class="nav-item">
@@ -66,15 +66,15 @@
               data-bs-dismiss="offcanvas"
               routerLink="about"
               routerLinkActive="header-navbar_link-active"
-              >About</a
+            >About</a
             >
           </li>
           <li class="nav-item">
             <a
               class="header-navbar_link nav-link"
               data-bs-dismiss="offcanvas"
-              href="#contact"
-              >Contact</a
+              (click)="onClick('contact')"
+            >Contact</a
             >
           </li>
         </ul>

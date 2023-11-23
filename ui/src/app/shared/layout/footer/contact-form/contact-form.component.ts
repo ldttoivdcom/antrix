@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,11 +7,13 @@ import {
   ValidationErrors,
   FormControl,
 } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject, takeUntil } from 'rxjs';
-import { Papa } from 'ngx-papaparse';
-import { CsvDataService } from 'src/app/shared/services/csv-data.service';
-import { Products } from 'src/app/models/products.model';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Subject, takeUntil} from 'rxjs';
+import {Papa} from 'ngx-papaparse';
+import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {Products} from 'src/app/models/products.model';
+import {isCheckDisabled} from "ng-zorro-antd/core/tree";
+
 interface ProductsServices {
   name: string;
   partnumber: string;
@@ -29,8 +31,9 @@ const httpOptions = {
 };
 
 function captchaValidator(control: AbstractControl): ValidationErrors | null {
-  return control.value ? null : { captchaNotResolved: true };
+  return control.value ? null : {captchaNotResolved: true};
 }
+
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -43,11 +46,13 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   Services: Products[] = [];
   contactForm: FormGroup;
   isConfirmRequestPopupOpened: boolean = false;
+  isHidden: boolean = false;
   Pricings: string[] = [
     'Consulting Service - 200$',
     'Consulting Service - 0$',
     'Product Purchase - 200$',
   ];
+
   constructor(
     private _formBuilder: FormBuilder,
     private _http: HttpClient,
@@ -56,6 +61,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   ) {
     this.captcha = '';
   }
+
   ngOnInit(): void {
     this.initContactForm();
     this.initCsvProductsData();
@@ -76,7 +82,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       jobTitle: ['', [Validators.required]],
       Pricing: '',
       companyWeb: ['', [Validators.required]],
-      probService: ['', [Validators.required]],
+      prodService: ['', [Validators.required]],
       partNo: '',
       message: ['', [Validators.required]],
       captcha: ['', [captchaValidator]],
@@ -93,15 +99,12 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       )
       .pipe(takeUntil(this.ngUnsubscribe$))
       .subscribe((res) => {
-        console.log(res);
         if (res.code === '200') {
           this.isConfirmRequestPopupOpened = true;
-          setTimeout(() => {
-            window.location.reload();
-          }, 3000);
         }
       });
   }
+
   resolved(captchaResponse: string) {
     this.captcha = captchaResponse;
     this.contactForm.get('captcha')?.setValue(captchaResponse);
@@ -150,8 +153,33 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     });
   }
 
+
+  onProductServiceChange(event: Event) {
+    // Cast the event target to HTMLSelectElement to access the value property
+    const selectElement = event.target as HTMLSelectElement;
+    const selectedProductName = selectElement.value;
+
+    if (this.Pricings.includes(selectedProductName)) {
+      this.isHidden = true;
+    } else {
+      this.isHidden = false;
+      // combine 2 array Products and Services
+      let selectedProductOrService = this.Products.concat(this.Services).find(
+        item => item.Name === selectedProductName
+      );
+
+      let partNumber = selectedProductOrService ? selectedProductOrService.PartNumber : '';
+
+      this.contactForm.get('partNo')!.setValue(partNumber);
+
+      this.contactForm.get('partNo')!.disable();
+    }
+  }
+
   ngOnDestroy() {
     this.ngUnsubscribe$.next();
     this.ngUnsubscribe$.complete();
   }
+
+  protected readonly isCheckDisabled = isCheckDisabled;
 }

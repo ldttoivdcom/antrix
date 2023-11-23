@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ViewportScroller} from '@angular/common';
 
 interface HomeContent {
   header: string;
@@ -20,6 +21,9 @@ interface HomeAdvantage {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  constructor(private viewportScroller: ViewportScroller) {
+  }
+
   Contents: HomeContent[] = [
     {
       header: 'OUR SERVICES',
@@ -71,4 +75,8 @@ export class HomeComponent {
       ammount: 10,
     },
   ];
+
+  onClick(id: string): void {
+    this.viewportScroller.scrollToAnchor(id);
+  }
 }

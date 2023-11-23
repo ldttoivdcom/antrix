@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Products } from 'src/app/models/products.model';
+import {Component, Input} from '@angular/core';
+import {Products} from 'src/app/models/products.model';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -10,8 +11,15 @@ export class CardComponent {
   @Input() ProductsData: Products[] = [];
   @Input() FirstBtnText: string = '';
   @Input() SubText: string = '';
+  modalsVisibility: boolean[] = new Array(this.ProductsData.length).fill(false);
+
   showModal(index: number): void {
-    this.activeItemIndex = index;
+    this.modalsVisibility[index] = true;
+  }
+
+  handleCancel(index: number): void {
+    this.modalsVisibility[index] = false;
+
   }
 
   closeModal(): void {

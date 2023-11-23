@@ -31,39 +31,74 @@
         <p class="card-subText">
           {{ SubText }}
         </p>
-        <!-- OPEN MODAL -->
-        <div
-          [hidden]="activeItemIndex !== i"
-          class="details-modal-overlay"
-          (click)="closeModal()"
+        <nz-modal
+          [(nzVisible)]="modalsVisibility[i]"
+          (nzOnCancel)="handleCancel(i)"
+          [nzFooter]="null"
+          nzMaskClosable="true"
+          nzClassName="request-livedemo-modal"
         >
-          <div class="details-modal">
-            <div (click)="closeModal()" class="details-modal-close">
-              <img class="z-1" src="assets/icons/icon-x-close.svg" alt=""/>
+          <ng-container *nzModalContent>
+            <div>
+              <div class="details-modal">
+                <div class="details-modal-header">
+                  <h1 class="details-modal-header_name">{{ data.Name }}</h1>
+                  <span class="card-subTitle mr-12px">Part Number:</span>
+                  <span class="card-subTitle fw-bold">{{ data.PartNumber }}</span>
+                </div>
+                <div class="details-modal-content">
+                  <img
+                    class="details-modal-content_img"
+                    src="assets/imgs/{{ data.imgPath }}"
+                    alt="{{ data.Name }}"
+                  />
+                  <p class="details-modal-content_description">
+                    {{ data.Description }}
+                  </p>
+                  <button class="details-modal-content_btn">
+                    {{ FirstBtnText }}
+                  </button>
+                  <p class="card-subText">
+                    {{ SubText }}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="details-modal-header">
-              <h1 class="details-modal-header_name">{{ data.Name }}</h1>
-              <span class="card-subTitle mr-12px">Part Number:</span>
-              <span class="card-subTitle fw-bold">{{ data.PartNumber }}</span>
-            </div>
-            <div class="details-modal-content">
-              <img
-                class="details-modal-content_img"
-                src="assets/imgs/{{ data.imgPath }}"
-                alt=""
-              />
-              <p class="details-modal-content_description">
-                {{ data.Description }}
-              </p>
-              <button class="details-modal-content_btn">
-                {{ FirstBtnText }}
-              </button>
-              <p class="card-subText">
-                {{ SubText }}
-              </p>
-            </div>
-          </div>
-        </div>
+          </ng-container>
+        </nz-modal>
+        <!-- OPEN MODAL -->
+        <!--        <div-->
+        <!--          [hidden]="activeItemIndex !== i"-->
+        <!--          class="details-modal-overlay"-->
+        <!--          (click)="closeModal()"-->
+        <!--        >-->
+        <!--          <div class="details-modal">-->
+        <!--            <div (click)="closeModal()" class="details-modal-close">-->
+        <!--              <img class="z-1" src="assets/icons/icon-x-close.svg" alt=""/>-->
+        <!--            </div>-->
+        <!--            <div class="details-modal-header">-->
+        <!--              <h1 class="details-modal-header_name">{{ data.Name }}</h1>-->
+        <!--              <span class="card-subTitle mr-12px">Part Number:</span>-->
+        <!--              <span class="card-subTitle fw-bold">{{ data.PartNumber }}</span>-->
+        <!--            </div>-->
+        <!--            <div class="details-modal-content">-->
+        <!--              <img-->
+        <!--                class="details-modal-content_img"-->
+        <!--                src="assets/imgs/{{ data.imgPath }}"-->
+        <!--                alt=""-->
+        <!--              />-->
+        <!--              <p class="details-modal-content_description">-->
+        <!--                {{ data.Description }}-->
+        <!--              </p>-->
+        <!--              <button class="details-modal-content_btn">-->
+        <!--                {{ FirstBtnText }}-->
+        <!--              </button>-->
+        <!--              <p class="card-subText">-->
+        <!--                {{ SubText }}-->
+        <!--              </p>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
         <!-- END MODAL -->
       </div>
     </div>
