@@ -184,6 +184,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   setPricingValue(): void {
     this.subscription.add(
       this._pricingService.selectedPricing.subscribe(pricingName => {
+        this.isHidden = true;
         this.contactForm.get('prodService')?.setValue(pricingName);
       })
     )

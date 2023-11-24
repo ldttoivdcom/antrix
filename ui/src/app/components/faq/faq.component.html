@@ -5,7 +5,7 @@
     <ul class="faq-list">
       <li class="faq-list_item" *ngFor="let data of FAQList; let i = index">
         <div class="d-flex align-items-center">
-          <span class="faq-list_item-index">0{{ i + 1 }}.</span>
+          <span class="faq-list_item-index">{{ i + 1 }}.</span>
           <h1 class="m-0 faq-list_item-question">
             {{ data.question }}
           </h1>
@@ -19,6 +19,1839 @@
               <span>{{ item }}</span>
             </li>
           </ul>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">13.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What is Regulatory Affairs?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            <strong>Regulatory Affairs (RA),</strong> is a profession within
+            regulated industries, such as pharmaceuticals and medical devices
+            which ensures that companies comply with all of the regulations and
+            laws pertaining to their business and develop and market safe and
+            effective product.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">14.</span>
+          <h1 class="m-0 faq-list_item-question">What is Quality Assurance?</h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            <strong>Quality Assurance</strong>, or <strong>QA</strong> for
+            short, refers to planned and systematic production processes that
+            provide confidence in a product's suitability for its intended
+            purpose (Wikipedia). For detailed definition refer to
+            http://en.wikipedia.org/wiki/Quality_assurance
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">15.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device 510(k)
+            clearance from US FDA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            The process of obtaining 510(k) clearance from the U.S. Food and
+            Drug Administration (FDA) for a medical device involves several
+            steps. The 510(k) clearance is a premarket submission made to the
+            FDA to demonstrate that the device to be marketed is at least as
+            safe and effective as a legally marketed device that is not subject
+            to premarket approval.
+            <br />
+            Here are the general steps for the 510(k) clearance process:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Device Classification:</strong> Identify the
+                appropriate classification for your medical device. The FDA
+                classifies devices into three classes (Class I, II, and III)
+                based on their level of risk.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Pre-submission Interaction:</strong> Consider
+                scheduling a pre-submission meeting with the FDA to discuss your
+                device and gather feedback on the submission process. This is
+                not mandatory but can be beneficial in clarifying regulatory
+                expectations.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Identify a Predicate Device:</strong> Find a legally
+                marketed device (predicate) that is similar to yours and has
+                already received FDA clearance. This will be used as a reference
+                for demonstrating substantial equivalence.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Prepare the 510(k) Submission:</strong> Compile all
+                necessary documentation, including:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Performance testing data</li>
+                  <li>Biocompatibility information</li>
+                  <li>Software documentation (if applicable)</li>
+                  <li>Labeling and user manual</li>
+                  <li>Risk analysis</li>
+                  <li>Clinical data (if needed)</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the 510(k) to the FDA:</strong> Prepare and
+                submit the 510(k) application to the FDA through the Electronic
+                Submission Gateway (ESG). Include the appropriate user fees with
+                the submission.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>FDA Review:</strong> The FDA will review the 510(k)
+                submission. This may involve several rounds of questions and
+                requests for additional information. The goal is to ensure that
+                the device is substantially equivalent to the predicate device
+                and meets regulatory requirements.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>FDA Decision:</strong> Once the review is complete, the
+                FDA will issue a decision. If the device is found to be
+                substantially equivalent and meets all requirements, the FDA
+                will issue a clearance letter.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After clearance, you
+                must comply with post-market requirements, such as adverse event
+                reporting, quality system regulations, and any special controls
+                identified by the FDA.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the specific requirements and timelines
+            can vary based on the type and class of the device. Manufacturers
+            are encouraged to refer to the FDA's guidance documents and
+            communicate with the FDA throughout the process to ensure a smooth
+            submission and review. Additionally, consulting with regulatory
+            experts or consultants can be beneficial to navigate the
+            complexities of the regulatory process.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">16.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device PMA
+            approval from US FDA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            Obtaining Premarket Approval (PMA) from the U.S. Food and Drug
+            Administration (FDA) for a medical device is a more rigorous process
+            compared to the 510(k) clearance. PMA is required for high-risk
+            devices and involves comprehensive scientific and regulatory review.
+            Here are the general steps for applying and obtaining PMA approval:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Device Classification:</strong> Identify the
+                appropriate classification for your medical device. PMA is
+                typically required for Class III devices, which are considered
+                high risk.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Pre-submission Interaction:</strong> Similar to the
+                510(k) process, consider scheduling a pre-submission meeting
+                with the FDA to discuss your device and gain insights into the
+                submission process.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Prepare the PMA Application:</strong> Compile a
+                comprehensive PMA application, including:
+                <ul class="faq-subList-childList">
+                  <li>Detailed device description and specifications</li>
+                  <li>Preclinical testing data</li>
+                  <li>Clinical trial data (if applicable)</li>
+                  <li>Risk analysis and mitigation strategies</li>
+                  <li>Biocompatibility information</li>
+                  <li>
+                    Manufacturing information and quality control measures
+                  </li>
+                  <li>Labeling and user manual</li>
+                  <li>Proposed indications for use</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the PMA Application to the FDA:</strong> Submit
+                the PMA application to the FDA. PMA submissions are typically
+                made through the FDA's Electronic Submission Gateway (ESG).
+                Include the appropriate user fees with the submission.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>FDA Filing Review:</strong> The FDA will conduct a
+                filing review to ensure that the application is administratively
+                complete. If the application is accepted for filing, the
+                substantive review process begins.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>FDA Substantive Review:</strong> The FDA will conduct a
+                thorough scientific and regulatory review of the PMA
+                application. This involves evaluating the safety and
+                effectiveness of the device based on preclinical and clinical
+                data. The FDA may request additional information or
+                clarification during this process.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Advisory Panel Review (if applicable):</strong> For
+                certain devices, the FDA may convene an advisory panel of
+                external experts to provide additional input and recommendations
+                on the device's safety and efficacy.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>FDA Decision:</strong> Based on the review, the FDA
+                will make a decision to either approve or deny the PMA. If
+                approved, the FDA will issue a PMA approval letter.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Approval Requirements:</strong> After PMA
+                approval, manufacturers must adhere to post-approval
+                requirements, including post-market surveillance, reporting of
+                adverse events, and compliance with any special controls or
+                conditions imposed by the FDA.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the PMA process is resource-intensive
+            and may require extensive clinical evidence. Engaging with the FDA
+            early in the development process, conducting well-designed clinical
+            trials, and seeking expert regulatory advice can help facilitate a
+            smoother PMA submission and review process. Manufacturers are
+            encouraged to refer to FDA guidance documents specific to PMA
+            submissions for detailed information.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">17.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device approval
+            from Health Canada?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            In Canada, the regulatory authority for medical devices is Health
+            Canada. The process for obtaining approval for a medical device in
+            Canada involves several steps. Here is a general overview:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Device Classification:</strong> Determine the
+                appropriate classification for your medical device according to
+                the risk-based classification system established by Health
+                Canada (Class I, II, III, or IV).</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conduct a Pre-submission Meeting (Optional):</strong>
+                While not mandatory, a pre-submission meeting with Health Canada
+                can be helpful to discuss your device, the regulatory
+                requirements, and to seek clarification on any issues before
+                submitting the application.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Prepare the Medical Device License (MDL) Application:</strong
+                >
+                Compile all necessary documentation for your Medical Device
+                License (MDL) application. This typically includes:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Device classification information</li>
+                  <li>Quality management system (QMS) documentation</li>
+                  <li>Risk analysis and management plan</li>
+                  <li>Clinical evidence (if required)</li>
+                  <li>Labeling and instructions for use</li>
+                  <li>Summary of safety and effectiveness data</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Select the appropriate review pathway:</strong> Health
+                Canada offers different pathways for the review of medical
+                device applications, including standard review, priority review,
+                and abbreviated review. Choose the pathway that best fits your
+                device and intended use.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the MDL Application:</strong> Submit the MDL
+                application to Health Canada through the Medical Devices
+                Directorate (MDD). Include the required fees with the
+                submission.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>MDL Application Review:</strong> Health Canada will
+                review the application for completeness and conduct a thorough
+                assessment of the safety, effectiveness, and quality of the
+                medical device. This may involve requests for additional
+                information or clarification.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Quality Management System Audit (if applicable):</strong
+                >
+                For certain classes of devices, Health Canada may conduct an
+                audit of the manufacturer's quality management system to ensure
+                compliance with regulatory requirements.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Decision:</strong> Based on the review, Health Canada
+                will make a decision to either issue a Medical Device License or
+                refuse the application. If approved, a Medical Device License
+                will be issued.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After receiving a
+                Medical Device License, manufacturers must comply with
+                post-market requirements, including adverse event reporting,
+                ongoing monitoring, and compliance with any conditions imposed
+                by Health Canada.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the specific requirements and timelines
+            can vary based on the class of the device and the review pathway
+            chosen. Manufacturers are encouraged to refer to Health Canada's
+            guidance documents and communicate with the regulatory authority
+            throughout the process to ensure a smooth application and review
+            process. Engaging with a regulatory consultant with expertise in
+            Canadian medical device regulations may also be beneficial.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">18.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device approval
+            from Australia TGA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            In Australia, the Therapeutic Goods Administration (TGA) is
+            responsible for regulating medical devices. The process of obtaining
+            approval for a medical device in Australia involves several steps.
+            Here is a general overview:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Device Classification:</strong> Determine the
+                appropriate classification for your medical device based on the
+                Australian regulatory framework. Medical devices are categorized
+                into Classes I, IIa, IIb, III, and Active Implantable Medical
+                Devices.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conduct a Pre-submission Meeting (Optional):</strong>
+                While not mandatory, you may consider arranging a pre-submission
+                meeting with the TGA to discuss your device and seek
+                clarification on regulatory requirements.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Prepare the Conformity Assessment Application:</strong>
+                Compile all necessary documentation for your conformity
+                assessment application. The type of application and required
+                documentation may vary depending on the device class. Common
+                elements include:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Risk analysis and management plan</li>
+                  <li>Quality management system (QMS) documentation</li>
+                  <li>Clinical evidence (if required)</li>
+                  <li>Labeling and Instructions for Use</li>
+                  <li>Summary of safety and performance data</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Select the appropriate conformity assessment route:</strong
+                >
+                The TGA offers different conformity assessment routes,
+                including:
+                <ul class="faq-subList-childList">
+                  <li>
+                    Class I devices: Self-certification or certification by a
+                    Conformity Assessment Body (CAB).
+                  </li>
+                  <li>Class IIa, IIb, III devices: Certification by a CAB.</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Compile Technical File:</strong> For devices subject to
+                certification by a Conformity Assessment Body, compile a
+                technical file containing all relevant documentation and
+                evidence of conformity.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the Conformity Assessment Application:</strong>
+                Submit the application to the TGA through the online TGA
+                Business Services (TBS) portal. Include the required fees with
+                the submission.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>TGA Review:</strong> The TGA will review the
+                application for completeness and conduct a detailed assessment
+                of the device's safety, efficacy, and quality. This may involve
+                requests for additional information or clarification.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Conformity Assessment Body (CAB) Review (if
+                  applicable):</strong
+                >
+                For devices subject to certification by a CAB, the CAB will
+                review the technical file and issue a conformity assessment
+                certificate if the device meets the requirements.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Decision:</strong> Based on the review, the TGA will
+                make a decision to either issue a conformity assessment
+                certificate or refuse the application. If approved, a conformity
+                assessment certificate will be issued.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After obtaining
+                approval, manufacturers must comply with post-market
+                requirements, including adverse event reporting, ongoing
+                monitoring, and compliance with any conditions imposed by the
+                TGA.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the specific requirements and timelines
+            can vary based on the class of the device and the conformity
+            assessment route chosen. Manufacturers are encouraged to refer to
+            TGA guidance documents, interact with the TGA during the application
+            process, and engage with regulatory consultants with expertise in
+            Australian medical device regulations.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">19.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device approval
+            from Japan PMDA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            In Japan, the Pharmaceuticals and Medical Devices Agency (PMDA) is
+            responsible for the regulatory approval of medical devices. The
+            process for obtaining approval for a medical device in Japan
+            involves several steps. Here is a general overview:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Device Classification:</strong> Identify the
+                appropriate classification for your medical device according to
+                the Japanese regulatory system. Devices are categorized into
+                Classes I, II, III, and IV based on the level of risk.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conduct a Consultation Meeting (Optional):</strong>
+                While not mandatory, manufacturers may choose to have a
+                consultation meeting with the PMDA to discuss the regulatory
+                requirements and seek guidance on the application process.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Appoint a Marketing Authorization Holder (MAH):</strong
+                >
+                Foreign manufacturers are required to appoint a Japanese entity
+                as the MAH, which will be responsible for the regulatory
+                submissions and compliance in Japan.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Prepare the Application:</strong> Compile all necessary
+                documentation for the marketing approval application. This
+                typically includes:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Risk analysis and management plan</li>
+                  <li>Quality management system (QMS) documentation</li>
+                  <li>Clinical data (if required)</li>
+                  <li>Labeling and Instructions for Use</li>
+                  <li>Summary of safety and effectiveness data</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Select the appropriate submission route:</strong>
+                Choose the appropriate submission route based on the
+                classification of your device. The submission routes include
+                Pre-Market Certification (PMDA review) and Pre-Market Approval
+                (PMDA review with expert panel evaluation).</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the Application to the PMDA:</strong> Submit the
+                application to the PMDA. Include the required fees with the
+                submission. The application can be submitted in Japanese or, if
+                necessary, in English with a Japanese summary.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>PMDA Review:</strong> The PMDA will review the
+                application for completeness and conduct a detailed assessment
+                of the device's safety, efficacy, and quality. This may involve
+                requests for additional information or clarification.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Expert Panel Evaluation (if applicable):</strong> For
+                certain high-risk devices, an expert panel may be convened to
+                provide additional evaluation and recommendations.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Decision:</strong> Based on the review, the PMDA will
+                make a decision to either approve or deny the marketing
+                approval. If approved, a marketing approval certificate will be
+                issued.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After obtaining
+                marketing approval, manufacturers must comply with post-market
+                requirements, including adverse event reporting, ongoing
+                monitoring, and compliance with any conditions imposed by the
+                PMDA.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the specific requirements and timelines
+            can vary based on the class of the device and the submission route
+            chosen. Manufacturers are encouraged to refer to PMDA guidance
+            documents, communicate with the PMDA during the application process,
+            and may benefit from engaging with regulatory consultants familiar
+            with Japanese medical device regulations.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">20.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device approval
+            from Brazil ANVISA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            In Brazil, the regulatory authority responsible for the approval of
+            medical devices is the National Health Surveillance Agency, or
+            Agência Nacional de Vigilância Sanitária (ANVISA). The process for
+            obtaining approval for a medical device in Brazil involves several
+            steps. Here is a general overview:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Device Classification:</strong> Identify the
+                appropriate classification for your medical device according to
+                the Brazilian regulatory system. Medical devices are categorized
+                into Classes I, II, III, and IV based on the level of
+                risk.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Appoint a Local Registration Holder:</strong> Foreign
+                manufacturers are required to appoint a Brazilian entity as the
+                local Registration Holder, who will be responsible for
+                regulatory submissions and compliance in Brazil.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Prepare the Technical Documentation:</strong> Compile
+                all necessary documentation for the registration application.
+                This typically includes:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Risk analysis and management plan</li>
+                  <li>Quality management system (QMS) documentation</li>
+                  <li>Clinical data (if required)</li>
+                  <li>Labeling and Instructions for Use</li>
+                  <li>Summary of safety and performance data</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Conduct Good Manufacturing Practices (GMP) Inspection (if
+                  applicable):</strong
+                >
+                ANVISA may require a GMP inspection for certain classes of
+                devices. Ensure that the manufacturing facilities comply with
+                Brazilian regulations.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the Registration Application to ANVISA:</strong>
+                Submit the application to ANVISA. Include the required fees with
+                the submission. The application can be submitted in
+                Portuguese.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>ANVISA Technical Review:</strong> ANVISA will conduct a
+                technical review of the application, assessing the device's
+                safety, efficacy, and quality. This may involve requests for
+                additional information or clarification.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Clinical Evaluation (if applicable):</strong> For
+                certain classes of devices, a clinical evaluation may be
+                required. Provide the necessary clinical data to support the
+                safety and performance of the device.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Decision:</strong> Based on the review, ANVISA will
+                make a decision to either approve or deny the registration. If
+                approved, a Certificate of Good Manufacturing Practices and
+                Sanitary Surveillance (CBPF) will be issued.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After obtaining
+                registration, manufacturers must comply with post-market
+                requirements, including adverse event reporting, ongoing
+                monitoring, and compliance with any conditions imposed by
+                ANVISA.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the specific requirements and timelines
+            can vary based on the class of the device. Manufacturers are
+            encouraged to refer to ANVISA guidance documents, communicate with
+            ANVISA during the application process, and may benefit from engaging
+            with regulatory consultants familiar with Brazilian medical device
+            regulations.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">21.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device approval
+            from India?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            In India, the regulatory authority responsible for the approval of
+            medical devices is the Central Drugs Standard Control Organization
+            (CDSCO), under the Ministry of Health and Family Welfare. The
+            process for obtaining approval for a medical device in India
+            involves several steps. Here is a general overview:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Device Classification:</strong> Identify the
+                appropriate classification for your medical device according to
+                the Indian regulatory system. Medical devices are categorized
+                into Classes A, B, and C, based on the level of risk.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Appoint an Indian Authorized Agent:</strong> Foreign
+                manufacturers are required to appoint an Indian Authorized Agent
+                who will act as the official representative and facilitate
+                communication with the regulatory authorities.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Prepare the Technical Documentation:</strong> Compile
+                all necessary documentation for the registration application.
+                This typically includes:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Risk analysis and management plan</li>
+                  <li>Quality management system (QMS) documentation</li>
+                  <li>Clinical data (if required)</li>
+                  <li>Labeling and Instructions for Use</li>
+                  <li>Summary of safety and performance data</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Conduct Clinical Investigation (if applicable):</strong
+                >
+                For certain classes of devices, clinical investigations may be
+                required to establish safety and efficacy. Obtain approval from
+                the Institutional Ethics Committee (IEC) for clinical
+                trials.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conduct Regulatory Testing (if applicable):</strong>
+                Some devices may require specific testing to ensure compliance
+                with Indian standards. Ensure that testing is conducted in
+                accredited laboratories.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the Registration Application to CDSCO:</strong>
+                Submit the application to CDSCO. Include the required fees with
+                the submission. The application can be submitted in
+                English.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>CDSCO Review:</strong> CDSCO will review the
+                application for completeness and conduct a detailed assessment
+                of the device's safety, efficacy, and quality. This may involve
+                requests for additional information or clarification.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Approval or Rejection:</strong> Based on the review,
+                CDSCO will make a decision to either approve or reject the
+                registration. If approved, a registration certificate will be
+                issued.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After obtaining
+                registration, manufacturers must comply with post-market
+                requirements, including adverse event reporting, ongoing
+                monitoring, and compliance with any conditions imposed by
+                CDSCO.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the specific requirements and timelines
+            can vary based on the class of the device. Manufacturers are
+            encouraged to refer to CDSCO guidance documents, communicate with
+            CDSCO during the application process, and may benefit from engaging
+            with regulatory consultants familiar with Indian medical device
+            regulations.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">22.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps of applying and getting medical device approval
+            from China NMPA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            Obtaining approval for a medical device in China involves a process
+            overseen by the National Medical Products Administration (NMPA). The
+            approval process includes several steps. Please note that the
+            regulatory landscape may evolve, and it's important to refer to the
+            latest guidance from NMPA. Here is a general overview of the steps:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Device Classification:</strong> Identify the
+                appropriate classification for your medical device according to
+                the Chinese regulatory system. Medical devices are categorized
+                into Classes I, II, III, and Class III devices are further
+                divided into Class III-A and Class III-B based on increasing
+                risk.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Establish a Local Entity:</strong> Foreign
+                manufacturers need to establish a local entity in China, which
+                will act as the license holder and be responsible for regulatory
+                submissions.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conduct Testing and Verification:</strong> Ensure that
+                the medical device meets Chinese regulatory standards. This may
+                involve testing and verification at NMPA-approved testing
+                facilities.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Clinical Trial Approval (if applicable):</strong> For
+                certain devices, clinical trials may be required to support
+                safety and efficacy claims. Obtain approval from the National
+                Medical Products Administration's Center for Medical Device
+                Evaluation (NMPA-CDE) for clinical trials.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Compile Technical Documentation:</strong> Prepare all
+                necessary technical documentation for the registration
+                application. This typically includes:
+                <ul class="faq-subList-childList">
+                  <li>Device description and specifications</li>
+                  <li>Risk analysis and management plan</li>
+                  <li>Quality management system (QMS) documentation</li>
+                  <li>Clinical trial data (if applicable)</li>
+                  <li>Labeling and Instructions for Use</li>
+                  <li>Summary of safety and performance data</li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Submit the Application to NMPA-CDE:</strong> Submit the
+                application to NMPA-CDE for the review and approval process.
+                Include the required fees with the submission.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>NMPA-CDE Review:</strong> NMPA-CDE will review the
+                application for completeness and conduct a thorough evaluation
+                of the device's safety, efficacy, and quality. This may involve
+                requests for additional information or clarification.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>On-site Inspection (if applicable):</strong> For
+                certain high-risk devices, NMPA may conduct an on-site
+                inspection of the manufacturing facilities to ensure compliance
+                with regulations.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Decision:</strong> Based on the review, NMPA-CDE will
+                make a decision to either approve or reject the registration. If
+                approved, a registration certificate will be issued.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Requirements:</strong> After obtaining
+                registration, manufacturers must comply with post-market
+                requirements, including adverse event reporting, ongoing
+                monitoring, and compliance with any conditions imposed by
+                NMPA.</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's crucial to engage with regulatory experts familiar with the
+            Chinese regulatory framework, stay informed about any updates or
+            changes to the regulations, and follow the specific requirements
+            outlined by NMPA for the device classification.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">23.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What is a Laboratory Developed Test (LDT)?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            A Laboratory Developed Test (LDT), also known as an in-house test or
+            a homebrew test, refers to a diagnostic test that is developed,
+            validated, and performed by a single laboratory for its own use.
+            These tests are typically designed and implemented within a specific
+            laboratory to meet the unique needs of that laboratory's patient
+            population. LDTs are often created by clinical laboratories to
+            diagnose or monitor diseases and conditions. br Key characteristics
+            of Laboratory Developed Tests include:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>In-House Development:</strong> LDTs are created and
+                developed within a specific laboratory rather than being
+                commercially manufactured by an external entity. Laboratories
+                may develop LDTs to address specific clinical needs that are not
+                met by commercially available tests.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Customization:</strong>Laboratories have the
+                flexibility to customize LDTs based on their specific
+                requirements, patient population, and testing goals. This
+                flexibility allows for adaptation to local needs and emerging
+                scientific knowledge</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Validation:</strong> Laboratories are responsible for
+                validating the performance characteristics of LDTs, ensuring
+                that they provide accurate and reliable results. This includes
+                assessing sensitivity, specificity, precision, and other
+                analytical and clinical performance parameters.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Regulatory Oversight:</strong> The regulation of LDTs
+                in the United States has historically fallen under the oversight
+                of the Centers for Medicare & Medicaid Services (CMS) under the
+                Clinical Laboratory Improvement Amendments (CLIA). However, the
+                regulatory landscape has been evolving, and there have been
+                discussions about increased oversight by the U.S. Food and Drug
+                Administration (FDA).</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the regulation of LDTs has been a topic
+            of discussion and change. Traditionally, LDTs have been considered
+            to be under the purview of clinical laboratories and regulated by
+            CLIA. However, in recent years, there have been efforts to increase
+            the regulatory oversight of LDTs, with proposals for increased FDA
+            involvement.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">24.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What is the regulations Laboratory Developed Test (LDT) need to
+            comply in USA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            As of my last knowledge update in January 2022, the regulatory
+            landscape for Laboratory Developed Tests (LDTs) in the United States
+            was evolving. Traditionally, LDTs had been regulated under the
+            Clinical Laboratory Improvement Amendments (CLIA) program
+            administered by the Centers for Medicare & Medicaid Services (CMS).
+            However, discussions and proposals for increased regulatory
+            oversight by the U.S. Food and Drug Administration (FDA) were
+            ongoing. Here are key aspects of the regulatory framework for LDTs
+            in the U.S.:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Clinical Laboratory Improvement Amendments (CLIA):</strong
+                >CLIA is a federal regulatory framework that establishes quality
+                standards for laboratory testing to ensure the accuracy,
+                reliability, and timeliness of patient test results.
+                Laboratories, including those performing LDTs, must comply with
+                CLIA requirements for personnel qualifications, quality control,
+                proficiency testing, and other aspects of laboratory
+                operations.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>U.S. Food and Drug Administration (FDA):</strong>
+                Historically, the FDA exercised enforcement discretion and did
+                not actively regulate most LDTs, considering them to be the
+                responsibility of CLIA. However, the FDA's approach has been
+                evolving, with proposals to increase FDA oversight of LDTs. The
+                FDA issued a draft guidance in 2014 outlining a risk-based
+                approach to the regulation of LDTs, but this guidance has not
+                been finalized as of the last update.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Proposed FDA Oversight:</strong> The FDA's proposed
+                oversight would involve a risk-based classification system for
+                LDTs, with higher-risk tests subject to more stringent
+                regulation. The proposed framework includes pre-market review,
+                quality system requirements, and adverse event reporting for
+                certain LDTs. However, the specifics of this oversight and its
+                implementation were still under consideration.</span
+              >
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Compliance with Other Regulations:</strong> In addition
+                to CLIA and potential FDA oversight, laboratories developing and
+                performing LDTs may need to consider other regulations and
+                standards, such as those related to privacy and data security
+                (e.g., the Health Insurance Portability and Accountability Act -
+                HIPAA).</span
+              >
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            Since the regulatory landscape can change, it's important to check
+            for the latest updates and guidance from regulatory authorities. As
+            of my last update in January 2022, the status of FDA oversight for
+            LDTs was still evolving. Laboratories and manufacturers of LDTs
+            should monitor developments in regulatory policy and consult with
+            regulatory experts to ensure compliance with the most current
+            requirements.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">25.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps required to convert Laboratory Developed Test
+            (LDT) to In Vitro Diagnostic Test (IVD) by US FDA?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            he regulatory landscape for Laboratory Developed Tests (LDTs) in the
+            United States is evolving, and discussions were ongoing regarding
+            increased oversight by the U.S. Food and Drug Administration (FDA).
+            It's essential to note that regulatory information may change, and
+            you should refer to the most recent guidance and regulations from
+            the FDA for the latest information.
+            <br />
+            If there have been changes or updates since my last knowledge
+            update, the steps for converting an LDT to an In Vitro Diagnostic
+            (IVD) test under FDA oversight might include the following:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Determine Applicability of FDA Oversight:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Assess whether the LDT falls under the FDA's jurisdiction
+                    for regulation. The FDA has proposed a risk-based approach,
+                    where higher-risk LDTs would be subject to more stringent
+                    regulation.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Consult FDA Guidance Documents:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Review any guidance documents issued by the FDA related to
+                    the regulation of LDTs and IVDs. The FDA may provide
+                    specific guidance on the steps to transition an LDT to an
+                    FDA-regulated IVD.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Submit a Pre-Submission or Pre-Market Notification
+                  (510(k)):</strong
+                >
+                <ul class="faq-subList-childList">
+                  <li>
+                    Prepare and submit a pre-submission or pre-market
+                    notification (510(k)) to the FDA, including detailed
+                    information about the test, its analytical and clinical
+                    performance, and data supporting its safety and efficacy.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Quality System Requirements:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Implement a quality management system (QMS) that complies
+                    with FDA regulations, such as the Quality System Regulation
+                    (QSR) for medical devices. This may involve establishing
+                    procedures for design control, risk management, and other
+                    aspects of product development and manufacturing.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Performance Data:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Provide comprehensive performance data demonstrating the
+                    accuracy, precision, and clinical performance of the IVD,
+                    including analytical and clinical validation studies.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Labeling and Instructions for Use:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Prepare labeling and instructions for use that comply with
+                    FDA requirements, including clear and accurate information
+                    for healthcare professionals and end-users.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Establish Good Manufacturing Practices (GMP):</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Implement good manufacturing practices (GMP) to ensure the
+                    quality and consistency of the manufacturing process,
+                    adhering to specific standards outlined in FDA regulations.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Adverse Event Reporting:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Develop procedures for adverse event reporting to comply
+                    with FDA requirements, including reporting adverse events
+                    related to their devices.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Engage with FDA:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Communicate with the FDA throughout the process, responding
+                    to requests for additional information, participating in
+                    meetings, and addressing concerns raised during the review
+                    process.
+                  </li>
+                </ul>
+              </span>
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            Since the regulatory landscape can change, it's important to check
+            for the latest updates and guidance from regulatory authorities. As
+            of my last update in January 2022, the status of FDA oversight for
+            LDTs was still evolving. Laboratories and manufacturers of LDTs
+            should monitor developments in regulatory policy and consult with
+            regulatory experts to ensure compliance with the most current
+            requirements.
+          </p>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">26.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the key take aways from FDA’s proposed rule to regulate
+            Laboratory Developed Tests (LDTs)?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-question pl-48px">
+            Timeline for Phaseout Policy
+          </p>
+          <p class="faq-list_item-answer">
+            The phaseout policy for all in-scope tests would consist of five
+            stages, with each stage marking the end of FDA’s general enforcement
+            discretion policy for different regulatory requirements. The five
+            stages each begin at a certain time “after FDA publishes a final
+            phaseout policy,” which is intended to be published in the preamble
+            to the final rule, as follows:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span>
+                Medical device reporting (MDR) (21 CFR Part 803) and corrections
+                and removal reporting (21 CFR Part 806) – 1 year after final
+                phaseout policy published.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                Registration and listing (21 CFR Part 807), labeling (21 CFR
+                Parts 801 and 809, subpart B), and investigational use
+                requirements (21 CFR Part 812) – 2 years after final phaseout
+                policy published.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                Quality system (QS) requirements (21 CFR Part 820) – 3 years
+                after final phaseout policy published. For traditional LDTs
+                (designed, manufactured, and performed within the same
+                CLIA-certified, high-complexity laboratory), the applicable QS
+                requirements include design controls (21 CFR 820.30), purchasing
+                controls (21 CFR 820.50), acceptance activities (21 CFR 820.80
+                and 21 CFR 820.86), corrective and preventative actions (21 CFR
+                820.100), and records (21 CFR Part 820, subpart M).
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                Submission of premarket approval (PMA) applications for
+                high-risk tests (i.e., class III devices) – 3.5 years after
+                final phaseout policy published, but no earlier than October 1,
+                2027. LDTs generally could continue to be offered as long as a
+                PMA is under review.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                Submission of 510(k) premarket notifications and de novo
+                requests for moderate- and low-risk tests (i.e., non-exempt
+                class I and II devices) – 4 years after final phaseout policy
+                published, but no earlier than April 1, 2028. LDTs generally
+                could continue to be offered as long as a premarket submission
+                is under review.
+              </span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">27.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What articles of EU IVDR 746/2017 regulations and ISO 15189
+            standards do Laboratory Developed Test (LDT) need to comply?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            Placing on the market and putting into service
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span>
+                A device may be placed on the market or put into service only if
+                it complies with this Regulation when duly supplied and properly
+                installed, maintained and used in accordance with its intended
+                purpose.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                A device shall meet the general safety and performance
+                requirements set out in Annex I which apply to it, taking into
+                account its intended purpose.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                Demonstration of conformity with the general safety and
+                performance requirements shall include a performance evaluation
+                in accordance with Article 56.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                Devices that are manufactured and used within health
+                institutions, with the exception of devices for performance
+                studies, shall be considered as having been put into service.
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span>
+                With the exception of the relevant general safety and
+                performance requirements set out in Annex I, the requirements of
+                this Regulation shall not apply to devices manufactured and used
+                only within health institutions established in the Union,
+                provided that all of the following conditions are met:
+                <ul class="faq-subList-childList_latin">
+                  <li>
+                    the devices are not transferred to another legal entity;
+                  </li>
+                  <li>
+                    manufacture and use of the devices occur under appropriate
+                    quality management systems;
+                  </li>
+                  <li>
+                    the laboratory of the health institution is compliant with
+                    standard EN ISO 15189 or where applicable national
+                    provisions, including national provisions regarding
+                    accreditation;
+                  </li>
+                  <li>
+                    the health institution justifies in its documentation that
+                    the target patient group's specific needs cannot be met, or
+                    cannot be met at the appropriate level of performance by an
+                    equivalent device available on the market;
+                  </li>
+                  <li>
+                    the health institution provides information upon request on
+                    the use of such devices to its competent authority, which
+                    shall include a justification of their manufacturing,
+                    modification and use;
+                  </li>
+                  <li>
+                    the health institution draws up a declaration which it shall
+                    make publicly available, including:
+                    <ul>
+                      <li>
+                        the name and address of the manufacturing health
+                        institution,
+                      </li>
+                      <li>the details necessary to identify the devices,</li>
+                      <li>
+                        a declaration that the devices meet the general safety
+                        and performance requirements set out in Annex I to this
+                        Regulation and, where applicable, information on which
+                        requirements are not fully met with a reasoned
+                        justification therefor;
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    as regards class D devices in accordance with the rules set
+                    out in Annex VIII, the health institution draws up
+                    documentation that makes it possible to have an
+                    understanding of the manufacturing facility, the
+                    manufacturing process, the design and performance data of
+                    the devices, including the intended purpose, and that is
+                    sufficiently detailed to enable the competent authority to
+                    ascertain that the general safety and performance
+                    requirements set out in Annex I to this Regulation are met.
+                    Member States may apply this provision also to class A, B or
+                    C devices in accordance with the rules set out in Annex
+                    VIII;
+                  </li>
+                  <li>
+                    the health institution takes all necessary measures to
+                    ensure that all devices are manufactured in accordance with
+                    the documentation referred to in point
+                  </li>
+                  <li>
+                    the health institution reviews experience gained from
+                    clinical use of the devices and takes all necessary
+                    corrective actions.
+                  </li>
+                  <p>
+                    Member States may require that such health institutions
+                    submit to the competent authority any further relevant
+                    information about such devices which have been manufactured
+                    and used on their territory. Member States shall retain the
+                    right to restrict the manufacture and use of any specific
+                    type of such devices and shall be permitted access to
+                    inspect the activities of the health institutions.
+                    <br />
+                    This paragraph shall not apply to devices that are
+                    manufactured on an industrial scale.
+                  </p>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              In order to ensure the uniform application of Annex I, the
+              Commission may adopt implementing acts to the extent necessary to
+              resolve issues of divergent interpretation and of practical
+              application. Those implementing acts shall be adopted in
+              accordance with the examination procedure referred to in Article
+              107(3).
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">28.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the requirements of ISO 15189 for medical device
+            laboratories?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            ISO 15189 is an international standard that specifies requirements
+            for quality and competence in medical laboratories. The standard is
+            designed to help laboratories develop a quality management system
+            and demonstrate their competence to produce reliable results. The
+            requirements of ISO 15189 cover various aspects of laboratory
+            operations. The standard is divided into several sections, each
+            addressing different elements of the quality management system. Here
+            is an overview of the key requirements of ISO 15189:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong
+                  >Scope and Normative References (Clauses 1 and 2):</strong
+                >
+                <ul class="faq-subList-childList">
+                  <li>
+                    Defines the scope of the standard and refers to other
+                    relevant documents.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Terms and Definitions (Clause 3):</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Provides definitions of terms used throughout the standard.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong> Management Requirements (Clauses 4-7):</strong>
+                <p class="faq-subList_item m-0">
+                  3.1 Clause 4 - Management Requirements:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Focuses on the overall management of the laboratory,
+                    including the organization's commitment to quality, the
+                    establishment and maintenance of a quality management
+                    system, and documentation requirements.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  3.2 Clause 5 - Technical Requirements:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Specifies technical competence requirements for the
+                    laboratory, covering personnel, facilities, equipment, and
+                    the pre-examination, examination, and post-examination
+                    processes.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  3.3 Clause 6 - Accommodation and Environmental Conditions:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Addresses the physical environment of the laboratory,
+                    including requirements for facilities, safety, and
+                    environmental conditions.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  3.4 Clause 7 - Ensuring the Quality of Test Results:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Focuses on quality control, validation of examination
+                    procedures, participation in proficiency testing, and the
+                    management of critical and significant results.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  4. Examination Procedures (Clauses 8-9):
+                </p>
+                <p class="faq-subList_item m-0">4.1 Clause 8 - Examination:</p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Details requirements related to the examination process,
+                    including sample identification, handling, and processing.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  4.2 Clause 9 - Assuring the Quality of Examination Results:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    4.2 Clause 9 - Assuring the Quality of Examination Results:
+                    Covers the verification and validation of examination
+                    procedures, as well as the use of reference materials and
+                    participation in interlaboratory comparison or proficiency
+                    testing.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  5. Assuring the Quality of Test Results (Clauses 10-12):
+                </p>
+                <p class="faq-subList_item m-0">
+                  5.1 Clause 10 - Reporting Results:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Specifies requirements for the content and format of test
+                    reports.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  5.2 Clause 11 - Release of Results:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Addresses the release of examination results, including
+                    communication with users and authorization of results.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  5.3 Clause 12 - Interpretation and Consultation:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Covers the interpretation of results and the provision of
+                    consultation services.
+                  </li>
+                </ul>
+
+                <p class="faq-subList_item m-0">
+                  6. Management System Requirements (Clauses 13-18):
+                </p>
+                <p class="faq-subList_item m-0">
+                  6.1 Clause 13 - Laboratory Management:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Addresses the overall management of the laboratory,
+                    including management reviews and continual improvement.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  6.2 Clause 14 - Technical Management:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Covers technical management aspects, including competence,
+                    equipment, and measurement traceability.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  6.3 Clause 15 - Management Review:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Requires regular reviews of the laboratory's management
+                    system.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  6.4 Clause 16 - Continual Improvement:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Focuses on the need for continual improvement in all aspects
+                    of the laboratory's operations.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  6.5 Clause 17 - Corrective Action:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Specifies requirements for corrective actions in response to
+                    nonconformities.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">
+                  6.6 Clause 18 - Preventive Action:
+                </p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Addresses the implementation of preventive actions to avoid
+                    potential issues.
+                  </li>
+                </ul>
+                <p class="faq-subList_item m-0">7. Annexes:</p>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Provides additional guidance and information to support the
+                    implementation of specific aspects of the standard.
+                  </li>
+                </ul>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </li>
+      <li class="faq-list_item">
+        <div class="d-flex align-items-center">
+          <span class="faq-list_item-index">29.</span>
+          <h1 class="m-0 faq-list_item-question">
+            What are the steps required to convert Laboratory Developed Test
+            (LDT) to In Vitro Diagnostic Test (IVD) by EU IVDR 746/2017
+            regulations?
+          </h1>
+        </div>
+        <div>
+          <p class="faq-list_item-answer">
+            As of January 2022, the European Union In Vitro Diagnostic
+            Regulation (IVDR) 2017/746 had come into effect, replacing the
+            previous In Vitro Diagnostic Directive (IVDD). The IVDR establishes
+            new and more stringent requirements for the regulatory oversight of
+            in vitro diagnostic (IVD) devices. If there have been changes or
+            updates to the regulations since then, it's important to refer to
+            the most recent guidance and regulations from the European Medicines
+            Agency (EMA) and other relevant authorities.
+            <br />
+            Here are general steps that might be involved in transitioning a
+            Laboratory Developed Test (LDT) to an In Vitro Diagnostic Test (IVD)
+            in compliance with the EU IVDR:
+          </p>
+          <ul class="faq-subList faq-subList-number">
+            <li class="faq-subList_item">
+              <span
+                ><strong>Device Classification:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Classify the IVD device according to the risk-based
+                    classification system outlined in Annex VIII of the IVDR.
+                    Determine whether the device is classified as Class A, B, C,
+                    or D based on factors such as intended use and technological
+                    characteristics.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conduct Performance Evaluation:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Perform a performance evaluation of the IVD device in
+                    accordance with the requirements specified in Annex XIII of
+                    the IVDR. This involves assessing and documenting the
+                    analytical and clinical performance of the device.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Quality Management System (QMS):</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Establish and implement a Quality Management System (QMS) in
+                    compliance with the requirements of the IVDR. The QMS should
+                    cover various aspects, including design and development,
+                    risk management, clinical evaluation, and post-market
+                    surveillance.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Technical Documentation:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Prepare and compile the technical documentation required for
+                    CE marking. This documentation should include information on
+                    the design, performance, and safety of the IVD device. It
+                    should also cover aspects such as the results of the
+                    performance evaluation and clinical evaluation.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Conformity Assessment:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Engage a Notified Body to perform the conformity assessment
+                    for the IVD device. The Notified Body will assess the
+                    technical documentation, conduct audits (if necessary), and
+                    issue a Certificate of Conformity if the device meets the
+                    requirements of the IVDR.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Labeling and Instructions for Use:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Ensure that the labeling and instructions for use comply
+                    with the requirements of the IVDR. This includes providing
+                    clear and accurate information for users, healthcare
+                    professionals, and patients.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Post-Market Surveillance:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Implement a post-market surveillance system to monitor the
+                    performance and safety of the IVD device once it is placed
+                    on the market. This involves collecting and analyzing data
+                    on the device's performance, as well as reporting adverse
+                    events.
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li class="faq-subList_item">
+              <span
+                ><strong>Registration with Competent Authorities:</strong>
+                <ul class="faq-subList-childList">
+                  <li>
+                    Register the IVD device with the competent authorities of
+                    the EU Member States where the device will be placed on the
+                    market. This registration may involve submitting information
+                    about the device, the manufacturer, and other relevant
+                    details.
+                  </li>
+                </ul>
+              </span>
+            </li>
+          </ul>
+          <p class="faq-list_item-answer">
+            It's important to note that the transition from an LDT to an IVD
+            under the EU IVDR involves significant regulatory requirements and
+            compliance efforts. Manufacturers should seek professional
+            regulatory advice, keep abreast of any updates to the regulatory
+            landscape, and work closely with Notified Bodies to ensure
+            compliance with the IVDR.
+          </p>
         </div>
         <hr />
       </li>
