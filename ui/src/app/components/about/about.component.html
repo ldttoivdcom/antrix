@@ -10,14 +10,14 @@
           affairs and quality assurance consulting services and sells product to
           the Medical Device, IVD, LDT, Life Sciences, Pharmaceutical, and
           Biotech Industries worldwide powered by AI, ML, and NLP.
-          <br />
-          <br />
+          <br/>
+          <br/>
           We specialize in medical devices in the area of chemistry, immunology,
           hematology, microbiology, pathology, cardiovascular, ENT, Ophthalmic,
           Radiology and so on. Antrix also has experts in the area of Cosmetics
           and Food Safety manufacturing facility setup.
-          <br />
-          <br />
+          <br/>
+          <br/>
           Our main objective is to help our clients navigate through the complex
           regulatory systems and achieve successful product development,
           approval, and commercialization in US FDA, EU, Health Canada,
@@ -27,8 +27,8 @@
           ISO 22716, ISO 22000, CLIA, and CAP Quality Management Systems and
           Certification. We assist in product innovation and increasing the
           revenue.
-          <br />
-          <br />
+          <br/>
+          <br/>
           Our team of industry experts has years of experience and a proven
           track record in delivering high-quality services to our clients.
         </p>
@@ -73,16 +73,19 @@
               <!-- OPEN MODAL -->
               <div
                 [hidden]="activeItemIndex !== i"
-                (click)="closeModal()"
+
                 class="details-modal-overlay"
               >
                 <div class="details-modal">
-                  <div (click)="closeModal()" class="details-modal-close">
-                    <img
-                      class="z-1"
-                      src="assets/icons/icon-x-close.svg"
-                      alt=""
-                    />
+                  <div class="details-modal-close">
+                    <button class="z-1 border-0 bg-transparent" (click)="closeModal()">
+                      <img
+                        class="z-1"
+                        src="assets/icons/icon-x-close.svg"
+                        alt=""
+                      />
+                    </button>
+
                   </div>
                   <div class="details-modal-header">
                     <h1 class="details-modal-header_name">{{ item.name }}</h1>

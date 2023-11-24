@@ -44,10 +44,12 @@
 
 .team-section {
   padding: 48px 0;
+
   &_wrapper {
     max-width: 1000px;
     margin: auto;
   }
+
   &_text {
     color: $color_primary--700;
     font-weight: 300;
@@ -60,13 +62,16 @@
     gap: 24px;
     flex-wrap: wrap;
   }
+
   .team-member {
     display: flex;
     flex-direction: column;
     gap: 24px;
     flex: 1;
+
     &_img {
     }
+
     &_info {
       &-name {
         color: var(--gray-900, #101828);
@@ -147,7 +152,7 @@
     width: 4.5em;
     cursor: pointer;
 
-    img {
+    div img {
       display: block;
     }
   }
@@ -171,6 +176,7 @@
       line-height: 28px;
     }
   }
+
   .details-modal-content {
     border-top: 1px solid #e0e0e0;
     padding: 24px;

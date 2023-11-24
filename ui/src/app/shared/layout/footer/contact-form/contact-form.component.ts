@@ -8,9 +8,10 @@ import {
   FormControl,
 } from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Subject, takeUntil} from 'rxjs';
+import {Subject, Subscription, takeUntil} from 'rxjs';
 import {Papa} from 'ngx-papaparse';
 import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {PricingDataService} from "../../../services/pricing-data.service";
 import {Products} from 'src/app/models/products.model';
 import {isCheckDisabled} from "ng-zorro-antd/core/tree";
 
@@ -41,6 +42,7 @@ function captchaValidator(control: AbstractControl): ValidationErrors | null {
 })
 export class ContactFormComponent implements OnInit, OnDestroy {
   ngUnsubscribe$ = new Subject<void>();
+  private subscription: Subscription = new Subscription();
   captcha: string;
   Products: Products[] = [];
   Services: Products[] = [];
@@ -49,7 +51,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   isHidden: boolean = false;
   Pricings: string[] = [
     'Consulting Service - 200$',
-    'Consulting Service - 0$',
+    'FREE Consultation Meeting - 0$',
     'Product Purchase - 200$',
   ];
 
@@ -57,7 +59,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     private _formBuilder: FormBuilder,
     private _http: HttpClient,
     private _papa: Papa,
-    private _csvDataService: CsvDataService
+    private _csvDataService: CsvDataService,
+    private _pricingService: PricingDataService
   ) {
     this.captcha = '';
   }
@@ -66,6 +69,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.initContactForm();
     this.initCsvProductsData();
     this.initCsvServicesData();
+    this.setPricingValue();
   }
 
   handleCancel(): void {
@@ -177,7 +181,16 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     }
   }
 
+  setPricingValue(): void {
+    this.subscription.add(
+      this._pricingService.selectedPricing.subscribe(pricingName => {
+        this.contactForm.get('prodService')?.setValue(pricingName);
+      })
+    )
+  }
+
   ngOnDestroy() {
+    this.subscription.unsubscribe();
     this.ngUnsubscribe$.next();
     this.ngUnsubscribe$.complete();
   }

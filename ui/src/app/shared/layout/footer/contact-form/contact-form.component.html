@@ -1,7 +1,10 @@
 <div id="contact" class="footer-container">
   <div class="container">
     <div class="d-flex flex-column align-items-center flex-gap-48px">
-      <h2 class="footer-header text-white">CONTACT US</h2>
+      <div class="text-center">
+        <h2 class="footer-header text-white">CONTACT US</h2>
+        <h2 class="footer-header text-white">Book a Consultation</h2>
+      </div>
       <form
         [formGroup]="contactForm"
         (ngSubmit)="onSubmit()"
@@ -9,7 +12,7 @@
       >
         <div class="form-container row">
           <div class="form-input col-lg-6 col-sm-12">
-            <label class="input-label">Frist name</label>
+            <label class="input-label">*First name</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -41,7 +44,7 @@
             </div>
           </div>
           <div class="form-input col-lg-6 col-sm-12">
-            <label class="input-label">Last name</label>
+            <label class="input-label">*Last name</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -76,7 +79,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Email</label>
+            <label class="input-label">*Email</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -111,7 +114,7 @@
             </div>
           </div>
           <div class="form-input">
-            <label class="input-label">Telephone no</label>
+            <label class="input-label">*Telephone no</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -138,14 +141,14 @@
               class="error-text"
             >
               <p *ngIf="contactForm.get('phone')?.errors?.['required']">
-                Please enter your phonenumber
+                Please enter your phone number
               </p>
             </div>
           </div>
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Company name</label>
+            <label class="input-label">*Company name</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -177,7 +180,7 @@
             </div>
           </div>
           <div class="form-input">
-            <label class="input-label">Job title</label>
+            <label class="input-label">*Job title</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -211,7 +214,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Company website</label>
+            <label class="input-label">*Company website</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -245,11 +248,11 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Product and Services</label>
+            <label class="input-label">*Product and Services</label>
             <div class="input-text_wraper">
               <select
                 type="text"
-                class="input-text"
+                class="select-text"
                 name="Select Product and Services"
                 formControlName="prodService"
                 (change)="onProductServiceChange($event)"
@@ -305,11 +308,11 @@
         </div>
         <div *ngIf="!isHidden" class="form-container">
           <div class="form-input">
-            <label class="input-label">Part No</label>
+            <label class="input-label">*Part No</label>
             <div class="input-text_wraper">
               <select
                 type="text"
-                class="input-text"
+                class="select-text"
                 name="Select Part No"
                 formControlName="partNo"
               >
@@ -336,19 +339,19 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Message</label>
+            <label class="input-label">*Message</label>
             <div class="input-text_wraper">
               <textarea
                 type="text"
-                class="input-text"
-                placeholder="Leave us a message..."
+                class="textarea-text"
+                placeholder="Please provide details about your medical device"
                 formControlName="message"
               ></textarea>
               <img
                 *ngIf="
-                  contactForm.get('Message')?.invalid &&
-                  (contactForm.get('Message')?.dirty ||
-                    contactForm.get('Message')?.touched)
+                  contactForm.get('message')?.invalid &&
+                  (contactForm.get('message')?.dirty ||
+                    contactForm.get('message')?.touched)
                 "
                 src="assets/icons/icon-alert-circle.svg"
                 alt=""
@@ -356,13 +359,13 @@
             </div>
             <div
               *ngIf="
-                contactForm.get('Message')?.invalid &&
-                (contactForm.get('Message')?.dirty ||
-                  contactForm.get('Message')?.touched)
+                contactForm.get('message')?.invalid &&
+                (contactForm.get('message')?.dirty ||
+                  contactForm.get('message')?.touched)
               "
               class="error-text"
             >
-              <p *ngIf="contactForm.get('Message')?.errors?.['required']">
+              <p *ngIf="contactForm.get('message')?.errors?.['required']">
                 Please enter your message
               </p>
             </div>
