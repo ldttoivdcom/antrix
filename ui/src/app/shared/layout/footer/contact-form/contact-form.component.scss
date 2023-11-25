@@ -15,11 +15,13 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
     .form-container {
       display: flex;
       align-items: flex-start;
       gap: 32px;
       flex-wrap: wrap;
+
       .form-input {
         display: flex;
         flex-direction: column;
@@ -28,6 +30,7 @@
         align-self: stretch;
         width: 100%;
         flex: 1;
+
         .input-label {
           color: var(--base-white, #fff);
           font-size: 14px;
@@ -37,11 +40,12 @@
         }
 
         .input-text_wraper {
-          display:flex;
+          display: flex;
           padding: 8px 12px;
           border-bottom: 1px solid var(--gray-300, #d0d5dd);
           box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
           width: 100%;
+
           .input-text {
             width: 100%;
             border: none;
@@ -53,11 +57,10 @@
             &:focus {
               outline: none;
             }
-
           }
 
-          input[type=text] {
-            color: var(--base-white, var(--colors-base-white, #FFF));
+          input[type="text"] {
+            color: var(--base-white, var(--colors-base-white, #fff));
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
@@ -65,8 +68,41 @@
           }
         }
 
+        .select-text {
+          width: 100%;
+          border: none;
+          background-color: transparent;
+          font-weight: 400;
+          line-height: 170%;
+          color: #fff;
+
+          optgroup {
+            background-color: #fff;
+            color: var(--gray-500, #667085);;
+          }
+
+          option {
+            background-color: var(--gray-500, #667085);
+            color: #fff;
+          }
+        }
+
+        .textarea-text {
+          width: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          font-weight: 400;
+          line-height: 170%;
+          color: #fff;
+
+          &::placeholder {
+            color: var(--gray-500, #667085);
+          }
+        }
+
         .error-text {
-          color: var(--error-400, #F97066);
+          color: var(--error-400, #f97066);
           font-size: 14px;
           font-style: normal;
           font-weight: 400;
@@ -89,6 +125,40 @@
       }
     }
   }
+}
+
+::ng-deep .request-livedemo-modal {
+  .ant-modal-body {
+    padding: 0px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    padding: var(--spacing-4xl, 32px) var(--spacing-3xl, 24px);
+  }
+
+  .popup-title {
+    color: $color_primary--600;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px; /* 150% */
+  }
+}
+
+.header {
+  width: 100%;
+  padding: 8px var(--spacing-3xl, 24px);
+  background-color: $color_primary--600;
+}
+
+.hide-icon-select {
+  -webkit-appearance: none;
 }
 
 @include mobile {

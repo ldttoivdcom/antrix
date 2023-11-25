@@ -1,17 +1,25 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {PricingDataService} from "../../shared/services/pricing-data.service";
+import {ViewportScroller} from '@angular/common';
 
 interface PrcingServices {
   header: string;
   price: number;
   text: string;
   listItems: string[];
+  headerAndprice: string;
 }
+
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
   styleUrls: ['./pricing.component.scss'],
 })
 export class PricingComponent {
+
+  constructor(private _pricingServices: PricingDataService, private _viewPortScroller: ViewportScroller) {
+  }
+
   Pricing: PrcingServices[] = [
     {
       header: 'Consulting Service',
@@ -24,6 +32,7 @@ export class PricingComponent {
         'Phone support',
         'Priority support',
       ],
+      headerAndprice: 'Consulting Service - 200$',
     },
     {
       header: 'FREE Consultation Meeting',
@@ -35,6 +44,7 @@ export class PricingComponent {
         '2 Statement of work sessions',
         'Online resources',
       ],
+      headerAndprice: 'FREE Consultation Meeting - 0$',
     },
     {
       header: 'Product Purchase',
@@ -47,6 +57,13 @@ export class PricingComponent {
         'Phone support',
         'Priority support',
       ],
+      headerAndprice: 'Product Purchase - 200$',
     },
   ];
+
+  onClick(headerAndprice: string, id: string): void {
+    this._pricingServices.updateSelectedPricing(headerAndprice);
+    this._viewPortScroller.scrollToAnchor(id)
+
+  }
 }

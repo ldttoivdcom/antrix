@@ -1,5 +1,6 @@
 $mobile-width: 480px;
 $tablet-width: 481px;
+$bigtablet-width: 768px;
 $desktop-width: 1024px;
 $largedesktop-width: 1920px;
 $xlargedesktop-width: 2560px;
@@ -12,6 +13,12 @@ $xlargedesktop-width: 2560px;
 
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin bigtablet {
+  @media (min-width: #{$bigtablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
   }
 }

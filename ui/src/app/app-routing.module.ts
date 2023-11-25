@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { PricingComponent } from './components/pricing/pricing.component';
-import { AboutComponent } from './components/about/about.component';
-import { FAQComponent } from './components/faq/faq.component';
-import { ResourcesComponent } from './components/resources/resources.component';
-import { ProductServiceLayoutComponent } from './components/product-service-layout/product-service-layout.component';
-import { CareersComponent } from './components/careers/careers.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from './components/home/home.component';
+import {PricingComponent} from './components/pricing/pricing.component';
+import {AboutComponent} from './components/about/about.component';
+import {FAQComponent} from './components/faq/faq.component';
+import {ResourcesComponent} from './components/resources/resources.component';
+import {ProductServiceLayoutComponent} from './components/product-service-layout/product-service-layout.component';
+import {CareersComponent} from './components/careers/careers.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -38,14 +39,15 @@ const routes: Routes = [
     loadChildren: () =>
       import(
         './components/product-service-layout/product-service-layout.module'
-      ).then((m) => m.ProductServiceLayoutModule),
+        ).then((m) => m.ProductServiceLayoutModule),
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled'}),
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

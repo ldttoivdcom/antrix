@@ -19,7 +19,8 @@
               {{ item.text }}
             </p>
             <div class="card-header_supportingText">Valid for one month</div>
-            <button class="card-header_btn w-100 fw-medium">Select</button>
+            <button (click)="onClick(item.headerAndprice, 'contact')" class="card-header_btn w-100 fw-medium">Select
+            </button>
           </div>
           <div class="card-content">
             <ul class="p-0 m-0 list-unstyled card-content_list">

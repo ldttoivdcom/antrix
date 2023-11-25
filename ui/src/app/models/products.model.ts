@@ -3,4 +3,8 @@ export interface Products {
   Name: string;
   imgPath: string;
   Description: string;
+  Header: string;
+  List: string;
+  SubList: string;
+  Footer: string;
 }

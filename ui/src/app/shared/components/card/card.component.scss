@@ -1,10 +1,14 @@
 @import "../../../../styles.scss";
+
 .card {
   border: 0;
   flex-basis: 385px;
+
   .card-img-top {
     border-radius: 0;
+    min-height: 277px;
   }
+
   .card-body {
     display: flex;
     flex-direction: column;
@@ -12,6 +16,7 @@
     padding: 20px;
     background: var(--gray-50, #f9fafb);
   }
+
   .card-title {
     color: var(--gray-900, #101828);
     font-family: Poppins;
@@ -139,6 +144,7 @@
       line-height: 28px;
     }
   }
+
   .details-modal-content {
     border-top: 1px solid #e0e0e0;
     padding: 24px;
@@ -156,6 +162,18 @@
       color: var(--gray-800, #1d2939);
       font-weight: 400;
       line-height: 170%;
+    }
+
+    .details-modal-content_list {
+      list-style-type: decimal;
+      color: var(--gray-800, #1d2939);
+      font-weight: 400;
+      line-height: 170%;
+      padding-left: 32px;
+
+      .modal-content-list_items {
+        margin-bottom: 8px;
+      }
     }
 
     &_btn {
@@ -179,4 +197,11 @@
   line-height: 60px; /* 125% */
   letter-spacing: -0.96px;
   text-align: center;
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .first-btn, .second-btn {
+    font-size: 12px !important;
+  }
 }
