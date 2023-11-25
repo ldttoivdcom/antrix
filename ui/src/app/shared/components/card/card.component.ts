@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Products} from 'src/app/models/products.model';
+import {ViewportScroller} from '@angular/common';
 
 @Component({
   selector: 'app-card',
@@ -13,8 +14,11 @@ export class CardComponent {
   @Input() SubText: string = '';
   modalsVisibility: boolean[] = new Array(this.ProductsData.length).fill(false);
 
+  constructor(private viewportScroller: ViewportScroller) {
+  }
+
   showModal(index: number): void {
-    this.modalsVisibility[index] = true;
+    this.activeItemIndex = index;
   }
 
   handleCancel(index: number): void {
@@ -23,7 +27,12 @@ export class CardComponent {
   }
 
   closeModal(): void {
-    console.log('closeModal');
     this.activeItemIndex = null;
+  }
+
+  // Scroll to contact us
+  onClick(id: string): void {
+    this.activeItemIndex = null; //close modal
+    this.viewportScroller.scrollToAnchor(id)
   }
 }

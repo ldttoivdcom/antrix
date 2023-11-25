@@ -56,10 +56,11 @@
     line-height: 150%;
     letter-spacing: 1.7px;
     margin-bottom: 0;
+    white-space: nowrap;
   }
 
   .content-container-box {
-    min-height: 400px;
+    min-height: 385px;
   }
 
   .content-list {
@@ -220,9 +221,7 @@
       margin-top: 12px !important;
     }
   }
-}
 
-@include mobile {
   .content-container-box {
     min-height: 0 !important;
   }
@@ -234,14 +233,14 @@
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 1200px) and (max-width: 1440px) {
   .content-container-box {
-    min-height: 505px !important;
+    min-height: 435px !important;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .advantage-banner_card-header {
-    min-height: 64px !important;
+@media (min-width: 992px) and (max-width: 1200px) {
+  .content-container-box {
+    min-height: 530px !important;
   }
 }

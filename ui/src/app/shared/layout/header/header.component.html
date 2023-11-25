@@ -4,88 +4,98 @@
     ><img src="assets/imgs/Logo-antrix.png" alt=""
     /></a>
     <button
-      class="navbar-toggler border-0"
+      class="navbar-toggler border-0 d-lg-none d-block"
       type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasNavbar"
-      aria-controls="offcanvasNavbar"
-      aria-label="Toggle navigation"
+      id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
     >
-      <img src="assets/icons/icon-menu.svg" alt=""/>
+      <img class="menu-icon" src="assets/icons/icon-menu.svg" alt=""/>
+      <img class="x-icon" src="assets/icons/icon-x-close.svg" alt=""/>
     </button>
-    <div
-      class="offcanvas bg-dark offcanvas-end"
-      tabindex="-1"
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
+    <ul
+      class="header-navbar navbar-nav align-items-center justify-content-center flex-grow-1 d-lg-flex d-none"
     >
-      <div class="offcanvas-body">
-        <ul
-          class="header-navbar navbar-nav align-items-center justify-content-center flex-grow-1"
+      <li class="nav-item">
+        <a
+          class="header-navbar_link nav-link"
+          data-bs-dismiss="offcanvas"
+          aria-current="page"
+          routerLink="/info/services"
+          routerLinkActive="header-navbar_link-active"
+        >Services</a
         >
-          <li class="nav-item">
-            <a
-              class="header-navbar_link nav-link"
-              data-bs-dismiss="offcanvas"
-              aria-current="page"
-              routerLink="/info/services"
-              routerLinkActive="header-navbar_link-active"
-            >Services</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="header-navbar_link nav-link"
-              data-bs-dismiss="offcanvas"
-              routerLink="/info/products"
-              routerLinkActive="header-navbar_link-active"
-            >Products</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="header-navbar_link nav-link"
-              data-bs-dismiss="offcanvas"
-              routerLink="pricing"
-              routerLinkActive="header-navbar_link-active"
-            >Pricing</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="header-navbar_link nav-link"
-              data-bs-dismiss="offcanvas"
-              routerLink="resources"
-              routerLinkActive="header-navbar_link-active"
-            >Resources</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="header-navbar_link nav-link"
-              data-bs-dismiss="offcanvas"
-              routerLink="about"
-              routerLinkActive="header-navbar_link-active"
-            >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="header-navbar_link nav-link"
-              data-bs-dismiss="offcanvas"
-              (click)="onClick('contact')"
-            >Contact</a
-            >
-          </li>
-        </ul>
-        <button
-          type="button"
+      </li>
+      <li class="nav-item">
+        <a
+          class="header-navbar_link nav-link"
+          data-bs-dismiss="offcanvas"
+          routerLink="/info/products"
+          routerLinkActive="header-navbar_link-active"
+        >Products</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="header-navbar_link nav-link"
+          data-bs-dismiss="offcanvas"
+          routerLink="pricing"
+          routerLinkActive="header-navbar_link-active"
+        >Pricing</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="header-navbar_link nav-link"
+          data-bs-dismiss="offcanvas"
+          routerLink="resources"
+          routerLinkActive="header-navbar_link-active"
+        >Resources</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="header-navbar_link nav-link"
+          data-bs-dismiss="offcanvas"
+          routerLink="about"
+          routerLinkActive="header-navbar_link-active"
+        >About</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="header-navbar_link nav-link"
+          data-bs-dismiss="offcanvas"
           (click)="onClick('contact')"
-          class="header-navbar_btn nav_list-btn d-lg-flex d-none"
+        >Contact</a
         >
-          Book a Consultation
-        </button>
-      </div>
-    </div>
+      </li>
+    </ul>
+    <button
+      type="button"
+      (click)="onClick('contact')"
+      class="header-navbar_btn nav_list-btn d-lg-flex d-none"
+    >
+      Book Now
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="/info/services">Services</a>
+        <hr>
+      </li>
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="/info/products">Products</a>
+        <hr>
+      </li>
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="pricing">Pricing</a>
+        <hr>
+      </li>
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="resources">Resources</a>
+        <hr>
+      </li>
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="about">About</a>
+        <hr>
+      </li>
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" href="#">Contact</a>
+        <hr>
+      </li>
+
+    </ul>
   </div>
 </nav>

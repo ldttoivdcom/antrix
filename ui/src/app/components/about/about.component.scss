@@ -79,13 +79,14 @@
         line-height: 30px;
         margin-bottom: 4px;
         text-transform: uppercase;
+        font-weight: 500;
       }
 
       &-title {
         color: $color_primary--700;
         line-height: 170%;
         margin-bottom: 16px;
-        text-transform: capitalize;
+        font-weight: 400;
       }
 
       &-description {
@@ -97,7 +98,7 @@
         text-overflow: ellipsis;
         font-size: 14px;
         font-weight: 300;
-        line-height: 170%; /* 23.8px */
+        line-height: 170%;
       }
     }
 

@@ -1,4 +1,5 @@
 @import "../../../../styles.scss";
+
 .header {
   color: $color_primary--700;
   font-size: 48px;
@@ -15,12 +16,14 @@
   padding: 10px 14px;
   border: 1px solid #d0d5dd;
   border-right: none;
-  width: 100%;
+  width: 80%;
+
   &_input {
     outline: none;
     border: none;
     width: 100%;
   }
+
   input[type="text"] {
     color: #344054;
     font-style: normal;
@@ -38,4 +41,5 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 170%; /* 27.2px */
+  flex-grow: 1;
 }

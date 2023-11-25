@@ -157,6 +157,10 @@
   background-color: $color_primary--600;
 }
 
+.hide-icon-select {
+  -webkit-appearance: none;
+}
+
 @include mobile {
   .google-iframe {
     width: 100% !important;

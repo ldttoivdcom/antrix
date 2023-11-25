@@ -73,19 +73,11 @@
               <!-- OPEN MODAL -->
               <div
                 [hidden]="activeItemIndex !== i"
-
+                (click)="closeModal()"
                 class="details-modal-overlay"
               >
-                <div class="details-modal">
+                <div (click)="$event.stopPropagation()" class="details-modal">
                   <div class="details-modal-close">
-                    <button class="z-1 border-0 bg-transparent" (click)="closeModal()">
-                      <img
-                        class="z-1"
-                        src="assets/icons/icon-x-close.svg"
-                        alt=""
-                      />
-                    </button>
-
                   </div>
                   <div class="details-modal-header">
                     <h1 class="details-modal-header_name">{{ item.name }}</h1>

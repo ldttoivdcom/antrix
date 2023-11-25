@@ -3,7 +3,7 @@
     <div class="d-flex flex-column align-items-center flex-gap-48px">
       <div class="text-center">
         <h2 class="footer-header text-white">CONTACT US</h2>
-        <h2 class="footer-header text-white">Book a Consultation</h2>
+        <h2 class="footer-header text-white">Book Now</h2>
       </div>
       <form
         [formGroup]="contactForm"
@@ -12,7 +12,7 @@
       >
         <div class="form-container row">
           <div class="form-input col-lg-6 col-sm-12">
-            <label class="input-label">*First name</label>
+            <label class="input-label">First name</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -39,12 +39,12 @@
               class="error-text"
             >
               <p *ngIf="contactForm.get('firstName')?.errors?.['required']">
-                Please enter you first first name
+                Please enter your first name
               </p>
             </div>
           </div>
           <div class="form-input col-lg-6 col-sm-12">
-            <label class="input-label">*Last name</label>
+            <label class="input-label">Last name*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -72,14 +72,14 @@
               class="error-text"
             >
               <p *ngIf="contactForm.get('lastName')?.errors?.['required']">
-                Please enter you last name
+                Please enter your last name
               </p>
             </div>
           </div>
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">*Email</label>
+            <label class="input-label">Email*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -106,7 +106,7 @@
               class="error-text"
             >
               <p *ngIf="contactForm.get('email')?.errors?.['required']">
-                Please enter you email
+                Please enter your email
               </p>
               <p *ngIf="contactForm.get('email')?.errors?.['email']">
                 Please enter valid email
@@ -114,7 +114,7 @@
             </div>
           </div>
           <div class="form-input">
-            <label class="input-label">*Telephone no</label>
+            <label class="input-label">Telephone no*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -148,7 +148,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">*Company name</label>
+            <label class="input-label">Company name*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -180,7 +180,7 @@
             </div>
           </div>
           <div class="form-input">
-            <label class="input-label">*Job title</label>
+            <label class="input-label">Job title*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -214,7 +214,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">*Company website</label>
+            <label class="input-label">Company website*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -248,7 +248,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">*Product and Services</label>
+            <label class="input-label">Product and Services*</label>
             <div class="input-text_wraper">
               <select
                 type="text"
@@ -308,9 +308,10 @@
         </div>
         <div *ngIf="!isHidden" class="form-container">
           <div class="form-input">
-            <label class="input-label">*Part No</label>
+            <label class="input-label">Part No*</label>
             <div class="input-text_wraper">
               <select
+                [class.hide-icon-select]="!isHidden"
                 type="text"
                 class="select-text"
                 name="Select Part No"
@@ -339,7 +340,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">*Message</label>
+            <label class="input-label">Message*</label>
             <div class="input-text_wraper">
               <textarea
                 type="text"

@@ -9,7 +9,7 @@
       <p class="home-banner_text m-0 fs-20px">
         *We Guarantee 0 Major Inspection Findings
       </p>
-      <button class="home-banner_btn">Book a Consultation</button>
+      <button (click)="onClick('contact')" class="home-banner_btn">Book Now</button>
     </div>
   </div>
 </div>
@@ -66,14 +66,14 @@
 <div class="container">
   <!--Advantage banner-->
   <div class="advantage-banner">
-    <h2 class="advantage-banner_header">ANTRIX ADVANTAGE</h2>
+    <h2 class="advantage-banner_header">YOUR SAVINGS</h2>
     <p class="advantage-banner_description">
       Powered by Generative AI, ML, and NPL - Data mining the regulatory
       agencies predicate devices, clinical studies, and PMS databases accelerate
       product development and save millions of dollars on delayed launches,
       recalls, adverse events, and quality issues. Recognize revenue faster
     </p>
-    <div class="d-flex flex-wrap flex-gap-32px">
+    <div class="d-flex flex-wrap flex-gap-32px w-100">
       <div *ngFor="let advan of Advantages" class="advantage-item">
         <div class="advantage-banner_card text-center text-white">
           <img class="mb-20px" src="assets/icons/{{ advan.icon }}" alt=""/>

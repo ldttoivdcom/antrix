@@ -131,10 +131,15 @@
   }
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 991px) and (max-width: 1200px) {
   .card-content {
     min-height: 310px !important;
   }
+
+  .card-header_text {
+    min-height: 81.6px !important;
+  }
+
 }
 
 @media (max-width: 991px) {
