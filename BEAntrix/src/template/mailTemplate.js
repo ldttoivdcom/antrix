@@ -4,9 +4,9 @@ dotenv.config({
 });
 
 
-exports.mailTemplate = (reqData) => {
+exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformation, additionalContact) => {
 
-   const { firstName, lastName, email, prodService, phone, company, jobTitle, companyWeb, message, subject, partNo } = reqData;
+   const { firstName, lastName, email, prodService, phone, company, jobTitle, companyWeb, message, pricing, partNo } = reqData;
 
     return `
 
@@ -128,11 +128,11 @@ exports.mailTemplate = (reqData) => {
                                 <tr>
                                     <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${prodService || ""}</span></td>
                                 </tr>
-                                ${partNo ? `<tr>
+                                ${pricing ? `<tr>
                                     <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
                                 </tr>` : ""}
                                  <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Subject: ${subject || ""}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Price: ${pricing|| ""}</span></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align: left; padding-top: 15px"><span>Message: ${message|| ""}</span></td>
@@ -146,10 +146,13 @@ exports.mailTemplate = (reqData) => {
                           inquiry is urgent, please feel free to contact us directly at ${email || ""}.</span></td>
                     </tr>
                     <tr>
-                      <td style="text-align: left; padding-top: 15px"><span>Thank you for considering Antrix. We look forward to assisting you.</span></td>
+                      <td style="text-align: left; padding-top: 15px"><span>Thank you for considering ${yourCompanyName || ""}. We look forward to assisting you.</span></td>
                     </tr>
                     <tr>
-                      <td style="text-align: left; padding-top: 15px"><span>Best Regards,</span></td>
+                      <td style="text-align: left; padding-top: 5px">
+                      <p>Best Regards,</p>
+                      <p>${yourCompanyName || ""} ${yourContactInformation || ""} ${additionalContact || ""}</p>
+                      </td>
                     </tr>
 
                 </table>
