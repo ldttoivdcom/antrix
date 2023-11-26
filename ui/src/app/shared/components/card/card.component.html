@@ -40,7 +40,7 @@
         >
           <div (click)="$event.stopPropagation()" class="details-modal">
             <div (click)="closeModal()" class="details-modal-close">
-              <img class="z-1" src="assets/icons/icon-x-close.svg" alt="" />
+              <img class="z-1" src="assets/icons/icon-x-close.svg" alt=""/>
             </div>
             <div class="details-modal-header">
               <h1 class="details-modal-header_name">{{ data.Name }}</h1>
@@ -48,14 +48,15 @@
               <span class="card-subTitle fw-bold">{{ data.PartNumber }}</span>
             </div>
             <div class="details-modal-content">
-              <img
-                class="details-modal-content_img"
-                src="assets/imgs/{{ data.imgPath }}"
-                alt=""
-              />
+              <div class="d-flex">
+                <img
+                  class="details-modal-content_img"
+                  src="assets/imgs/{{ data.imgPath }}"
+                  alt=""
+                />
+              </div>
               <div class="">
-                <p class="details-modal-content_description">
-                  {{ data.Header }}
+                <p class="details-modal-content_description" [innerHTML]="data.Header">
                 </p>
                 <ul class="details-modal-content_list">
                   <li
@@ -87,3 +88,4 @@
     </div>
   </div>
 </div>
+

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,13 +7,13 @@ import {
   ValidationErrors,
   FormControl,
 } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject, Subscription, takeUntil } from 'rxjs';
-import { Papa } from 'ngx-papaparse';
-import { CsvDataService } from 'src/app/shared/services/csv-data.service';
-import { PricingDataService } from '../../../services/pricing-data.service';
-import { Products } from 'src/app/models/products.model';
-import { isCheckDisabled } from 'ng-zorro-antd/core/tree';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Subject, Subscription, takeUntil} from 'rxjs';
+import {Papa} from 'ngx-papaparse';
+import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {PricingDataService} from '../../../services/pricing-data.service';
+import {Products} from 'src/app/models/products.model';
+import {isCheckDisabled} from 'ng-zorro-antd/core/tree';
 
 interface ProductsServices {
   name: string;
@@ -32,7 +32,7 @@ const httpOptions = {
 };
 
 function captchaValidator(control: AbstractControl): ValidationErrors | null {
-  return control.value ? null : { captchaNotResolved: true };
+  return control.value ? null : {captchaNotResolved: true};
 }
 
 @Component({
@@ -212,5 +212,4 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe$.complete();
   }
 
-  protected readonly isCheckDisabled = isCheckDisabled;
 }
