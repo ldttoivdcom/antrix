@@ -4,7 +4,7 @@ dotenv.config({
 });
 
 
-exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformation, additionalContact) => {
+exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourCompanyName = "Antrix",yourContactInformation, additionalContact) => {
 
    const { firstName, lastName, email, prodService, phone, company, jobTitle, companyWeb, message, pricing, partNo } = reqData;
 
@@ -19,7 +19,7 @@ exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformati
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>Contact Us</title>
+    <title>${process.env.TITLE_MAIL_TAB}</title>
   </head>
   <body
     style="
@@ -75,7 +75,7 @@ exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformati
                       <tr >
                           <td style="align-items: center;text-align: center; padding: 35px 0;">
                               <img src="${process.env.IMAGE_BASE_URL}check_circle.png" alt="tick" style="padding-bottom: 16px; width: 32px; height: 32px; object-fit: cover;pointer-events: none;">
-                                <p style="font-weight: 600; text-align: center; font-size: 24px; color: #0C3C60;margin: 0">Thank you for submitting the form.</p>
+                                <p style="font-weight: 600; text-align: center; font-size: 24px; color: #0C3C60;margin: 0">${thanksTitle}</p>
                           </td>
                       </tr>
                   <tr>
@@ -87,7 +87,7 @@ exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformati
                   </tr>
                   <tr>
                       <td style="text-align: left; padding-top: 15px">
-                          <span>Thank you for reaching out to us. We appreciate your interest in Antrix. Your inquiry about Product / Service: ${prodService || ""} is important to us, and we will make every effort to respond as quickly as possible. </span>
+                          <span>${topContent} </span>
                       </td>
                   </tr>
                   <tr>
@@ -126,9 +126,9 @@ exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformati
                                     <td style="text-align: left; padding-top: 15px"><span>Company Website: ${companyWeb || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${prodService || ""}</span></td>
+                                    <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${!pricing ? prodService || "" : pricing || ""} </span></td>
                                 </tr>
-                                ${pricing ? `<tr>
+                                ${!pricing ? `<tr>
                                     <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
                                 </tr>` : ""}
                                 <tr>
@@ -139,11 +139,10 @@ exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformati
                         </td>
                   </tr>
                       <tr>
-                      <td style="text-align: left; padding-top: 16px"><span>Our team will review your message and get back to you shortly. If your
-                          inquiry is urgent, please feel free to contact us directly at ${email || ""}.</span></td>
+                      <td style="text-align: left; padding-top: 16px"><span>${bottomContent}</span></td>
                     </tr>
                     <tr>
-                      <td style="text-align: left; padding-top: 15px"><span>Thank you for considering ${yourCompanyName || ""}. We look forward to assisting you.</span></td>
+                      <td style="text-align: left; padding-top: 15px"><span>${ps}</span></td>
                     </tr>
                     <tr>
                       <td style="text-align: left; padding-top: 5px">
