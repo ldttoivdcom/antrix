@@ -1,6 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {Products} from 'src/app/models/products.model';
-import {ViewportScroller} from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { Products } from 'src/app/models/products.model';
+import { ViewportScroller } from '@angular/common';
+import { PricingDataService } from '../../services/pricing-data.service';
 
 @Component({
   selector: 'app-card',
@@ -14,8 +15,10 @@ export class CardComponent {
   @Input() SubText: string = '';
   modalsVisibility: boolean[] = new Array(this.ProductsData.length).fill(false);
 
-  constructor(private viewportScroller: ViewportScroller) {
-  }
+  constructor(
+    private viewportScroller: ViewportScroller,
+    private _pricingServices: PricingDataService
+  ) {}
 
   showModal(index: number): void {
     this.activeItemIndex = index;
@@ -23,7 +26,6 @@ export class CardComponent {
 
   handleCancel(index: number): void {
     this.modalsVisibility[index] = false;
-
   }
 
   closeModal(): void {
@@ -31,8 +33,9 @@ export class CardComponent {
   }
 
   // Scroll to contact us
-  onClick(id: string): void {
+  onClick(id: string, name: string, partNumber: string): void {
     this.activeItemIndex = null; //close modal
-    this.viewportScroller.scrollToAnchor(id)
+    this._pricingServices.updateSelectedProServices({ name, partNumber });
+    this.viewportScroller.scrollToAnchor(id);
   }
 }

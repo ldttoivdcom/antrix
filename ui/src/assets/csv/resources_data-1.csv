@@ -1,39 +1,39 @@
-﻿WebLinks,Regulations
-FDA 21 CFR Part 820 ,Medical Device Quality System Regulations
-FDA 21 CFR Part 210,"Current Good Manufacturing Practice in Manufacturing, Processing, Packing, Or Holding of Drugs; General"
-FDA 21 CFR Part 211,Current Good Manufacturing Practice for Finished Pharmaceuticals
-FDA 21 CFR Part 600,Biological Products: General
-FDA Labeling,FDA Introduction to Medical Device Labeling
-FDA GUDID,FDA Global Unique Device Identification Database (GUDID)
-FDA Guidance’s,Search for FDA Guidance Documents
-FDA Cybersecurity,FDA Cybersecurity Guidance
-FDA Digital Health,Digital Health Center of Excellence
-FDA Clinical Trials,FDA Clinical Trials Database
-FDA Clinical Trials Database,FDA Cosmetics Laws & Regulations
-FDA Food Safety,FDA Food Safety Modernization Act (FSMA)
-FDA Dietary Supplements Regulations Part 111,FDA Dietary Supplements Regulations
-FDA Dietary Supplements Guidelines,FDA Dietary Supplements Guidelines
-ICH Guidelines,ICH Guidelines
-EU IVDR,EU 2017/746 In Vitro Diagnostic Regulations
-EU MDR,EU 2017/745 Medical Device Regulations
-EU MDCG,MDCG endorsed documents and other guidance
+﻿WebLinks,Regulations,href
+FDA 21 CFR Part 820 ,Medical Device Quality System Regulations,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?CFRPart=820
+FDA 21 CFR Part 210,"Current Good Manufacturing Practice in Manufacturing, Processing, Packing, Or Holding of Drugs; General",https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRsearch.cfm?CFRPart=210
+FDA 21 CFR Part 211,Current Good Manufacturing Practice for Finished Pharmaceuticals,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?CFRPart=211
+FDA 21 CFR Part 600,Biological Products: General,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?CFRPart=600
+FDA Labeling,FDA Introduction to Medical Device Labeling,https://www.fda.gov/medical-devices/overview-device-regulation/device-labeling
+FDA GUDID,FDA Global Unique Device Identification Database (GUDID),https://www.fda.gov/medical-devices/unique-device-identification-system-udi-system/global-unique-device-identification-database-gudid
+FDA Guidance’s,Search for FDA Guidance Documents,https://www.fda.gov/industry/fda-basics-industry/guidances
+FDA Cybersecurity,FDA Cybersecurity Guidance,https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity
+FDA Digital Health,Digital Health Center of Excellence,https://www.fda.gov/medical-devices/digital-health-center-excellence
+FDA Clinical Trials,FDA Clinical Trials Database,https://clinicaltrials.gov/
+FDA Clinical Trials Database,FDA Cosmetics Laws & Regulations,https://www.fda.gov/cosmetics/cosmetics-guidance-regulation/cosmetics-laws-regulations
+FDA Food Safety,FDA Food Safety Modernization Act (FSMA),https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma
+FDA Dietary Supplements Regulations Part 111,FDA Dietary Supplements Regulations,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?cfrpart=111
+FDA Dietary Supplements Guidelines,FDA Dietary Supplements Guidelines,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?cfrpart=111
+ICH Guidelines,ICH Guidelines,https://www.ich.org/page/ich-guidelines
+EU IVDR,EU 2017/746 In Vitro Diagnostic Regulations,https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32017R0746
+EU MDR,EU 2017/745 Medical Device Regulations,https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32017R0745
+EU MDCG,MDCG endorsed documents and other guidance,https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en
 EU EUDAMED,EUDAMED DATABASE
-EU NANDO,EU Notified Bodies Database
-EU Medicinal Drugs,Medicinal product | European Medicines Agency
-MDSAP,Medical Device Single Audit Program (MDSAP)
-IMDRF,International Medical Device Regulators Forum (IMDRF)
-Health Canada,Health Canada
-Brazil ANVISA,Brazilian Health Regulatory Agency (Anvisa)
-Japan PMDA,Japan Pharmaceuticals and Medical Devices Agency - PMDA
-China NMPA,China National Medical Products Administration
-Australia TGA,Australia Therapeutic Goods Administration (TGA)
-UK Medicines Agency,Medicines and Healthcare products Regulatory Agency
-Swissmedic,Swiss Medicines Agency
-Danish Regulatory,Danish Medicines Agency
-Malaysia Medical Device Authority,Malaysia Medical Device Authority Ministry of Health
-New Zealand Medsafe,New Zealand Medicines and Medical Devices Safety Authority
-Singapore HAS,Singapore Health Sciences Authority
-South Korea Regulatory Agency,Ministry of Food and Drug Safety Regulations for Medical Devices
-Taiwan FDA,Taiwan Food and Drug Administration
-Medtecheurope,"MedTech Europe, from diagnosis to cure"
-AdvaMed,AdvaMed - Advanced Medical Technology Association
+EU NANDO,EU Notified Bodies Database,https://single-market-economy.ec.europa.eu/single-market/goods/building-blocks/notified-bodies_en
+EU Medicinal Drugs,Medicinal product | European Medicines Agency,https://www.ema.europa.eu/en/glossary/medicinal-product
+MDSAP,Medical Device Single Audit Program (MDSAP),https://www.fda.gov/medical-devices/cdrh-international-affairs/medical-device-single-audit-program-mdsap
+IMDRF,International Medical Device Regulators Forum (IMDRF),https://www.imdrf.org/
+Health Canada,Health Canada,https://www.canada.ca/en/health-canada.html
+Brazil ANVISA,Brazilian Health Regulatory Agency (Anvisa),https://www.gov.br/anvisa/pt-br/english
+Japan PMDA,Japan Pharmaceuticals and Medical Devices Agency - PMDA,https://www.pmda.go.jp/english/
+China NMPA,China National Medical Products Administration,http://english.nmpa.gov.cn/
+Australia TGA,Australia Therapeutic Goods Administration (TGA),https://www.tga.gov.au/
+UK Medicines Agency,Medicines and Healthcare products Regulatory Agency,https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency
+Swissmedic,Swiss Medicines Agency,https://www.swissmedic.ch/swissmedic/en/home.html
+Danish Regulatory,Danish Medicines Agency,https://laegemiddelstyrelsen.dk/en/
+Malaysia Medical Device Authority,Malaysia Medical Device Authority Ministry of Health,https://portal.mda.gov.my/industry/overview-of-regulatory-medical-device.html
+New Zealand Medsafe,New Zealand Medicines and Medical Devices Safety Authority,https://www.medsafe.govt.nz/regulatory/devicesnew/industry.asp
+Singapore HSA,Singapore Health Sciences Authority,https://www.hsa.gov.sg/medical-devices/regulatory-overview
+South Korea Regulatory Agency,Ministry of Food and Drug Safety Regulations for Medical Devices,https://www.mfds.go.kr/eng/brd/m_40/list.do
+Taiwan FDA,Taiwan Food and Drug Administration,https://www.fda.gov.tw/ENG/law.aspx?cid=5063&cr=156044819
+Medtecheurope,"MedTech Europe, from diagnosis to cure",https://www.medtecheurope.org/
+AdvaMed,AdvaMed - Advanced Medical Technology Association,https://www.advamed.org/

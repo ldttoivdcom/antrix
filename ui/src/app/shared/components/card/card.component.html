@@ -1,7 +1,5 @@
 <div class="row">
-  <h1 class="not-found-text" *ngIf="ProductsData.length < 1">
-    Search Unsuccessful: Item Not Found
-  </h1>
+  <h1 class="not-found-text" *ngIf="ProductsData.length < 1">Item Not Found</h1>
   <div
     *ngFor="let data of ProductsData; let i = index"
     class="col-lg-4 col-md-6 pr-16px pl-16px mb-32px"
@@ -23,7 +21,10 @@
           {{ data.Description }}
         </p>
         <div class="d-flex flex-gap-24px">
-          <button (click)="onClick('contact')" class="first-btn">
+          <button
+            (click)="onClick('contact', data.Name, data.PartNumber)"
+            class="first-btn"
+          >
             {{ FirstBtnText }}
           </button>
           <button (click)="showModal(i)" class="second-btn">Learn more</button>
@@ -39,7 +40,7 @@
         >
           <div (click)="$event.stopPropagation()" class="details-modal">
             <div (click)="closeModal()" class="details-modal-close">
-              <img class="z-1" src="assets/icons/icon-x-close.svg" alt=""/>
+              <img class="z-1" src="assets/icons/icon-x-close.svg" alt="" />
             </div>
             <div class="details-modal-header">
               <h1 class="details-modal-header_name">{{ data.Name }}</h1>
@@ -57,14 +58,22 @@
                   {{ data.Header }}
                 </p>
                 <ul class="details-modal-content_list">
-                  <li class="modal-content-list_items" *ngFor="let item of data.List">{{item}}</li>
+                  <li
+                    class="modal-content-list_items"
+                    *ngFor="let item of data.List"
+                    [innerHTML]="item"
+                  ></li>
                 </ul>
-                <p class="details-modal-content_description">
-                  {{ data.Footer }}
-                </p>
+                <p
+                  class="details-modal-content_description"
+                  [innerHTML]="data.Footer"
+                ></p>
               </div>
 
-              <button (click)="onClick('contact')" class="details-modal-content_btn">
+              <button
+                (click)="onClick('contact', data.Name, data.PartNumber)"
+                class="details-modal-content_btn"
+              >
                 {{ FirstBtnText }}
               </button>
               <p class="card-subText text-center">

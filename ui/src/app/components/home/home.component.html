@@ -7,9 +7,11 @@
         Services and Products Powered by AI, ML and NLP
       </h3>
       <p class="home-banner_text m-0 fs-20px">
-        *We Guarantee 0 Major Inspection Findings
+        We Guarantee 0 Major Inspection Findings*
       </p>
-      <button (click)="onClick('contact')" class="home-banner_btn">Book Now</button>
+      <button (click)="onClick('contact')" class="home-banner_btn">
+        Book Now
+      </button>
     </div>
   </div>
 </div>
@@ -55,14 +57,14 @@
             *ngIf="content.list && content.list.length < 1"
             (click)="onClick('clients')"
             class="content-container_btn"
-          >Learn more</a
+            >Learn more</a
           >
         </div>
       </div>
     </div>
   </div>
 </div>
-<hr>
+<hr />
 <div class="container">
   <!--Advantage banner-->
   <div class="advantage-banner">
@@ -76,7 +78,7 @@
     <div class="d-flex flex-wrap flex-gap-32px w-100">
       <div *ngFor="let advan of Advantages" class="advantage-item">
         <div class="advantage-banner_card text-center text-white">
-          <img class="mb-20px" src="assets/icons/{{ advan.icon }}" alt=""/>
+          <img class="mb-20px" src="assets/icons/{{ advan.icon }}" alt="" />
           <h4 class="advantage-banner_card-header mb-12px">
             {{ advan.header }}
           </h4>
