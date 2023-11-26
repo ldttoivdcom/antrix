@@ -131,9 +131,6 @@ exports.mailTemplate = (reqData, yourCompanyName = "Antrix",yourContactInformati
                                 ${pricing ? `<tr>
                                     <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
                                 </tr>` : ""}
-                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Price: ${pricing|| ""}</span></td>
-                                </tr>
                                 <tr>
                                     <td style="text-align: left; padding-top: 15px"><span>Message: ${message|| ""}</span></td>
                                 </tr>
