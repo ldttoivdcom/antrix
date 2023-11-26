@@ -43,3 +43,14 @@
   line-height: 170%;
   flex-grow: 1;
 }
+
+@include mobile {
+  .header {
+    text-align: center;
+  }
+
+  .search-container_btn {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+}

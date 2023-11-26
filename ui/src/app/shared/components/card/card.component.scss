@@ -218,3 +218,9 @@
     font-size: 12px !important;
   }
 }
+
+@include mobile {
+  .details-modal-content_img {
+    width: 300px !important;
+  }
+}
