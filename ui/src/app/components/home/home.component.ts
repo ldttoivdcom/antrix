@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ViewportScroller} from '@angular/common';
+import AOS from "aos";
 
 interface HomeContent {
   header: string;
@@ -20,8 +21,13 @@ interface HomeAdvantage {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   constructor(private viewportScroller: ViewportScroller) {
+  }
+
+  ngOnInit() {
+    AOS.init();
+    AOS.refresh();
   }
 
   Contents: HomeContent[] = [

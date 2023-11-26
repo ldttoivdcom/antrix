@@ -15,11 +15,6 @@ import {PricingDataService} from '../../../services/pricing-data.service';
 import {Products} from 'src/app/models/products.model';
 import {isCheckDisabled} from 'ng-zorro-antd/core/tree';
 
-interface ProductsServices {
-  name: string;
-  partnumber: string;
-}
-
 interface ApiResponse {
   code: string;
   message: string;
