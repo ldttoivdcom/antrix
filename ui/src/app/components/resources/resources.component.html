@@ -5,20 +5,20 @@
     <a routerLink="/careers" class="resources-link mb-32px">Careers</a>
     <table class="mb-48px table table-bordered">
       <thead>
-        <tr>
-          <th class="table-header w-25" scope="col">Web Links</th>
-          <th class="table-header" scope="col">Regulation</th>
-        </tr>
+      <tr>
+        <th class="table-header w-25" scope="col">Web Links</th>
+        <th class="table-header" scope="col">Regulation</th>
+      </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of regulations">
-          <td class="table-link">
-            <a href="">{{ item.WebLinks }}</a>
-          </td>
-          <td class="table-link table-link_text">
-            {{ item.Regulations }}
-          </td>
-        </tr>
+      <tr *ngFor="let item of regulations">
+        <td class="table-link">
+          <a href="{{item.href}}">{{ item.WebLinks }}</a>
+        </td>
+        <td class="table-link table-link_text">
+          {{ item.Regulations }}
+        </td>
+      </tr>
       </tbody>
     </table>
 
@@ -33,1209 +33,1209 @@
     </div>
     <table class="table table-bordered">
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">A</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">A</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Andorra</td>
-          <td class="table-link">
-            <a href="https://acces-ec.govern.ad/cas/login"
-              >Ministry of Health and Welfare</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Australia</td>
-          <td class="table-link">
-            <a href="https://www.health.gov.au/"
-              >Australian Government- Department of Health and Aged Care</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Australia</td>
-          <td class="table-link">
-            <a href="https://www.tga.gov.au/"
-              >Therapeutic Goods Administration (TGA)</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Austria</td>
-          <td class="table-link">
-            <a href="https://www.sozialministerium.at/"
-              >Federal Ministry for Social Affairs, Health, Care and Consumer
-              Protection</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Austria</td>
-          <td class="table-link">
-            <a href="https://www.ages.at/"
-              >Austrian Agency for Health and Food Safety</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Argentina</td>
-          <td class="table-link">
-            <a href="https://www.argentina.gob.ar/anmat"
-              >Ministry of Health 0</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Armenia</td>
-          <td class="table-link">
-            <a href="http://www.pharm.am/index.php/en/"
-              >The Scientific Center of Drug and Medical Technologies Expertise
-              (SCDMTE)</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Andorra</td>
+        <td class="table-link">
+          <a href="https://acces-ec.govern.ad/cas/login"
+          >Ministry of Health and Welfare</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Australia</td>
+        <td class="table-link">
+          <a href="https://www.health.gov.au/"
+          >Australian Government- Department of Health and Aged Care</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Australia</td>
+        <td class="table-link">
+          <a href="https://www.tga.gov.au/"
+          >Therapeutic Goods Administration (TGA)</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Austria</td>
+        <td class="table-link">
+          <a href="https://www.sozialministerium.at/"
+          >Federal Ministry for Social Affairs, Health, Care and Consumer
+            Protection</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Austria</td>
+        <td class="table-link">
+          <a href="https://www.ages.at/"
+          >Austrian Agency for Health and Food Safety</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Argentina</td>
+        <td class="table-link">
+          <a href="https://www.argentina.gob.ar/anmat"
+          >Ministry of Health 0</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Armenia</td>
+        <td class="table-link">
+          <a href="http://www.pharm.am/index.php/en/"
+          >The Scientific Center of Drug and Medical Technologies Expertise
+            (SCDMTE)</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">B</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">B</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Bahrain</td>
-          <td class="table-link">
-            <a href="http://www.moh.gov.bh/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Belgium</td>
-          <td class="table-link">
-            <a href="https://www.favv-afsca.be/"
-              >Federal Agency for the Safety of the Food Chain</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Belgium</td>
-          <td class="table-link">
-            <a
-              href="https://www.health.belgium.be/language_selection?destination=%3Cfront%3E"
-              >Health, Food Chain Safety and Environment</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Belgium</td>
-          <td class="table-link">
-            <a href="https://www.afmps.be/fr"
-              >Federal Agency for Medicines and Health Products</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Belize</td>
-          <td class="table-link">
-            <a href="https://www.health.gov.bz/"
-              >Ministry of Health and Wellness</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Benin</td>
-          <td class="table-link">
-            <a href="https://sante.gouv.bj/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Bolivia</td>
-          <td class="table-link">
-            <a href="https://www.minsalud.gob.bo/"
-              >Ministry of Health and Social Welfare</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Botswana</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.bw/"
-              >Ministry of Health and Wellness</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Brazil</td>
-          <td class="table-link">
-            <a href="https://portal.fiocruz.br/">Oswaldo Cruz Foundation</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Brazil</td>
-          <td class="table-link">
-            <a href="https://www.gov.br/saude/pt-br">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Brazil</td>
-          <td class="table-link">
-            <a href="https://www.gov.br/anvisa/pt-br/english"
-              >Brazilian Health Regulatory Agency (Anvisa)</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Brunei</td>
-          <td class="table-link">
-            <a href="https://moh.gov.bn/Pages/Home.aspx">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Bulgaria</td>
-          <td class="table-link">
-            <a href="https://www.bda.bg/bg/">Drug Agency (BDA)</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Bulgaria</td>
-          <td class="table-link">
-            <a href="https://www.mh.government.bg/bg/">Ministry of Health </a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Bahrain</td>
+        <td class="table-link">
+          <a href="http://www.moh.gov.bh/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Belgium</td>
+        <td class="table-link">
+          <a href="https://www.favv-afsca.be/"
+          >Federal Agency for the Safety of the Food Chain</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Belgium</td>
+        <td class="table-link">
+          <a
+            href="https://www.health.belgium.be/language_selection?destination=%3Cfront%3E"
+          >Health, Food Chain Safety and Environment</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Belgium</td>
+        <td class="table-link">
+          <a href="https://www.afmps.be/fr"
+          >Federal Agency for Medicines and Health Products</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Belize</td>
+        <td class="table-link">
+          <a href="https://www.health.gov.bz/"
+          >Ministry of Health and Wellness</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Benin</td>
+        <td class="table-link">
+          <a href="https://sante.gouv.bj/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Bolivia</td>
+        <td class="table-link">
+          <a href="https://www.minsalud.gob.bo/"
+          >Ministry of Health and Social Welfare</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Botswana</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.bw/"
+          >Ministry of Health and Wellness</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Brazil</td>
+        <td class="table-link">
+          <a href="https://portal.fiocruz.br/">Oswaldo Cruz Foundation</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Brazil</td>
+        <td class="table-link">
+          <a href="https://www.gov.br/saude/pt-br">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Brazil</td>
+        <td class="table-link">
+          <a href="https://www.gov.br/anvisa/pt-br/english"
+          >Brazilian Health Regulatory Agency (Anvisa)</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Brunei</td>
+        <td class="table-link">
+          <a href="https://moh.gov.bn/Pages/Home.aspx">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Bulgaria</td>
+        <td class="table-link">
+          <a href="https://www.bda.bg/bg/">Drug Agency (BDA)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Bulgaria</td>
+        <td class="table-link">
+          <a href="https://www.mh.government.bg/bg/">Ministry of Health </a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">C</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">C</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Canada</td>
-          <td class="table-link">
-            <a
-              href="https://inspection.canada.ca/eng/1297964599443/1297965645317/"
-              >Canadian Food Inspection Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Canada</td>
-          <td class="table-link">
-            <a
-              href="https://www.canada.ca/en/health-canada/corporate/about-health-canada/branches-agencies/health-products-food-branch.html"
-              >Health Products and Food Branch</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Canada</td>
-          <td class="table-link">
-            <a href="https://www.canada.ca/en/health-canada.html"
-              >Health Canada</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Chile</td>
-          <td class="table-link">
-            <a href="https://www.minsal.cl/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Chile</td>
-          <td class="table-link">
-            <a href="https://www.ispch.cl/">Institute of Public Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">China</td>
-          <td class="table-link">
-            <a href="http://subsites.chinadaily.com.cn/nmpa/NMPA.html"
-              >National Medical Products Administration</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Colombia</td>
-          <td class="table-link">
-            <a href="https://www.invima.gov.co/"
-              >National Institute for Drug and Food Surveillance (INVIMA)</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Colombia</td>
-          <td class="table-link">
-            <a href="https://www.minsalud.gov.co/Portada2021/index.html"
-              >Ministry of Health and Social Protection</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Croatia</td>
-          <td class="table-link">
-            <a href="https://www.ministeriodesalud.go.cr/"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Croatia</td>
-          <td class="table-link">
-            <a href="https://zdravlje.gov.hr/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Costa Rica</td>
-          <td class="table-link">
-            <a href="https://www.halmed.hr/"
-              >Agency for Medicinal Products and Medical Devices of Croatia</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Cyprus</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.cy/moh/moh.nsf/index_en/index_en"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Czech Republic</td>
-          <td class="table-link">
-            <a href="https://www.mzcr.cz/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Czech Republic</td>
-          <td class="table-link">
-            <a href="https://www.sukl.cz/">State Institute for Drug Control</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Canada</td>
+        <td class="table-link">
+          <a
+            href="https://inspection.canada.ca/eng/1297964599443/1297965645317/"
+          >Canadian Food Inspection Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Canada</td>
+        <td class="table-link">
+          <a
+            href="https://www.canada.ca/en/health-canada/corporate/about-health-canada/branches-agencies/health-products-food-branch.html"
+          >Health Products and Food Branch</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Canada</td>
+        <td class="table-link">
+          <a href="https://www.canada.ca/en/health-canada.html"
+          >Health Canada</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Chile</td>
+        <td class="table-link">
+          <a href="https://www.minsal.cl/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Chile</td>
+        <td class="table-link">
+          <a href="https://www.ispch.cl/">Institute of Public Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">China</td>
+        <td class="table-link">
+          <a href="http://subsites.chinadaily.com.cn/nmpa/NMPA.html"
+          >National Medical Products Administration</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Colombia</td>
+        <td class="table-link">
+          <a href="https://www.invima.gov.co/"
+          >National Institute for Drug and Food Surveillance (INVIMA)</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Colombia</td>
+        <td class="table-link">
+          <a href="https://www.minsalud.gov.co/Portada2021/index.html"
+          >Ministry of Health and Social Protection</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Croatia</td>
+        <td class="table-link">
+          <a href="https://www.ministeriodesalud.go.cr/"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Croatia</td>
+        <td class="table-link">
+          <a href="https://zdravlje.gov.hr/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Costa Rica</td>
+        <td class="table-link">
+          <a href="https://www.halmed.hr/"
+          >Agency for Medicinal Products and Medical Devices of Croatia</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Cyprus</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.cy/moh/moh.nsf/index_en/index_en"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Czech Republic</td>
+        <td class="table-link">
+          <a href="https://www.mzcr.cz/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Czech Republic</td>
+        <td class="table-link">
+          <a href="https://www.sukl.cz/">State Institute for Drug Control</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">D</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">D</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Denmark</td>
-          <td class="table-link">
-            <a href="https://laegemiddelstyrelsen.dk/en"
-              >Danish Medicines Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Denmark</td>
-          <td class="table-link">
-            <a href="https://sum.dk/english">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Dominican Republic</td>
-          <td class="table-link">
-            <a href="https://msp.gob.do/web/">Ministry of Public Health</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Denmark</td>
+        <td class="table-link">
+          <a href="https://laegemiddelstyrelsen.dk/en"
+          >Danish Medicines Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Denmark</td>
+        <td class="table-link">
+          <a href="https://sum.dk/english">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Dominican Republic</td>
+        <td class="table-link">
+          <a href="https://msp.gob.do/web/">Ministry of Public Health</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">E</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">E</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Ecuador</td>
-          <td class="table-link">
-            <a href="https://www.salud.gob.ec/">Ministry of Public Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Egypt</td>
-          <td class="table-link">
-            <a href="http://mohpegypt.com/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">El Salvador</td>
-          <td class="table-link">
-            <a href="https://www.salud.gob.sv/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Estonia</td>
-          <td class="table-link">
-            <a href="https://ravimiamet.ee/en">State Agency of Medicines</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Ecuador</td>
+        <td class="table-link">
+          <a href="https://www.salud.gob.ec/">Ministry of Public Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Egypt</td>
+        <td class="table-link">
+          <a href="http://mohpegypt.com/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">El Salvador</td>
+        <td class="table-link">
+          <a href="https://www.salud.gob.sv/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Estonia</td>
+        <td class="table-link">
+          <a href="https://ravimiamet.ee/en">State Agency of Medicines</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">F</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">F</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Fiji</td>
-          <td class="table-link">
-            <a href="https://www.health.gov.fj/"
-              >Ministry of Health and Medical Services</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Finland</td>
-          <td class="table-link">
-            <a href="https://stm.fi/en/frontpage"
-              >Ministry of Social Affairs and Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Finland</td>
-          <td class="table-link">
-            <a href="https://www.fimea.fi/web/en">Finnish Medicines Agency</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">France</td>
-          <td class="table-link">
-            <a href="http://www.ansm.sante.fr/"
-              >National Agency for the Safety of Medicine and Health Products</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Fiji</td>
+        <td class="table-link">
+          <a href="https://www.health.gov.fj/"
+          >Ministry of Health and Medical Services</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Finland</td>
+        <td class="table-link">
+          <a href="https://stm.fi/en/frontpage"
+          >Ministry of Social Affairs and Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Finland</td>
+        <td class="table-link">
+          <a href="https://www.fimea.fi/web/en">Finnish Medicines Agency</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">France</td>
+        <td class="table-link">
+          <a href="http://www.ansm.sante.fr/"
+          >National Agency for the Safety of Medicine and Health Products</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">G</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">G</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Georgia</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.ge/"
-              >Ministry of Labor, Health and Social Affairs</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Germany</td>
-          <td class="table-link">
-            <a href="https://www.bfarm.de/DE/Home/_node.html"
-              >Federal Institute of Drugs and Medical Devices</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Germany</td>
-          <td class="table-link">
-            <a href="https://www.bundesgesundheitsministerium.de/en/"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Germany</td>
-          <td class="table-link">
-            <a href="https://www.pei.de/index.htm">Paul Ehrlich Institute</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Ghana</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.gh/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Greece</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.gh/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Greece</td>
-          <td class="table-link">
-            <a
-              href="https://www.eof.gr/web/guest;jsessionid=3efd597007558a16c6bf746a4bf0"
-              >National Organization for Medicines</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Guatemala</td>
-          <td class="table-link">
-            <a href="https://www.mspas.gob.gt/"
-              >Ministry of Public Health and Social Assistance</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Guyana</td>
-          <td class="table-link">
-            <a href="http://www.health.gov.gy/">Ministry of Health</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Georgia</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.ge/"
+          >Ministry of Labor, Health and Social Affairs</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Germany</td>
+        <td class="table-link">
+          <a href="https://www.bfarm.de/DE/Home/_node.html"
+          >Federal Institute of Drugs and Medical Devices</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Germany</td>
+        <td class="table-link">
+          <a href="https://www.bundesgesundheitsministerium.de/en/"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Germany</td>
+        <td class="table-link">
+          <a href="https://www.pei.de/index.htm">Paul Ehrlich Institute</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Ghana</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.gh/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Greece</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.gh/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Greece</td>
+        <td class="table-link">
+          <a
+            href="https://www.eof.gr/web/guest;jsessionid=3efd597007558a16c6bf746a4bf0"
+          >National Organization for Medicines</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Guatemala</td>
+        <td class="table-link">
+          <a href="https://www.mspas.gob.gt/"
+          >Ministry of Public Health and Social Assistance</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Guyana</td>
+        <td class="table-link">
+          <a href="http://www.health.gov.gy/">Ministry of Health</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">H</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">H</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Hong Kong</td>
-          <td class="table-link">
-            <a href="https://www.dh.gov.hk/">Department of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Hungary</td>
-          <td class="table-link">
-            <a href="https://www.antsz.hu/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Hungary</td>
-          <td class="table-link">
-            <a href="https://ogyei.gov.hu/"
-              >National Institute of Health and Nutrition</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Hong Kong</td>
+        <td class="table-link">
+          <a href="https://www.dh.gov.hk/">Department of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Hungary</td>
+        <td class="table-link">
+          <a href="https://www.antsz.hu/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Hungary</td>
+        <td class="table-link">
+          <a href="https://ogyei.gov.hu/"
+          >National Institute of Health and Nutrition</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">I</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">I</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Iceland</td>
-          <td class="table-link">
-            <a href="https://www.stjornarradid.is/hrn-og-frn/"
-              >Ministry for Health and Social Security</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Iceland</td>
-          <td class="table-link">
-            <a href="https://www.lyfjastofnun.is/"
-              >Icelandic Medicines Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">India</td>
-          <td class="table-link">
-            <a href="https://cdsco.gov.in/opencms/opencms/en/Home/"
-              >Central Drug Standards Control Organisation</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">India</td>
-          <td class="table-link">
-            <a href="https://www.mohfw.gov.in/"
-              >Ministry of Health and Family Welfare</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Indonesia</td>
-          <td class="table-link">
-            <a href="https://www.kemkes.go.id/index.php?lg=ln02"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Ireland</td>
-          <td class="table-link">
-            <a href="http://www.hpra.ie/"
-              >Health Products Regulatory Authority (HPRA)</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Israel</td>
-          <td class="table-link">
-            <a
-              href="https://www.gov.il/en/departments/ministry_of_health/govil-landing-page"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Italy</td>
-          <td class="table-link">
-            <a href="https://www.salute.gov.it/portale/home.html"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Italy</td>
-          <td class="table-link">
-            <a href="https://www.iss.it/">National Institute of Health</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Iceland</td>
+        <td class="table-link">
+          <a href="https://www.stjornarradid.is/hrn-og-frn/"
+          >Ministry for Health and Social Security</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Iceland</td>
+        <td class="table-link">
+          <a href="https://www.lyfjastofnun.is/"
+          >Icelandic Medicines Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">India</td>
+        <td class="table-link">
+          <a href="https://cdsco.gov.in/opencms/opencms/en/Home/"
+          >Central Drug Standards Control Organisation</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">India</td>
+        <td class="table-link">
+          <a href="https://www.mohfw.gov.in/"
+          >Ministry of Health and Family Welfare</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Indonesia</td>
+        <td class="table-link">
+          <a href="https://www.kemkes.go.id/index.php?lg=ln02"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Ireland</td>
+        <td class="table-link">
+          <a href="http://www.hpra.ie/"
+          >Health Products Regulatory Authority (HPRA)</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Israel</td>
+        <td class="table-link">
+          <a
+            href="https://www.gov.il/en/departments/ministry_of_health/govil-landing-page"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Italy</td>
+        <td class="table-link">
+          <a href="https://www.salute.gov.it/portale/home.html"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Italy</td>
+        <td class="table-link">
+          <a href="https://www.iss.it/">National Institute of Health</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">J</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">J</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Jamaica</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.jm/"
-              >Ministry of Health and Wellness</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Japan</td>
-          <td class="table-link">
-            <a href="https://www.mhlw.go.jp/english/index.html"
-              >Ministry of Health, Labour and Welfare</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Japan</td>
-          <td class="table-link">
-            <a href="https://www.pmda.go.jp/english/index.html"
-              >Pharmaceuticals and Medical Devices Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Jordan</td>
-          <td class="table-link">
-            <a href="https://moh.gov.jo/Default/En">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Jordan</td>
-          <td class="table-link">
-            <a href="http://www.jfda.jo/Default.aspx"
-              >Saudi Food and Drug Authority</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Jamaica</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.jm/"
+          >Ministry of Health and Wellness</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Japan</td>
+        <td class="table-link">
+          <a href="https://www.mhlw.go.jp/english/index.html"
+          >Ministry of Health, Labour and Welfare</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Japan</td>
+        <td class="table-link">
+          <a href="https://www.pmda.go.jp/english/index.html"
+          >Pharmaceuticals and Medical Devices Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Jordan</td>
+        <td class="table-link">
+          <a href="https://moh.gov.jo/Default/En">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Jordan</td>
+        <td class="table-link">
+          <a href="http://www.jfda.jo/Default.aspx"
+          >Saudi Food and Drug Authority</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">K</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">K</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Kenya</td>
-          <td class="table-link">
-            <a href="https://www.health.go.ke/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Korea</td>
-          <td class="table-link">
-            <a href="https://www.mfds.go.kr/eng/index.do"
-              >Ministry of Food and Drug Safety</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Kenya</td>
+        <td class="table-link">
+          <a href="https://www.health.go.ke/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Korea</td>
+        <td class="table-link">
+          <a href="https://www.mfds.go.kr/eng/index.do"
+          >Ministry of Food and Drug Safety</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">L</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">L</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Latvia</td>
-          <td class="table-link">
-            <a href="https://www.zva.gov.lv/en">State Agency of Medicines</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Lebanon</td>
-          <td class="table-link">
-            <a href="https://www.moph.gov.lb/">Ministry of Public Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Lichtenstein</td>
-          <td class="table-link">
-            <a href="https://www.llv.li/"
-              >Office of Health/ Department of Pharmaceuticals</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Lithuania</td>
-          <td class="table-link">
-            <a href="https://sam.lrv.lt/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Lithuania</td>
-          <td class="table-link">
-            <a href="https://www.vvkt.lt/index.php?3327723903"
-              >State Medicines Control Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Luxembourg</td>
-          <td class="table-link">
-            <a href="https://sante.public.lu/fr.html">Ministry of Health</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Latvia</td>
+        <td class="table-link">
+          <a href="https://www.zva.gov.lv/en">State Agency of Medicines</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Lebanon</td>
+        <td class="table-link">
+          <a href="https://www.moph.gov.lb/">Ministry of Public Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Lichtenstein</td>
+        <td class="table-link">
+          <a href="https://www.llv.li/"
+          >Office of Health/ Department of Pharmaceuticals</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Lithuania</td>
+        <td class="table-link">
+          <a href="https://sam.lrv.lt/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Lithuania</td>
+        <td class="table-link">
+          <a href="https://www.vvkt.lt/index.php?3327723903"
+          >State Medicines Control Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Luxembourg</td>
+        <td class="table-link">
+          <a href="https://sante.public.lu/fr.html">Ministry of Health</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">M</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">M</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Malaysia</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.my/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Malaysia</td>
-          <td class="table-link">
-            <a href="https://www.npra.gov.my/index.php/en/"
-              >National Pharmaceutical Regulatory Agency (NPRA)</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Maldives</td>
-          <td class="table-link">
-            <a href="https://health.gov.mv/dv">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Malta</td>
-          <td class="table-link">
-            <a href="https://deputyprimeminister.gov.mt/en/Pages/health.aspx"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Malta</td>
-          <td class="table-link">
-            <a href="https://medicinesauthority.gov.mt/">Medicines Authority</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Mauritius</td>
-          <td class="table-link">
-            <a href="https://health.govmu.org/Pages/default.aspx"
-              >Ministry of Health and Wellness</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Mexico</td>
-          <td class="table-link">
-            <a href="https://www.gob.mx/salud/en">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Morocco</td>
-          <td class="table-link">
-            <a href="https://www.sante.gov.ma/Pages/Accueil.aspx"
-              >Ministry of Public Health</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Malaysia</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.my/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Malaysia</td>
+        <td class="table-link">
+          <a href="https://www.npra.gov.my/index.php/en/"
+          >National Pharmaceutical Regulatory Agency (NPRA)</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Maldives</td>
+        <td class="table-link">
+          <a href="https://health.gov.mv/dv">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Malta</td>
+        <td class="table-link">
+          <a href="https://deputyprimeminister.gov.mt/en/Pages/health.aspx"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Malta</td>
+        <td class="table-link">
+          <a href="https://medicinesauthority.gov.mt/">Medicines Authority</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Mauritius</td>
+        <td class="table-link">
+          <a href="https://health.govmu.org/Pages/default.aspx"
+          >Ministry of Health and Wellness</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Mexico</td>
+        <td class="table-link">
+          <a href="https://www.gob.mx/salud/en">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Morocco</td>
+        <td class="table-link">
+          <a href="https://www.sante.gov.ma/Pages/Accueil.aspx"
+          >Ministry of Public Health</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">N</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">N</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Namibia</td>
-          <td class="table-link">
-            <a href="https://mhss.gov.na/"
-              >Ministry of Health and Social Service</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Netherlands</td>
-          <td class="table-link">
-            <a
-              href="https://www.government.nl/ministries/ministry-of-health-welfare-and-sport"
-              >Ministry of Health, Welfare, and Sport</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Netherlands</td>
-          <td class="table-link">
-            <a href="https://www.cbg-meb.nl/">Medicines Evaluation Board</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Netherlands</td>
-          <td class="table-link">
-            <a href="https://www.cbg-meb.nl/">Healthcare Inspectorate</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">New Zealand</td>
-          <td class="table-link">
-            <a href="https://www.medsafe.govt.nz/"
-              >Medicines and Medical Devices Safety Authority</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">New Zealand</td>
-          <td class="table-link">
-            <a href="https://www.health.govt.nz/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Nicaragua</td>
-          <td class="table-link">
-            <a href="http://www.minsa.gob.ni/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Norway</td>
-          <td class="table-link">
-            <a href="https://www.health.govt.nz/"
-              >Ministry of Health and Care Services</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Norway</td>
-          <td class="table-link">
-            <a href="https://www.helsetilsynet.no/en/"
-              >Board of Health Supervision</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Norway</td>
-          <td class="table-link">
-            <a href="https://legemiddelverket.no/english">Medicines Agency</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Namibia</td>
+        <td class="table-link">
+          <a href="https://mhss.gov.na/"
+          >Ministry of Health and Social Service</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Netherlands</td>
+        <td class="table-link">
+          <a
+            href="https://www.government.nl/ministries/ministry-of-health-welfare-and-sport"
+          >Ministry of Health, Welfare, and Sport</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Netherlands</td>
+        <td class="table-link">
+          <a href="https://www.cbg-meb.nl/">Medicines Evaluation Board</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Netherlands</td>
+        <td class="table-link">
+          <a href="https://www.cbg-meb.nl/">Healthcare Inspectorate</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">New Zealand</td>
+        <td class="table-link">
+          <a href="https://www.medsafe.govt.nz/"
+          >Medicines and Medical Devices Safety Authority</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">New Zealand</td>
+        <td class="table-link">
+          <a href="https://www.health.govt.nz/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Nicaragua</td>
+        <td class="table-link">
+          <a href="http://www.minsa.gob.ni/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Norway</td>
+        <td class="table-link">
+          <a href="https://www.health.govt.nz/"
+          >Ministry of Health and Care Services</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Norway</td>
+        <td class="table-link">
+          <a href="https://www.helsetilsynet.no/en/"
+          >Board of Health Supervision</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Norway</td>
+        <td class="table-link">
+          <a href="https://legemiddelverket.no/english">Medicines Agency</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">P</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">P</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Palestine</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.ps/portal/en/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Panama</td>
-          <td class="table-link">
-            <a href="https://www.minsa.gob.pa/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Papua New Guinea</td>
-          <td class="table-link">
-            <a href="http://www.health.gov.pg/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Peru</td>
-          <td class="table-link">
-            <a href="https://www.digemid.minsa.gob.pe/webDigemid/"
-              >General Directorate of Medicines, Supplies and Drugs</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Peru</td>
-          <td class="table-link">
-            <a href="https://www.gob.pe/minsa">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Philippines</td>
-          <td class="table-link">
-            <a href="https://doh.gov.ph/">Department of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Poland</td>
-          <td class="table-link">
-            <a href="https://www.gov.pl/web/zdrowie">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Poland</td>
-          <td class="table-link">
-            <a href="https://www.urpl.gov.pl/pl"
-              >Office for Registration of Medicinal Products, Medical Devices
-              and Biocidal Products</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Portugal</td>
-          <td class="table-link">
-            <a
-              href="https://www.portugal.gov.pt/en/gc23/ministries/health/secretaries-of-state?i=health"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Portugal</td>
-          <td class="table-link">
-            <a href="https://www.infarmed.pt/"
-              >National Authority of Medicines and Health Products</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Palestine</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.ps/portal/en/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Panama</td>
+        <td class="table-link">
+          <a href="https://www.minsa.gob.pa/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Papua New Guinea</td>
+        <td class="table-link">
+          <a href="http://www.health.gov.pg/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Peru</td>
+        <td class="table-link">
+          <a href="https://www.digemid.minsa.gob.pe/webDigemid/"
+          >General Directorate of Medicines, Supplies and Drugs</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Peru</td>
+        <td class="table-link">
+          <a href="https://www.gob.pe/minsa">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Philippines</td>
+        <td class="table-link">
+          <a href="https://doh.gov.ph/">Department of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Poland</td>
+        <td class="table-link">
+          <a href="https://www.gov.pl/web/zdrowie">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Poland</td>
+        <td class="table-link">
+          <a href="https://www.urpl.gov.pl/pl"
+          >Office for Registration of Medicinal Products, Medical Devices
+            and Biocidal Products</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Portugal</td>
+        <td class="table-link">
+          <a
+            href="https://www.portugal.gov.pt/en/gc23/ministries/health/secretaries-of-state?i=health"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Portugal</td>
+        <td class="table-link">
+          <a href="https://www.infarmed.pt/"
+          >National Authority of Medicines and Health Products</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">Q</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">Q</th>
+      </tr>
       </thead>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">R</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">R</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Romania</td>
-          <td class="table-link">
-            <a href="https://www.ms.ro/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Romania</td>
-          <td class="table-link">
-            <a href="https://www.anm.ro/"
-              >National Authority of Medicines and Medical Devices</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Russia</td>
-          <td class="table-link">
-            <a href="http://www.regmed.ru/en/"
-              >Scientific Centre for Expert Evaluation of Medicinal Products</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Russia</td>
-          <td class="table-link">
-            <a href="https://gilsinp.ru/language/en/"
-              >State Institute of Drugs and Good Practices</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Romania</td>
+        <td class="table-link">
+          <a href="https://www.ms.ro/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Romania</td>
+        <td class="table-link">
+          <a href="https://www.anm.ro/"
+          >National Authority of Medicines and Medical Devices</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Russia</td>
+        <td class="table-link">
+          <a href="http://www.regmed.ru/en/"
+          >Scientific Centre for Expert Evaluation of Medicinal Products</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Russia</td>
+        <td class="table-link">
+          <a href="https://gilsinp.ru/language/en/"
+          >State Institute of Drugs and Good Practices</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">S</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">S</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Saudi Arabia</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.sa/en/Pages/Default.aspx"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Senegal</td>
-          <td class="table-link">
-            <a href="https://moh.gov.so/en/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Singapore</td>
-          <td class="table-link">
-            <a href="https://www.hsa.gov.sg/"
-              >Health Sciences Authority (HSA)</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Singapore</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.sg/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Slovakia</td>
-          <td class="table-link">
-            <a href="https://www.moh.gov.sg/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Slovakia</td>
-          <td class="table-link">
-            <a href="https://www.sukl.sk/">State Institute of Drug Control</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Slovenia</td>
-          <td class="table-link">
-            <a href="https://www.ivz.si/">Institute of Public Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Slovenia</td>
-          <td class="table-link">
-            <a
-              href="https://www.gov.si/en/state-authorities/ministries/ministry-of-health/"
-              >Ministry of Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Slovenia</td>
-          <td class="table-link">
-            <a href="https://www.jazmp.si/en/"
-              >Agency for Medical Products and Medical Devices</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">South Africa</td>
-          <td class="table-link">
-            <a href="https://www.health.gov.za/">Department of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Spain</td>
-          <td class="table-link">
-            <a href="https://www.aemps.gob.es/"
-              >Agency for Medicines and Health Products</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Spain</td>
-          <td class="table-link">
-            <a href="https://www.sanidad.gob.es/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Sri Lanka</td>
-          <td class="table-link">
-            <a href="http://www.health.gov.lk/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Sweden</td>
-          <td class="table-link">
-            <a href="https://www.lakemedelsverket.se/sv"
-              >Medical Product Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Sweden</td>
-          <td class="table-link">
-            <a
-              href="https://www.government.se/government-of-sweden/ministry-of-health-and-social-affairs/"
-              >Ministry of Health and Social Affairs</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Switzerland</td>
-          <td class="table-link">
-            <a href="https://www.swissmedic.ch/swissmedic/de/home.html"
-              >Agency for Therapeutic Products</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Switzerland</td>
-          <td class="table-link">
-            <a href="https://www.bag.admin.ch/bag/de/home.html"
-              >Federal Office of Public Health</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Saudi Arabia</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.sa/en/Pages/Default.aspx"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Senegal</td>
+        <td class="table-link">
+          <a href="https://moh.gov.so/en/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Singapore</td>
+        <td class="table-link">
+          <a href="https://www.hsa.gov.sg/"
+          >Health Sciences Authority (HSA)</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Singapore</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.sg/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Slovakia</td>
+        <td class="table-link">
+          <a href="https://www.moh.gov.sg/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Slovakia</td>
+        <td class="table-link">
+          <a href="https://www.sukl.sk/">State Institute of Drug Control</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Slovenia</td>
+        <td class="table-link">
+          <a href="https://www.ivz.si/">Institute of Public Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Slovenia</td>
+        <td class="table-link">
+          <a
+            href="https://www.gov.si/en/state-authorities/ministries/ministry-of-health/"
+          >Ministry of Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Slovenia</td>
+        <td class="table-link">
+          <a href="https://www.jazmp.si/en/"
+          >Agency for Medical Products and Medical Devices</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">South Africa</td>
+        <td class="table-link">
+          <a href="https://www.health.gov.za/">Department of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Spain</td>
+        <td class="table-link">
+          <a href="https://www.aemps.gob.es/"
+          >Agency for Medicines and Health Products</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Spain</td>
+        <td class="table-link">
+          <a href="https://www.sanidad.gob.es/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Sri Lanka</td>
+        <td class="table-link">
+          <a href="http://www.health.gov.lk/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Sweden</td>
+        <td class="table-link">
+          <a href="https://www.lakemedelsverket.se/sv"
+          >Medical Product Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Sweden</td>
+        <td class="table-link">
+          <a
+            href="https://www.government.se/government-of-sweden/ministry-of-health-and-social-affairs/"
+          >Ministry of Health and Social Affairs</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Switzerland</td>
+        <td class="table-link">
+          <a href="https://www.swissmedic.ch/swissmedic/de/home.html"
+          >Agency for Therapeutic Products</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Switzerland</td>
+        <td class="table-link">
+          <a href="https://www.bag.admin.ch/bag/de/home.html"
+          >Federal Office of Public Health</a
+          >
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">T</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">T</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Taiwan</td>
-          <td class="table-link">
-            <a href="https://www.mohw.gov.tw/mp-2.html"
-              >Ministry of Health and Welfare</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Tanzania</td>
-          <td class="table-link">
-            <a href="https://www.tanzania.go.tz/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Thailand</td>
-          <td class="table-link">
-            <a href="https://www.moph.go.th/">Ministry of Public Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Trinidad and Tobago</td>
-          <td class="table-link">
-            <a href="https://health.gov.tt/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Tunisia</td>
-          <td class="table-link">
-            <a href="http://www.santetunisie.rns.tn/en/"
-              >Ministry of Public Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Tunisia</td>
-          <td class="table-link">
-            <a href="http://www.dpm.tn/">Office of Pharmacy and Medicines</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Turkey</td>
-          <td class="table-link">
-            <a href="https://www.saglik.gov.tr/">Ministry of Health</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Taiwan</td>
+        <td class="table-link">
+          <a href="https://www.mohw.gov.tw/mp-2.html"
+          >Ministry of Health and Welfare</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Tanzania</td>
+        <td class="table-link">
+          <a href="https://www.tanzania.go.tz/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Thailand</td>
+        <td class="table-link">
+          <a href="https://www.moph.go.th/">Ministry of Public Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Trinidad and Tobago</td>
+        <td class="table-link">
+          <a href="https://health.gov.tt/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Tunisia</td>
+        <td class="table-link">
+          <a href="http://www.santetunisie.rns.tn/en/"
+          >Ministry of Public Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Tunisia</td>
+        <td class="table-link">
+          <a href="http://www.dpm.tn/">Office of Pharmacy and Medicines</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Turkey</td>
+        <td class="table-link">
+          <a href="https://www.saglik.gov.tr/">Ministry of Health</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">U</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">U</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Uganda</td>
-          <td class="table-link">
-            <a href="https://www.health.go.ug/">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">UK</td>
-          <td class="table-link">
-            <a
-              href="https://www.gov.uk/government/organisations/department-of-health-and-social-care"
-              >Department of Health and Social Care</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">UK</td>
-          <td class="table-link">
-            <a
-              href="https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency"
-              >Medicines & Healthcare products Regulatory Agency</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">UK</td>
-          <td class="table-link">
-            <a
-              href="https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency"
-              >Veterinary Medicines Directorate</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Ukraine</td>
-          <td class="table-link">
-            <a href="https://www.vmd.gov.uk/business">Ministry of Health</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">United Arab Emirates</td>
-          <td class="table-link">
-            <a href="https://mohap.gov.ae/en/home"
-              >Ministry of Health and Prevention</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">Uruguay</td>
-          <td class="table-link">
-            <a href="https://www.gub.uy/ministerio-salud-publica/home"
-              >Ministry of Public Health</a
-            >
-          </td>
-        </tr>
-        <tr>
-          <td class="table-link table-link_text">USA</td>
-          <td class="table-link">
-            <a href="https://www.fda.gov/">US Food and Drug Administration</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Uganda</td>
+        <td class="table-link">
+          <a href="https://www.health.go.ug/">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">UK</td>
+        <td class="table-link">
+          <a
+            href="https://www.gov.uk/government/organisations/department-of-health-and-social-care"
+          >Department of Health and Social Care</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">UK</td>
+        <td class="table-link">
+          <a
+            href="https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency"
+          >Medicines & Healthcare products Regulatory Agency</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">UK</td>
+        <td class="table-link">
+          <a
+            href="https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency"
+          >Veterinary Medicines Directorate</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Ukraine</td>
+        <td class="table-link">
+          <a href="https://www.vmd.gov.uk/business">Ministry of Health</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">United Arab Emirates</td>
+        <td class="table-link">
+          <a href="https://mohap.gov.ae/en/home"
+          >Ministry of Health and Prevention</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">Uruguay</td>
+        <td class="table-link">
+          <a href="https://www.gub.uy/ministerio-salud-publica/home"
+          >Ministry of Public Health</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="table-link table-link_text">USA</td>
+        <td class="table-link">
+          <a href="https://www.fda.gov/">US Food and Drug Administration</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">Y</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">Y</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Yemen</td>
-          <td class="table-link">
-            <a href="http://moh.gov.ye/">Ministry of Health and Population</a>
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Yemen</td>
+        <td class="table-link">
+          <a href="http://moh.gov.ye/">Ministry of Health and Population</a>
+        </td>
+      </tr>
       </tbody>
       <thead>
-        <tr>
-          <th class="table-header" colSpan="2" scope="col">Z</th>
-        </tr>
+      <tr>
+        <th class="table-header" colSpan="2" scope="col">Z</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-link table-link_text">Zimbabwe</td>
-          <td class="table-link">
-            <a href="http://www.mohcc.gov.zw/"
-              >Ministry of Health and Child Care</a
-            >
-          </td>
-        </tr>
+      <tr>
+        <td class="table-link table-link_text">Zimbabwe</td>
+        <td class="table-link">
+          <a href="http://www.mohcc.gov.zw/"
+          >Ministry of Health and Child Care</a
+          >
+        </td>
+      </tr>
       </tbody>
     </table>
   </div>

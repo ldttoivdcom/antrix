@@ -200,6 +200,19 @@
 }
 
 
+::ng-deep {
+  .sub-list-disc {
+    list-style-type: disc;
+    padding-left: 22px;
+  }
+
+  .sub-list-number {
+    list-style-type: decimal;
+    padding-left: 22px;
+  }
+}
+
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .first-btn, .second-btn {
     font-size: 12px !important;
