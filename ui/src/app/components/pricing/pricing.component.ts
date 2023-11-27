@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {PricingDataService} from "../../shared/services/pricing-data.service";
+import {SharedDataService} from "../../shared/services/shared-data.service";
 import {ViewportScroller} from '@angular/common';
 
 interface PrcingServices {
@@ -17,7 +17,7 @@ interface PrcingServices {
 })
 export class PricingComponent {
 
-  constructor(private _pricingServices: PricingDataService, private _viewPortScroller: ViewportScroller) {
+  constructor(private _pricingServices: SharedDataService, private _viewPortScroller: ViewportScroller) {
   }
 
   Pricing: PrcingServices[] = [

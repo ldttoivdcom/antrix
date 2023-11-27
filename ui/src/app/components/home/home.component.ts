@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ViewportScroller} from '@angular/common';
-import AOS from "aos";
+import AOS from 'aos';
 
 interface HomeContent {
   header: string;
   description: string;
   list?: string[];
-  text?: string;
   link: string;
 }
 
@@ -14,6 +13,7 @@ interface HomeAdvantage {
   icon: string;
   header: string;
   ammount: number;
+  subText: string;
 }
 
 @Component({
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
         'Product Regulatory Strategy and Submissions, Product Design, Development, Risk Analysis as per ISO 14971, Usability Studies as per ISO 62366, Software Compliance as per ISO 62304, Cybersecurity, Clinical Study, Verification and Validation',
         'Product Post Market Surveillance, Vigilance, Complaints, and Field Actions',
       ],
-      link: '/info/services'
+      link: '/info/services',
     },
     {
       header: 'OUR PRODUCTS',
@@ -51,16 +51,18 @@ export class HomeComponent implements OnInit {
         'Product Regulatory Strategy and Submissions, Product Design, Development, Risk Analysis, Cybersecurity, Clinical Study, Verification and Validation',
         'Product Post Market Surveillance, Vigilance, Complaints, and Field Actions',
       ],
-      link: '/info/products'
-
+      link: '/info/products',
     },
     {
       header: 'OUR CLIENTS',
       description:
-        'At Antrix, we have worked with a number of clients in the Medical Device, IVD, LDT, SaMD,Industries worldwide. ',
-      list: [],
-      text: 'Our clients trust us for our expert regulatory affairs, clinical affairs, and quality assurance consulting services and products. We believe in delivering quality and timely services to our clients to ensure their success in the market and assist in innovation and growth. Our clients range from small startups to large multinational corporations. We have helped our clients achieve their goals and improve patient safety and effectiveness outcomes.',
-      link: '/info/services'
+        'At Antrix, we have worked with a number of clients in Medical Device, IVD, LDT, SaMD Industries.',
+      list: [
+        'Our clients trust us for our expert regulatory affairs, clinical affairs, and quality assurance consulting services and products.',
+        'We believe in delivering quality and timely services to our clients to ensure their success in the market and assist in innovation and growth. Recognize revenue faster.',
+        'Our clients range from small startups to large multinational corporations. We have helped our clients achieve their goals and improve patient safety and effectiveness outcomes.',
+      ],
+      link: '/info/services',
     },
   ];
 
@@ -69,17 +71,23 @@ export class HomeComponent implements OnInit {
       icon: 'icon-advantage-law.svg',
       header: 'Regulatory Intelligence',
       ammount: 2.5,
+      subText: '(Right Intended Use and Predicate)'
     },
+
     {
       icon: 'icon-advantage-hospital.svg',
       header: 'Clinical Intelligence',
       ammount: 5,
+      subText: '(Optimized Clinical Study Size and Low Cost)'
     },
+
     {
       icon: 'icon-advantage-group.svg',
       header: 'PMS Intelligence',
       ammount: 10,
+      subText: '(No Recalls and Stop Shipments)'
     },
+
   ];
 
   onClick(id: string): void {

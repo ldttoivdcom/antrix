@@ -42,9 +42,6 @@
                 {{ idx + 1 }}. {{ item }}
               </li>
             </ul>
-            <p *ngIf="content.text" class="content-list-text">
-              {{ content.text }}
-            </p>
           </div>
           <button
             *ngIf="content.list && content.list.length > 0"
@@ -88,6 +85,7 @@
             <span class="dollar fs-16px mb-15px">$</span>
             <span class="ammount">{{ advan.ammount }} Million</span>
           </div>
+          <p class="fs-12px lh-30px">{{advan.subText}}</p>
         </div>
       </div>
     </div>

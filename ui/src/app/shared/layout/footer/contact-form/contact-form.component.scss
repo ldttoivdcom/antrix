@@ -76,14 +76,16 @@
           line-height: 170%;
           color: #fff;
 
-          optgroup {
+          .select-outgroup {
             background-color: #fff;
-            color: var(--gray-500, #667085);;
+            color: var(--gray-500, #667085);
+            font-size: 18px;
           }
 
           option {
             background-color: var(--gray-500, #667085);
             color: #fff;
+            font-size: 12px;
           }
         }
 
@@ -112,6 +114,9 @@
     }
 
     .form-submit_btn {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
       border: 1px solid var(--gray-300, #d0d5dd);
       background: var(--base-white, #fff);
       box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
@@ -122,6 +127,19 @@
       &:disabled {
         opacity: 0.7;
         cursor: default;
+      }
+
+      .request-loading_icon {
+        animation: loading 700ms linear infinite;
+
+        @keyframes loading {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
       }
     }
   }

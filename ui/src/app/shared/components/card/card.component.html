@@ -13,7 +13,7 @@
       <div class="card-body">
         <h5 class="card-title m-0">{{ data.Name }}</h5>
         <div>
-          <span class="card-subTitle mr-12px">Part Number:</span>
+          <span class="card-subTitle mr-12px">Part No:</span>
           <span class="card-subTitle fw-medium">{{ data.PartNumber }}</span>
         </div>
 
@@ -22,7 +22,7 @@
         </p>
         <div class="d-flex flex-gap-24px">
           <button
-            (click)="onClick('contact', data.Name, data.PartNumber)"
+            (click)="onClick('contact', data.Name, data.PartNumber, false)"
             class="first-btn"
           >
             {{ FirstBtnText }}
@@ -44,7 +44,7 @@
             </div>
             <div class="details-modal-header">
               <h1 class="details-modal-header_name">{{ data.Name }}</h1>
-              <span class="card-subTitle mr-12px">Part Number:</span>
+              <span class="card-subTitle mr-12px">Part No:</span>
               <span class="card-subTitle fw-bold">{{ data.PartNumber }}</span>
             </div>
             <div class="details-modal-content">
@@ -56,8 +56,10 @@
                 />
               </div>
               <div class="">
-                <p class="details-modal-content_description" [innerHTML]="data.Header">
-                </p>
+                <p
+                  class="details-modal-content_description"
+                  [innerHTML]="data.Header"
+                ></p>
                 <ul class="details-modal-content_list">
                   <li
                     class="modal-content-list_items"
@@ -72,7 +74,7 @@
               </div>
 
               <button
-                (click)="onClick('contact', data.Name, data.PartNumber)"
+                (click)="onClick('contact', data.Name, data.PartNumber, false)"
                 class="details-modal-content_btn"
               >
                 {{ FirstBtnText }}
@@ -88,4 +90,3 @@
     </div>
   </div>
 </div>
-

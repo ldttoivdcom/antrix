@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Products} from 'src/app/models/products.model';
 import {ViewportScroller} from '@angular/common';
-import {PricingDataService} from '../../services/pricing-data.service';
+import {SharedDataService} from '../../services/shared-data.service';
 
 @Component({
   selector: 'app-card',
@@ -16,7 +16,7 @@ export class CardComponent {
 
   constructor(
     private viewportScroller: ViewportScroller,
-    private _pricingServices: PricingDataService
+    private _pricingServices: SharedDataService
   ) {
   }
 
@@ -28,10 +28,10 @@ export class CardComponent {
     this.activeItemIndex = null;
   }
 
-  // Scroll to contact us
-  onClick(id: string, name: string, partNumber: string): void {
+  // Scroll to contact us, pass value to contact-form
+  onClick(id: string, name: string, partNumber: string, isHidden: boolean): void {
     this.activeItemIndex = null; //close modal
-    this._pricingServices.updateSelectedProServices({name, partNumber});
+    this._pricingServices.updateSelectedProServices({name, partNumber, isHidden});
     this.viewportScroller.scrollToAnchor(id);
   }
 }

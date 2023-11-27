@@ -53,7 +53,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
                 List: row.List.split(';'),
                 Footer: row.Footer
               }));
-            console.log(this.data);
             this.filteredProducts = [...this.data];
           },
         });

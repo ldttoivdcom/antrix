@@ -11,7 +11,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Subject, Subscription, takeUntil} from 'rxjs';
 import {Papa} from 'ngx-papaparse';
 import {CsvDataService} from 'src/app/shared/services/csv-data.service';
-import {PricingDataService} from '../../../services/pricing-data.service';
+import {SharedDataService} from '../../../services/shared-data.service';
 import {Products} from 'src/app/models/products.model';
 import {isCheckDisabled} from 'ng-zorro-antd/core/tree';
 
@@ -43,7 +43,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   Services: Products[] = [];
   contactForm: FormGroup;
   isConfirmRequestPopupOpened: boolean = false;
-  isHidden: boolean = false;
+  isHidden: boolean;
+  isLoading: boolean = false;
   Pricings: string[] = [
     'Consulting Service - 200$',
     'FREE Consultation Meeting - 0$',
@@ -55,7 +56,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     private _http: HttpClient,
     private _papa: Papa,
     private _csvDataService: CsvDataService,
-    private _pricingService: PricingDataService
+    private _sharedDataService: SharedDataService
   ) {
     this.captcha = '';
   }
@@ -66,6 +67,13 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.initCsvServicesData();
     this.setPricingValue();
     this.setProdServiceValue();
+    this.isHidden = true; //Init the value
+    this.subscription.add(
+      this._sharedDataService.isHidden$.subscribe((isHidden: boolean) => {
+        this.isHidden = isHidden;
+      })
+    )
+    console.log(this.isLoading)
   }
 
   handleCancel(): void {
@@ -90,6 +98,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
+    this.isLoading = true;
     const submitForm = this.contactForm.value;
     this._http
       .post<ApiResponse>(
@@ -99,10 +108,19 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       )
       .pipe(takeUntil(this.ngUnsubscribe$))
       .subscribe((res) => {
-        if (res.code === '200') {
-          this.isConfirmRequestPopupOpened = true;
+          if (res.code === '200') {
+            this.isConfirmRequestPopupOpened = true;
+            this.contactForm.reset();
+          } else {
+            console.log('err');
+          }
+          this.isLoading = false;
+        },
+        (error) => {
+          console.log(error);
+          this.isLoading = false;
         }
-      });
+      );
   }
 
   resolved(captchaResponse: string) {
@@ -158,7 +176,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     const selectElement = event.target as HTMLSelectElement;
     const selectedProductName = selectElement.value;
 
-    //check if pricings will hidden Part number
+    //check if has pricing will hide Part number
     if (this.Pricings.includes(selectedProductName)) {
       this.isHidden = true;
     } else {
@@ -173,14 +191,12 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         : '';
 
       this.contactForm.get('partNo')!.setValue(partNumber);
-
-      this.contactForm.get('partNo')!.disable();
     }
   }
 
   setPricingValue(): void {
     this.subscription.add(
-      this._pricingService.selectedPricing.subscribe((pricingName) => {
+      this._sharedDataService.selectedPricing.subscribe((pricingName) => {
         this.isHidden = true;
         this.contactForm.get('prodService')?.setValue(pricingName);
       })
@@ -188,14 +204,13 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   setProdServiceValue(): void {
-    this.isHidden = false; //show the partnumber input
     this.subscription.add(
-      this._pricingService.selectedProServiceName.subscribe((name) => {
+      this._sharedDataService.selectedProServiceName.subscribe((name) => {
         this.contactForm.get('prodService')?.setValue(name);
       })
     );
     this.subscription.add(
-      this._pricingService.selectedPartNumber.subscribe((partNumber) => {
+      this._sharedDataService.selectedPartNumber.subscribe((partNumber) => {
         this.contactForm.get('partNo')?.setValue(partNumber);
       })
     );
