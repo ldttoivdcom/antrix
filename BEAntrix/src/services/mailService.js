@@ -26,6 +26,7 @@ exports.sendMail = async (reqData) => {
         await transporter.sendMail({
         from:  process.env.SENDER,
         to: `${reqData.email}`,
+        cc: process.env.SENDER_CC,
         subject:  process.env.SENDER_SUBJECT,
         html: mailTemplate.mailTemplate(thanksTitle,topContent, bottomContent, ps, reqData)
         });
