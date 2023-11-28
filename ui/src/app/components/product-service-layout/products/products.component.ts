@@ -49,6 +49,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
                 Name: row.Name,
                 imgPath: row.imgPath,
                 Description: row.Description,
+                Header: row.Header,
+                List: row.List.split(';'),
+                Footer: row.Footer
               }));
             this.filteredProducts = [...this.data];
           },

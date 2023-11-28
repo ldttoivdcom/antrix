@@ -17,11 +17,15 @@ export class TextSliderComponent implements AfterViewInit {
     slidesPerView: 1,
     speed: 500,
     navigation: true,
+    grabCursor: true,
     pagination: true,
     on: {
-      init: () => {},
-      slideChange: () => {},
-      activeIndexChange: () => {},
+      init: () => {
+      },
+      slideChange: () => {
+      },
+      activeIndexChange: () => {
+      },
     },
   };
 

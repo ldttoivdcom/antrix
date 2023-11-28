@@ -136,6 +136,7 @@
       font-weight: 600;
       line-height: 30px;
       margin-bottom: 4px;
+      width: 95%;
     }
 
     &_title {
@@ -155,7 +156,7 @@
     gap: 24px;
 
     &_img {
-      max-height: 400px;
+      margin: auto;
     }
 
     &_description {
@@ -216,5 +217,11 @@
 @media (min-width: 768px) and (max-width: 1200px) {
   .first-btn, .second-btn {
     font-size: 12px !important;
+  }
+}
+
+@include mobile {
+  .details-modal-content_img {
+    width: 300px !important;
   }
 }

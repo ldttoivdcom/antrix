@@ -1,4 +1,5 @@
 @import "../../../styles.scss";
+
 .resources-wrapper {
   padding: 48px 0;
 
@@ -17,6 +18,7 @@
     line-height: 24px;
     text-decoration-line: underline;
     display: block;
+    font-size: 18px;
   }
 
   .table {
@@ -29,6 +31,7 @@
 
     &-link {
       background: var(--gray-50, #f9fafb);
+
       a {
         color: $color_primary--700;
         font-size: 16px;
@@ -53,6 +56,7 @@
       line-height: 38px;
       margin-bottom: 8px;
     }
+
     &_text {
       color: $color_primary--700;
       font-weight: 400;

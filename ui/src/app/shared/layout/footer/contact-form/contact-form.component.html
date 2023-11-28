@@ -11,8 +11,8 @@
         class="contactUs-form w-50"
       >
         <div class="form-container row">
-          <div class="form-input col-lg-6 col-sm-12">
-            <label class="input-label">First name</label>
+          <div class="form-input col-lg-6 col-md-12 col-sm-12">
+            <label class="input-label">First name*</label>
             <div class="input-text_wraper">
               <input
                 type="text"
@@ -43,7 +43,7 @@
               </p>
             </div>
           </div>
-          <div class="form-input col-lg-6 col-sm-12">
+          <div class="form-input col-lg-6 col-md-12 col-sm-12">
             <label class="input-label">Last name*</label>
             <div class="input-text_wraper">
               <input
@@ -260,15 +260,12 @@
                 <option value="" disabled selected>
                   Select Products and Services
                 </option>
-                <optgroup label="Products">
-                  <option
-                    *ngFor="let product of Products"
-                    [value]="product.Name"
-                  >
-                    {{ product.Name }}
+                <optgroup class="select-outgroup" label="Pricing">
+                  <option *ngFor="let price of Pricings" [value]="price">
+                    {{ price }}
                   </option>
                 </optgroup>
-                <optgroup label="Services">
+                <optgroup class="select-outgroup" label="Services">
                   <option
                     *ngFor="let service of Services"
                     [value]="service.Name"
@@ -276,9 +273,12 @@
                     {{ service.Name }}
                   </option>
                 </optgroup>
-                <optgroup label="Pricing">
-                  <option *ngFor="let price of Pricings" [value]="price">
-                    {{ price }}
+                <optgroup class="select-outgroup" label="Products">
+                  <option
+                    *ngFor="let product of Products"
+                    [value]="product.Name"
+                  >
+                    {{ product.Name }}
                   </option>
                 </optgroup>
               </select>
@@ -310,31 +310,13 @@
           <div class="form-input">
             <label class="input-label">Part No*</label>
             <div class="input-text_wraper">
-              <select
-                [class.hide-icon-select]="!isHidden"
+              <input
                 type="text"
-                class="select-text"
-                name="Select Part No"
+                class="input-text pe-none fs-14px"
+                readonly
+                placeholder="Select Part No"
                 formControlName="partNo"
-              >
-                <option value="" disabled selected>Select Part No</option>
-                <optgroup label="Products">
-                  <option
-                    *ngFor="let product of Products"
-                    value="{{ product.PartNumber }}"
-                  >
-                    {{ product.PartNumber }}
-                  </option>
-                </optgroup>
-                <optgroup label="Services">
-                  <option
-                    *ngFor="let service of Services"
-                    value="{{ service.PartNumber }}"
-                  >
-                    {{ service.PartNumber }}
-                  </option>
-                </optgroup>
-              </select>
+              />
             </div>
           </div>
         </div>
@@ -377,8 +359,13 @@
           (resolved)="resolved($event)"
           siteKey="6LfIKg8pAAAAAMaCv2AwZPDmCum9a5q3ZoBhFBmC"
         ></re-captcha>
-        <button [disabled]="contactForm.invalid" class="form-submit_btn">
+        <button [disabled]="contactForm.invalid || isLoading" class="form-submit_btn">
           Submit
+          <div *ngIf="isLoading" class="request-loading">
+            <div class="mb-1">
+              <img src="assets/icons/icon-loading.svg" alt="" class="request-loading_icon"/>
+            </div>
+          </div>
         </button>
       </form>
       <iframe

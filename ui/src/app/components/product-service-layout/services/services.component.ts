@@ -4,16 +4,6 @@ import {Papa} from 'ngx-papaparse';
 import {CsvDataService} from 'src/app/shared/services/csv-data.service';
 import {debounceTime, distinctUntilChanged, Subject, takeUntil} from 'rxjs';
 
-interface test {
-  PartNumber: string;
-  Name: string;
-  imgPath: string;
-  Description: string;
-  Header: string;
-  List: string;
-  SubList: string;
-  Footer: string;
-}
 
 @Component({
   selector: 'app-services',
@@ -51,18 +41,16 @@ export class ServicesComponent implements OnInit, OnDestroy {
         header: true,
         complete: (result) => {
           this.data = result.data
-            .filter((row: test) => row.PartNumber && row.Name)
-            .map((row: test) => ({
+            .filter((row: Products) => row.PartNumber && row.Name)
+            .map((row: Products) => ({
               PartNumber: row.PartNumber,
               Name: row.Name,
               imgPath: row.imgPath,
               Description: row.Description,
               Header: row.Header,
               List: row.List.split(';'),
-              SubList: row.SubList,
               Footer: row.Footer
             }));
-          console.log(this.data)
           this.filteredProducts = [...this.data];
         },
       });

@@ -36,6 +36,8 @@
 
       img {
         margin: 0 32px;
+        max-width: 250px;
+        max-height: 100px;
       }
     }
 
@@ -45,6 +47,8 @@
 
       img {
         margin: 0 32px;
+        max-width: 250px;
+        max-height: 100px;
       }
     }
   }
@@ -60,7 +64,7 @@
   flex-wrap: wrap;
 
   &_item {
-    max-width: 75%;
+    max-width: 250px;
   }
 }
 
