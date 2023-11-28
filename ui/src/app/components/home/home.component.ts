@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
         'We believe in delivering quality and timely services to our clients to ensure their success in the market and assist in innovation and growth. Recognize revenue faster.',
         'Our clients range from small startups to large multinational corporations. We have helped our clients achieve their goals and improve patient safety and effectiveness outcomes.',
       ],
-      link: '/info/services',
+      link: '',
     },
   ];
 

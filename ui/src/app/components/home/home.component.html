@@ -44,14 +44,14 @@
             </ul>
           </div>
           <button
-            *ngIf="content.list && content.list.length > 0"
+            *ngIf="content.link !== ''"
             routerLink="{{ content.link }}"
             class="content-container_btn"
           >
             Learn more
           </button>
           <a
-            *ngIf="content.list && content.list.length < 1"
+            *ngIf="content.link === ''"
             (click)="onClick('clients')"
             class="content-container_btn"
           >Learn more</a
