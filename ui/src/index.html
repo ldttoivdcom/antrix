@@ -8,6 +8,38 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
         type="text/css"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DWSY5H6S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-X5DWSY5H6S');
+  </script>
+  <script>
+    var JSON_CONFIG;
+
+    function readTextFile(file) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+          if (rawFile.status === 200 || rawFile.status === 0) {
+            var allText = rawFile.responseText;
+            JSON_CONFIG = JSON.parse(allText);
+          }
+        }
+      };
+      rawFile.send(null);
+    }
+
+    readTextFile("config/config.json");
+  </script>
 </head>
 <body>
 <app-root></app-root>

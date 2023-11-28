@@ -27,7 +27,6 @@ export class FAQComponent implements OnInit {
               answer: row.answer,
               answerList: row.answerList.split(';'),
             }));
-          console.log(this.FAQList);
         },
       });
     });

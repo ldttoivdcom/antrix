@@ -354,11 +354,13 @@
             </div>
           </div>
         </div>
-        <re-captcha
-          class="m-auto"
-          (resolved)="resolved($event)"
-          siteKey="6LfIKg8pAAAAAMaCv2AwZPDmCum9a5q3ZoBhFBmC"
-        ></re-captcha>
+        <div class="d-flex">
+          <re-captcha
+            class="m-auto"
+            (resolved)="resolved($event)"
+            siteKey="6LfIKg8pAAAAAMaCv2AwZPDmCum9a5q3ZoBhFBmC"
+          ></re-captcha>
+        </div>
         <button [disabled]="contactForm.invalid || isLoading" class="form-submit_btn">
           Submit
           <div *ngIf="isLoading" class="request-loading">
