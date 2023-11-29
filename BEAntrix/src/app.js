@@ -3,7 +3,8 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: ["http://34.72.99.64","http://localhost:4200","*"],
+  origin: ["http://34.42.75.246","https://antrix.com"],
+
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
