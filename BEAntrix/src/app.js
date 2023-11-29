@@ -15,11 +15,9 @@ app.use(express.json());
 //   console.log(`${new Date().toISOString()} - ${req.method} request to ${req.url}`);
 //     next();
 // })
-const authRoute = require("./routes/authRoute");
 const contactUsRoute = require("./routes/contactUsRoute");
 const imageRoute = require("./routes/imageRoute");
 
-app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/contact-us", contactUsRoute);
 app.use("/api/v1/image", imageRoute);
 
