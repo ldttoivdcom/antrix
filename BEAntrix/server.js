@@ -20,7 +20,7 @@ const credentials = {key: privateKey, cert: certificate};
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080);
+httpServer.listen(8001);
 httpsServer.listen(8443, () => {
   console.log(`App running on port 8443`);
 });
