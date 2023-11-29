@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CsvDataService } from 'src/app/shared/services/csv-data.service';
-import { Member } from 'src/app/models/member.model';
-import { Papa } from 'ngx-papaparse';
+import {Component, OnInit} from '@angular/core';
+import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {Member} from 'src/app/models/member.model';
+import {Papa} from 'ngx-papaparse';
 
 @Component({
   selector: 'app-about',
@@ -12,7 +12,8 @@ export class AboutComponent implements OnInit {
   data: Member[] = [];
   activeItemIndex: number | null = null;
 
-  constructor(private _csvService: CsvDataService, private papa: Papa) {}
+  constructor(private _csvService: CsvDataService, private papa: Papa) {
+  }
 
   ngOnInit(): void {
     const csvFileUrl = '../../../assets/csv/member_data.csv';
@@ -38,15 +39,6 @@ export class AboutComponent implements OnInit {
   }
 
   closeModal(): void {
-    console.log('closeModal');
     this.activeItemIndex = null;
   }
-
-  isOverlayHidden(i: number): boolean {
-    return this.activeItemIndex !== i;
-  }
-
-  // handleCancel(): void {
-  //   this.isVisible = false;
-  // }
 }

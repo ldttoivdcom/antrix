@@ -21,7 +21,7 @@ echo $PACKAGE_VERSION
 #cd ../../
 
 # build
-ng build $PROJECT_NAME
+#ng build $PROJECT_NAME
 
 ## RELEASE
 cd ./$RELEASE_NAME

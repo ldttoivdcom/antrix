@@ -46,6 +46,7 @@
         line-height: 170%;
         margin-bottom: 16px;
         padding-left: 48px;
+        word-break: break-word;
       }
     }
   }
@@ -83,8 +84,14 @@
       ul {
         list-style-type: upper-roman;
         padding-left: 32px;
-        
+
       }
     }
+  }
+}
+
+@include mobile {
+  .faq-list_item-answer {
+    padding: 0 !important;
   }
 }

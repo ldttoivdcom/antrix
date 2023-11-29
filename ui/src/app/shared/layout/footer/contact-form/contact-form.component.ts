@@ -13,7 +13,7 @@ import {Papa} from 'ngx-papaparse';
 import {CsvDataService} from 'src/app/shared/services/csv-data.service';
 import {SharedDataService} from '../../../services/shared-data.service';
 import {Products} from 'src/app/models/products.model';
-import {isCheckDisabled} from 'ng-zorro-antd/core/tree';
+import {END_POINT} from '../../../const/end-point.const';
 
 interface ApiResponse {
   code: string;
@@ -73,7 +73,6 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         this.isHidden = isHidden;
       })
     )
-    console.log(this.isLoading)
   }
 
   handleCancel(): void {
@@ -102,7 +101,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     const submitForm = this.contactForm.value;
     this._http
       .post<ApiResponse>(
-        'http://34.72.99.64:8080/api/v1/contact-us',
+        `${END_POINT.BE_URL}/api/v1/contact-us`,
         submitForm,
         httpOptions
       )
@@ -219,7 +218,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.ngUnsubscribe$.next();
-    this.ngUnsubscribe$.complete();
+    this.ngUnsubscribe$.complete()
   }
 
 }
