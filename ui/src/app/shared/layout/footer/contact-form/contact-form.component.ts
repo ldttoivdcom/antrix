@@ -13,6 +13,7 @@ import {Papa} from 'ngx-papaparse';
 import {CsvDataService} from 'src/app/shared/services/csv-data.service';
 import {SharedDataService} from '../../../services/shared-data.service';
 import {Products} from 'src/app/models/products.model';
+import {END_POINT} from '../../../const/end-point.const';
 
 interface ApiResponse {
   code: string;
@@ -100,7 +101,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     const submitForm = this.contactForm.value;
     this._http
       .post<ApiResponse>(
-        'http://34.42.75.246:8080/api/v1/contact-us',
+        `${END_POINT.BE_URL}/api/v1/contact-us`,
         submitForm,
         httpOptions
       )
