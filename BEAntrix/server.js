@@ -9,8 +9,8 @@ dotenv.config({
 const http = require('http');
 const https = require('https');
 
-const privateKey  = fs.readFileSync('./src/ssl/example.key', 'utf8');
-const certificate = fs.readFileSync('./src/ssl/example.crt', 'utf8');
+const privateKey  = fs.readFileSync('./src/ssl/example.pem', 'utf8');
+const certificate = fs.readFileSync('./src/ssl/cert.pem', 'utf8');
 const credentials = {key: privateKey, cert: certificate};
 // const PORT = process.env.PORT;
 // app.listen(PORT, () => {
