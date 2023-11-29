@@ -3,10 +3,10 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: ["http://34.42.75.246","https://antrix.com"],
+    origin: ["http://34.42.75.246", "https://antrix.com"],
 
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
+    credentials: true, //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
@@ -20,7 +20,7 @@ const contactUsRoute = require("./routes/contactUsRoute");
 const imageRoute = require("./routes/imageRoute");
 
 app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/contact-us",contactUsRoute);
-app.use("/api/v1/image",imageRoute);
+app.use("/api/v1/contact-us", contactUsRoute);
+app.use("/api/v1/image", imageRoute);
 
 module.exports = app;
