@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {SharedDataService} from "../../shared/services/shared-data.service";
-import {ViewportScroller} from '@angular/common';
+import { Component } from '@angular/core';
+import { SharedDataService } from '../../shared/services/shared-data.service';
+import { ViewportScroller } from '@angular/common';
 
 interface Pricings {
   header: string;
@@ -16,9 +16,10 @@ interface Pricings {
   styleUrls: ['./pricing.component.scss'],
 })
 export class PricingComponent {
-
-  constructor(private _pricingServices: SharedDataService, private _viewPortScroller: ViewportScroller) {
-  }
+  constructor(
+    private _pricingServices: SharedDataService,
+    private _viewPortScroller: ViewportScroller
+  ) {}
 
   Pricing: Pricings[] = [
     {
@@ -32,7 +33,7 @@ export class PricingComponent {
         'Phone support',
         'Priority support',
       ],
-      headerAndprice: 'Consulting Service - 200$',
+      headerAndprice: 'Consulting Service - $200',
     },
     {
       header: 'FREE Consultation Meeting',
@@ -44,7 +45,7 @@ export class PricingComponent {
         '2 Statement of work sessions',
         'Online resources',
       ],
-      headerAndprice: 'FREE Consultation Meeting - 0$',
+      headerAndprice: 'FREE Consultation Meeting - $0',
     },
     {
       header: 'Product Purchase',
@@ -57,7 +58,7 @@ export class PricingComponent {
         'Phone support',
         'Priority support',
       ],
-      headerAndprice: 'Product Purchase - 200$',
+      headerAndprice: 'Product Purchase - $200',
     },
   ];
 
@@ -71,13 +72,13 @@ export class PricingComponent {
         '1 annual report every year',
         'List of all new predicates',
         'List of all updated standards',
-        'List of all guidances',
+        "List of all guidance's",
         'List of product codes and regulations',
         'List of brands',
         'List of UDI records',
-        'Save 1 full time personnel work'
+        'Save 1 full time personnel work',
       ],
-      headerAndprice: 'Regulatory Intelligence Report - $159/ month',
+      headerAndprice: 'Regulatory Intelligence Report - $159 / month',
     },
     {
       header: 'Clinical Intelligence Report',
@@ -89,11 +90,11 @@ export class PricingComponent {
         'List of literature search report',
         'List of scientific validity report',
         'List of all predicate device clinical trials',
-        'List of all new clinical guidances',
+        "List of all new clinical guidance's",
         'List of product codes and regulations',
         'Save 1-2 full time personnel work',
       ],
-      headerAndprice: 'Clinical Intelligence Report - $199/ month',
+      headerAndprice: 'Clinical Intelligence Report - $199 / month',
     },
     {
       header: 'PMS Intelligence Report',
@@ -108,14 +109,14 @@ export class PricingComponent {
         'List of product codes and regulations',
         'List of brands',
         'List of UDI records',
+        'Save 2-3 full time personnel work',
       ],
       headerAndprice: 'PMS Intelligence Report - $249 / month',
     },
-  ]
+  ];
 
-  onClick(headerAndprice: string, id: string): void {
-    this._pricingServices.updateSelectedPricing(headerAndprice);
-    this._viewPortScroller.scrollToAnchor(id)
-
+  onClick(headerAndprice: string, id: string, isSelect: boolean): void {
+    this._pricingServices.updateSelectedPricing(headerAndprice, isSelect);
+    this._viewPortScroller.scrollToAnchor(id);
   }
 }

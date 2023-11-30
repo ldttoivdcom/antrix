@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,13 +7,13 @@ import {
   ValidationErrors,
   FormControl,
 } from '@angular/forms';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Subject, Subscription, takeUntil} from 'rxjs';
-import {Papa} from 'ngx-papaparse';
-import {CsvDataService} from 'src/app/shared/services/csv-data.service';
-import {SharedDataService} from '../../../services/shared-data.service';
-import {Products} from 'src/app/models/products.model';
-import {END_POINT} from '../../../const/end-point.const';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Subject, Subscription, takeUntil } from 'rxjs';
+import { Papa } from 'ngx-papaparse';
+import { CsvDataService } from 'src/app/shared/services/csv-data.service';
+import { SharedDataService } from '../../../services/shared-data.service';
+import { Products } from 'src/app/models/products.model';
+import { END_POINT } from '../../../const/end-point.const';
 
 interface ApiResponse {
   code: string;
@@ -27,7 +27,7 @@ const httpOptions = {
 };
 
 function captchaValidator(control: AbstractControl): ValidationErrors | null {
-  return control.value ? null : {captchaNotResolved: true};
+  return control.value ? null : { captchaNotResolved: true };
 }
 
 @Component({
@@ -45,14 +45,14 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   isConfirmRequestPopupOpened: boolean = false;
   isHidden: boolean;
   isLoading: boolean = false;
-  isSelectChange: boolean = false;
+  isSelectChange: boolean;
   Pricings: string[] = [
     'Consulting Service - $200',
     'FREE Consultation Meeting - $0',
     'Product Purchase - $200',
-    'Regulatory Intelligence Report - $159/ month',
-    'Clinical Intelligence Report - $199/ month',
-    'PMS Intelligence Report - $249 / month'
+    'Regulatory Intelligence Report - $159 / month',
+    'Clinical Intelligence Report - $199 / month',
+    'PMS Intelligence Report - $249 / month',
   ];
 
   constructor(
@@ -76,7 +76,15 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       this._sharedDataService.isHidden$.subscribe((isHidden: boolean) => {
         this.isHidden = isHidden;
       })
-    )
+    );
+    this.isSelectChange = true;
+    this.subscription.add(
+      this._sharedDataService.isSelect$.subscribe((isSelect: boolean) => {
+        this.isSelectChange = isSelect;
+        console.log('test' + this.isSelectChange);
+      })
+    );
+    console.log(this.isSelectChange);
   }
 
   handleCancel(): void {
@@ -110,7 +118,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         httpOptions
       )
       .pipe(takeUntil(this.ngUnsubscribe$))
-      .subscribe((res) => {
+      .subscribe(
+        (res) => {
           if (res.code === '200') {
             this.isConfirmRequestPopupOpened = true;
             this.contactForm.reset();
@@ -174,7 +183,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   onProductServiceChange(event: Event) {
-    this.isSelectChange = true;
+    this.isSelectChange = false;
     // Cast the event target to HTMLSelectElement to access the value property
     const selectElement = event.target as HTMLSelectElement;
     const selectedProductName = selectElement.value;
@@ -222,7 +231,6 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.ngUnsubscribe$.next();
-    this.ngUnsubscribe$.complete()
+    this.ngUnsubscribe$.complete();
   }
-
 }

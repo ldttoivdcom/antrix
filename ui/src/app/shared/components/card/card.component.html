@@ -22,7 +22,9 @@
         </p>
         <div class="d-flex flex-gap-24px">
           <button
-            (click)="onClick('contact', data.Name, data.PartNumber, false)"
+            (click)="
+              onClick('contact', data.Name, data.PartNumber, false, false)
+            "
             class="first-btn"
           >
             {{ FirstBtnText }}
@@ -74,7 +76,9 @@
               </div>
 
               <button
-                (click)="onClick('contact', data.Name, data.PartNumber, false)"
+                (click)="
+                  onClick('contact', data.Name, data.PartNumber, false, false)
+                "
                 class="details-modal-content_btn"
               >
                 {{ FirstBtnText }}

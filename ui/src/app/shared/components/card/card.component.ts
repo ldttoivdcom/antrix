@@ -29,9 +29,9 @@ export class CardComponent {
   }
 
   // Scroll to contact us, pass value to contact-form
-  onClick(id: string, name: string, partNumber: string, isHidden: boolean): void {
+  onClick(id: string, name: string, partNumber: string, isHidden: boolean, isSelect: boolean): void {
     this.activeItemIndex = null; //close modal
-    this._pricingServices.updateSelectedProServices({name, partNumber, isHidden});
+    this._pricingServices.updateSelectedProServices({name, partNumber, isHidden, isSelect});
     this.viewportScroller.scrollToAnchor(id);
   }
 }
