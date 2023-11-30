@@ -45,10 +45,14 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   isConfirmRequestPopupOpened: boolean = false;
   isHidden: boolean;
   isLoading: boolean = false;
+  isSelectChange: boolean = false;
   Pricings: string[] = [
-    'Consulting Service - 200$',
-    'FREE Consultation Meeting - 0$',
-    'Product Purchase - 200$',
+    'Consulting Service - $200',
+    'FREE Consultation Meeting - $0',
+    'Product Purchase - $200',
+    'Regulatory Intelligence Report - $159/ month',
+    'Clinical Intelligence Report - $199/ month',
+    'PMS Intelligence Report - $249 / month'
   ];
 
   constructor(
@@ -125,7 +129,6 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   resolved(captchaResponse: string) {
     this.captcha = captchaResponse;
     this.contactForm.get('captcha')?.setValue(captchaResponse);
-    console.log(`Resolved captcha with response: ` + this.captcha);
   }
 
   errored() {
@@ -171,6 +174,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   onProductServiceChange(event: Event) {
+    this.isSelectChange = true;
     // Cast the event target to HTMLSelectElement to access the value property
     const selectElement = event.target as HTMLSelectElement;
     const selectedProductName = selectElement.value;

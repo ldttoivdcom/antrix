@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {SharedDataService} from "../../shared/services/shared-data.service";
 import {ViewportScroller} from '@angular/common';
 
-interface PrcingServices {
+interface Pricings {
   header: string;
   price: number;
   text: string;
@@ -20,7 +20,7 @@ export class PricingComponent {
   constructor(private _pricingServices: SharedDataService, private _viewPortScroller: ViewportScroller) {
   }
 
-  Pricing: PrcingServices[] = [
+  Pricing: Pricings[] = [
     {
       header: 'Consulting Service',
       price: 200,
@@ -60,6 +60,58 @@ export class PricingComponent {
       headerAndprice: 'Product Purchase - 200$',
     },
   ];
+
+  Subscriptions: Pricings[] = [
+    {
+      header: 'Regulatory Intelligence Report',
+      price: 159,
+      text: 'Get a customized Regulatory Intelligence Report for your company product delivered  per month',
+      listItems: [
+        '1 monthly report every month',
+        '1 annual report every year',
+        'List of all new predicates',
+        'List of all updated standards',
+        'List of all guidances',
+        'List of product codes and regulations',
+        'List of brands',
+        'List of UDI records',
+        'Save 1 full time personnel work'
+      ],
+      headerAndprice: 'Regulatory Intelligence Report - $159/ month',
+    },
+    {
+      header: 'Clinical Intelligence Report',
+      price: 199,
+      text: 'Get a customized Clinical Intelligence Report for your company product delivered  per month',
+      listItems: [
+        '1 monthly report every month',
+        '1 annual report every year',
+        'List of literature search report',
+        'List of scientific validity report',
+        'List of all predicate device clinical trials',
+        'List of all new clinical guidances',
+        'List of product codes and regulations',
+        'Save 1-2 full time personnel work',
+      ],
+      headerAndprice: 'Clinical Intelligence Report - $199/ month',
+    },
+    {
+      header: 'PMS Intelligence Report',
+      price: 249,
+      text: 'Get a customized PMS Intelligence Report for your company product delivered  per month',
+      listItems: [
+        '1 monthly report every month',
+        '1 annual report every year',
+        'List of all predicates adverse events',
+        'List of all recalls & field safety actions',
+        'List of warning letters',
+        'List of product codes and regulations',
+        'List of brands',
+        'List of UDI records',
+      ],
+      headerAndprice: 'PMS Intelligence Report - $249 / month',
+    },
+  ]
 
   onClick(headerAndprice: string, id: string): void {
     this._pricingServices.updateSelectedPricing(headerAndprice);

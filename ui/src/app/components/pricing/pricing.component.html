@@ -43,4 +43,53 @@
       </div>
     </div>
   </div>
+  <div class="pricing-container pt-0">
+    <h1 class="text-center pricing-header">SUBSCRIPTIONS</h1>
+    <p class="text-center pricing-description w-50 m-auto mb-32px">
+      Get customized regulatory reports for your company products every month delivered to you via email or deposited
+      into shared site. Free up company personnel. Let us do your work allowing you to focus on innovation and new
+      product development.
+    </p>
+    <div class="row">
+      <div *ngFor="let item of Subscriptions" class="col-lg-4 card-wrapper">
+        <div class="subscriptions-card">
+          <div class="card-header">
+            <h3 class="card-header_heading subscriptions-header m-0">{{ item.header }}</h3>
+            <p class="card-header_price position-relative">
+              <span class="dollar position-absolute fs-30px">$</span>
+              <span class="ammount">{{ item.price }}</span>
+              <span class="ammount fs-30px">/ month*</span>
+            </p>
+            <p class="card-header_text subscriptions-header_text">
+              {{ item.text }}
+            </p>
+            <div class="card-header_supportingText">Valid for one month</div>
+            <button (click)="onClick(item.headerAndprice, 'contact')" class="card-header_btn w-100 fw-medium">Select
+            </button>
+          </div>
+          <div class="card-content">
+            <ul class="p-0 m-0 list-unstyled card-content_list subscriptions-list">
+              <li
+                *ngFor="let item of item.listItems"
+                class="list-items d-flex flex-gap-12px"
+              >
+                <img
+                  src="assets/icons/icon-circle-check.svg"
+                  alt=""
+                  class="list-items_icon"
+                />
+                <p class="list-items_text">
+                  {{ item }}
+                </p>
+              </li>
+            </ul>
+            <p class="card-header_supportingText mt-8px fs-10px">*Plus initial custom report setup fee to
+              directly add it to
+              your
+              company monthly quality and management review metrics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

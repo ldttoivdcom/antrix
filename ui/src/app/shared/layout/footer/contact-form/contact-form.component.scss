@@ -54,6 +54,14 @@
             line-height: 170%;
             color: var(--gray-500, #667085);
 
+            &::placeholder {
+              color: var(--gray-500, #667085);
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 170%;
+            }
+
             &:focus {
               outline: none;
             }
@@ -85,8 +93,16 @@
           option {
             background-color: var(--gray-500, #667085);
             color: #fff;
-            font-size: 12px;
+            font-size: 10px;
           }
+        }
+
+        .select-text--placeholder {
+          color: var(--gray-500, #667085);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 170%;
         }
 
         .textarea-text {
@@ -100,6 +116,10 @@
 
           &::placeholder {
             color: var(--gray-500, #667085);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 170%;
           }
         }
 

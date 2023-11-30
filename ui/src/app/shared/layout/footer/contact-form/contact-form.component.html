@@ -256,9 +256,10 @@
                 name="Select Product and Services"
                 formControlName="prodService"
                 (change)="onProductServiceChange($event)"
+                [class.select-text--placeholder]="!isSelectChange"
               >
-                <option value="" disabled selected>
-                  Select Products and Services
+                <option class="select-text_placeholder" value="" disabled selected>
+                  Select Products or Services
                 </option>
                 <optgroup class="select-outgroup" label="Pricing">
                   <option *ngFor="let price of Pricings" [value]="price">
