@@ -93,7 +93,7 @@
           option {
             background-color: var(--gray-500, #667085);
             color: #fff;
-            font-size: 10px;
+            font-size: 14px;
           }
         }
 
@@ -168,6 +168,10 @@
 ::ng-deep .request-livedemo-modal {
   .ant-modal-body {
     padding: 0px;
+  }
+
+  .ant-modal-close-x {
+    color: #fff;
   }
 
   .header {
