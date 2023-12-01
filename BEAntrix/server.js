@@ -12,10 +12,10 @@ const https = require('https');
 const privateKey  = fs.readFileSync('./src/ssl/example.pem', 'utf8');
 const certificate = fs.readFileSync('./src/ssl/cert.pem', 'utf8');
 const credentials = {key: privateKey, cert: certificate};
-// const PORT = process.env.PORT;
-// app.listen(PORT, () => {
-//   console.log(`App running on port ${PORT}...`);
-// });
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}...`);
+});
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);

@@ -5,15 +5,12 @@ dotenv.config({
   path: "./config.env",
 });
 
-
-
-
 exports.sendMail = async (reqData) => {
     const { firstName, lastName, email, prodService, phone, company, jobTitle, companyWeb, message, pricing, partNo } = reqData;
     const thanksTitle = `Thank you for submitting the form.`;
     const topContent = `Thank you for reaching out to us. We appreciate your interest in Antrix. Your inquiry about Product / Service: ${prodService || ""} is important to us, and we will make every effort to respond as quickly as possible. `
     const bottomContent = `Our team will review your message and get back to you shortly. If your
-                          inquiry is urgent, please feel free to contact us directly at ${email || ""}.`
+                          inquiry is urgent, please feel free to contact us directly at support@antrix.com.`
     const ps = `Thank you for considering Antrix. We look forward to assisting you.`
     const transporter = nodeMailer.createTransport({
         host: process.env.SENDER_HOST,
@@ -23,6 +20,7 @@ exports.sendMail = async (reqData) => {
             pass: process.env.SENDER_PASSWORD
         }
     });
+
         await transporter.sendMail({
         from:  process.env.SENDER,
         to: `${reqData.email}`,

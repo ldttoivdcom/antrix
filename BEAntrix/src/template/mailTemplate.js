@@ -4,177 +4,103 @@ dotenv.config({
 });
 
 
-exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourCompanyName = "Antrix",yourContactInformation, additionalContact) => {
+exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourCompanyName = "Antrix",yourContactInformation, additionalContact ) => {
 
    const { firstName, lastName, email, prodService, phone, company, jobTitle, companyWeb, message, pricing, partNo } = reqData;
 
     return `
 
-
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>${process.env.TITLE_MAIL_TAB}</title>
-  </head>
-  <body
-    style="
-      margin: 0;
-      font-family: 'Poppins',sans-serif ;
-      background-color: #f5f5f5;
-    ">
-    <table
-      role="presentation"
-      cellspacing="0"
-      cellpadding="0"
-      border="0"
-      align="center"
-      width="640px"
-      style="padding-top: 32px; padding-bottom: 32px">
-      <tr>
-        <td>
-          <table
-            cellspacing="0"
-            cellpadding="0"
-            border="0"
-            align="center"
-            width="100%"
-            style="background-color: white; margin: 0 auto">
-            <tr>
-              <td
-                style="
-                  text-align: center;
-                  margin: 0;
-                  height: 80px;
-                  color: white;
-                ">
-                <img
-                  src="${process.env.IMAGE_BASE_URL}dropdown_header_navigation.png"
-                  alt="header"
-                  style="width: 100%; height: 100%; object-fit: cover;pointer-events: none;" />
-              </td>
-            </tr>
+</head>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #f5f5f5;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 640px; background-color: white;">
+        <tr>
+            <td style="text-align: center; background-color: #0C3C60;">
+                <img src="${process.env.IMAGE_BASE_URL}dropdown_header_navigation.png" alt="header" style="width: 100%; height: auto; border: 0;"/>
+            </td>
+        </tr>
 
-            <tr>
-              <td>
-                  <table
-                  style="
-                    padding: 0 32px 30px 32px;
-                    font-family: 'Poppins', sans-serif;
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 24px;
-                    width:100%;
+        <tr>
+            <td style="padding: 32px; font-size: 16px; line-height: 24px; color: #333333;">
+                <p style="text-align: center; margin: 12px 0 0 0">
+                    <img src="${process.env.IMAGE_BASE_URL}check_circle.png" alt="tick" style="width: 32px; height: 32px; border: 0;">
+                </p>
+                <p style="text-align: center; font-weight: 600; font-size: 24px; color: #0C3C60; margin: 15px 0 22px 0;">
+                    ${thanksTitle}
+                </p>
+                <p style="border-top: 1px solid #EAECF0; padding-top: 15px;">
+                    Dear, ${firstName || ""}
+                </p>
+                <p style="margin: 9px 0">${topContent}</p>
+                <p style="margin: 0 0 9px 0">Here are the details you provided:</p>
 
-                  ">
-                      <tr >
-                          <td style="align-items: center;text-align: center; padding: 35px 0;">
-                              <img src="${process.env.IMAGE_BASE_URL}check_circle.png" alt="tick" style="padding-bottom: 16px; width: 32px; height: 32px; object-fit: cover;pointer-events: none;">
-                                <p style="font-weight: 600; text-align: center; font-size: 24px; color: #0C3C60;margin: 0">${thanksTitle}</p>
-                          </td>
-                      </tr>
-                  <tr>
-                    <td style="border-top: 1px solid #EAECF0; padding-top: 16px">
-                        <span style="font-weight: 400; text-align: left">
-                          Dear, ${firstName || ""}
-                        </span>
-                    </td>
-                  </tr>
-                  <tr>
-                      <td style="text-align: left; padding-top: 15px">
-                          <span>${topContent} </span>
-                      </td>
-                  </tr>
-                  <tr>
-                          <td style="text-align: left; padding-top: 15px"><span>Here are the details you provided:</span></td>
-                  </tr>
-                  <tr style="background-color: #F9FAFB; width: 100%;">
-                        <td>
-                            <table style="
-                            font-family: 'Poppins', sans-serif;
-                            font-size: 16px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 24px;
-                            width: 100%;
-                            padding: 12px;
-                            ">
-                              <tr style="">
-                                    <td style="text-align: left; width: 100%"><span>First Name: ${firstName || ""}</span></td>
+                <table style="width: 100%; background-color: #F9FAFB;">
+                    <tr>
+                        <td >
+                            <table style="margin-left: 12px">
+                                 <tr style="">
+                                    <td style="text-align: left; padding-left: 12px ;padding-top: 12px; width: 100%"><span>First Name: ${firstName || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Last Name: ${lastName || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Last Name: ${lastName || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Email: ${email || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Email: ${email || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Telephone: ${phone || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Telephone: ${phone || ""}</span></td>
                                 </tr>
                               <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Company: ${company || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Company: ${company || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Job Title: ${jobTitle || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Job Title: ${jobTitle || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Company Website: ${companyWeb || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Company Website: ${companyWeb || ""}</span></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Product / Service: ${!pricing ? prodService || "" : pricing || ""} </span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Product / Service: ${!pricing ? prodService || "" : pricing || ""} </span></td>
                                 </tr>
                                 ${!pricing ? `<tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
                                 </tr>` : ""}
                                 <tr>
-                                    <td style="text-align: left; padding-top: 15px"><span>Message: ${message|| ""}</span></td>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px; padding-bottom: 12px"><span>Message: ${message|| ""}</span></td>
                                 </tr>
-                          </table>
-
+                            </table>
                         </td>
-                  </tr>
-                      <tr>
-                      <td style="text-align: left; padding-top: 16px"><span>${bottomContent}</span></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: left; padding-top: 15px"><span>${ps}</span></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: left; padding-top: 5px">
-                      <p>Best Regards,</p>
-                      <p>${yourCompanyName || ""} ${yourContactInformation || ""} ${additionalContact || ""}</p>
-                      </td>
                     </tr>
 
                 </table>
 
-              </td>
-            </tr>
-               <tr style="background-color: #EAECF0;">
-                    <td
-                      style="
-                        height: auto;
-                        padding: 12px;
-                        text-align: center;
-                        font-size: 14px;
-                        font-family: 'Poppins',sans-serif;
-                      ">
-                        <p style="margin: 9px 0">@ 2023 Antrix</p>
-                        <p style="margin: 9px 0">Antrix, Inc819 Peekskill DrSunnyvale,CA 94087</p>
-                        <p style="margin: 9px 0">www.antrix.com</p>
-                    </td>
-                  </tr>
-          </table>
-        </td>
-      </tr>
+                <p style="margin: 9px 0">${bottomContent}</p>
+                <p style="margin: 9px 0">${ps}</p>
+                <p style="margin: 9px 0">Best Regards,</p>
+                <p style="margin: 9px 0">${yourCompanyName || ""} ${yourContactInformation || ""} ${additionalContact || ""}</p>
+            </td>
+        </tr>
+
+        <tr style="background-color: #EAECF0;">
+            <td style="padding: 12px; text-align: center; font-size: 14px;">
+                <p style="margin: 9px 0">@ 2023 Antrix</p>
+                <p style="margin: 9px 0">Antrix, Inc819 Peekskill DrSunnyvale, CA 94087</p>
+                <p style="margin: 9px 0">www.antrix.com</p>
+            </td>
+        </tr>
     </table>
-  </body>
+</body>
 </html>
+
+
 
 
 
