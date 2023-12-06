@@ -12,7 +12,7 @@ FDA Digital Health,Digital Health Center of Excellence,https://www.fda.gov/medic
 FDA AI ML Enabled Medical Devices,Artificial Intelligence and Machine Learning (AI/ML)-Enabled Medical Devices,https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices
 FDA AI/ML Guidance,Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence/Machine Learning (AI/ML)-Enabled Device Software Functions,https://www.fda.gov/medical-devices/medical-devices-news-and-events/cdrh-issues-guiding-principles-predetermined-change-control-plans-machine-learning-enabled-medical
 FDA Clinical Trials,FDA Clinical Trials Database,https://clinicaltrials.gov/
-FDA Clinical Trials Database,FDA Cosmetics Laws & Regulations,https://www.fda.gov/cosmetics/cosmetics-guidance-regulation/cosmetics-laws-regulations
+FDA Cosmetics,FDA Cosmetics Laws & Regulations,https://www.fda.gov/cosmetics/cosmetics-guidance-regulation/cosmetics-laws-regulations
 FDA Food Safety,FDA Food Safety Modernization Act (FSMA),https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma
 FDA Dietary Supplements Regulations Part 111,FDA Dietary Supplements Regulations,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?cfrpart=111
 FDA Dietary Supplements Guidelines,FDA Dietary Supplements Guidelines,https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?cfrpart=111
@@ -48,6 +48,22 @@ GMDN Code List,The GMDN Agency is responsible for the Global Medical Device Nome
 EU Unique Device Identifier - UDI,EU Medical Device MDR and IVDR Unique Device Identifier - UDI,https://health.ec.europa.eu/medical-devices-topics-interest/unique-device-identifier-udi_en
 EU AI Act,EU AI Act: first regulation on artificial intelligence
 EU AI Rule,Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT),https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A52021PC0206
+ISO/IEC 22989:2022,ISO /IEC 22989:2022 Information technology — Artificial intelligence — Artificial intelligence concepts and terminology,https://cdn.standards.iteh.ai/samples/74296/c4efbadbf1a146d4af6d62fcad09438f/ISO-IEC-22989-2022.pdf
+ISO/IEC 22053-2022,Framework for Artificial Intelligence (AI) Systems Using Machine Learning (ML),https://cdn.standards.iteh.ai/samples/74438/dc54208373d643c191a657cf5eed9eaf/ISO-IEC-23053-2022.pdf
+ISO/IEC 24027-2021,Information technology — Artificial intelligence (AI) — Bias in AI systems and AI aided decision making,https://cdn.standards.iteh.ai/samples/77607/c0664994eace4bd597db80bb10c18dec/ISO-IEC-TR-24027-2021.pdf
+ISO/IEC 23894-2023,Information technology — Artificial intelligence — Guidance on risk management,https://cdn.standards.iteh.ai/samples/77304/cb803ee4e9624430a5db177459158b24/ISO-IEC-23894-2023.pdf
+ISO/IEC 38507-2022,Information technology — Governance of IT — Governance implications of the use of artificial intelligence by organizations,https://cdn.standards.iteh.ai/samples/56641/b4eb4a571b0f4899bf1da5a7204e92b4/ISO-IEC-38507-2022.pdf
+ISO/IEC 24030:2021,Information technology — Artificial intelligence (AI) — Use cases,https://cdn.standards.iteh.ai/samples/77610/ebcb38166ad94fb0963e2ade7ea35f83/ISO-IEC-TR-24030-2021.pdf
+EU AI Act News,EU AI Act: first regulation on artificial intelligence,https://www.europarl.europa.eu/news/en/headlines/society/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence
+EU AI Act PDF,Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021PC0206
+EU AI Act,LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS,https://eur-lex.europa.eu/resource.html?uri=cellar:e0649735-a372-11eb-9585-01aa75ed71a1.0001.02/DOC_1&format=PDF
+EU AI Act Annex,ANNEXES to the LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS,https://eur-lex.europa.eu/resource.html?uri=cellar:e0649735-a372-11eb-9585-01aa75ed71a1.0001.02/DOC_2&format=PDF
+OECD – Better Policies for Better Lives,OECD Digital and Artificial Intelligence,https://www.oecd.org/digital/
+ISO/IEC 42001-2023,Information technology — Artificial intelligence — Management system,https://cdn.standards.iteh.ai/samples/81230/2890a4958ba9484ba795f02dbe7f5407/ISO-IEC-FDIS-42001.pdf
+ISO and IEC Joint Technical Committee,"ISO and IEC Joint Technical Committee (JTC 1) for information technology, is a consensus-based, voluntary international standards group",https://jtc1info.org/
+JTC – ISO 22989 and ISO 23053,JTC ISO 22989 and ISO 23053 – The foundational standards for AI,https://jtc1info.org/wp-content/uploads/2022/06/03_08_Paul_Milan_Wei_The-foundational-standards-for-AI-20220525-ww-mp.pdf
+Artificial Intelligence - SC 42 – May 2022,Information technology — Artificial Intelligence (AI) — Use cases,https://www.itu.int/en/ITU-T/focusgroups/ai4h/Documents/all/FGAI4H-H-025-A02.pdf
+Artificial Intelligence - SC 42 – Use Cases ISO/IEC 24030:2019,"Artificial Intelligence Overview of the AI Standards Program and Novel Ecosystem Approach ISO/IEC Workshop Series, Inaugural Event, May 2022",https://jtc1info.org/wp-content/uploads/2022/06/03_09_Wael_Overview-of-ISO_IEC-AI-for-ISO-IEC-AI-Workshop-0522-rev-28_3.pdf
 MHRA – MDR – IVDR Guidance,An introductory guide to the medical device regulation (MDR) and the in vitro diagnostic medical device regulation (IVDR)
 Regulating medical devices in the UK,Guidance - Regulating medical devices in the UK,https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk
 EU Medicinal Drugs,Medicinal product | European Medicines Agency,https://www.ema.europa.eu/en/glossary/medicinal-product
@@ -66,5 +82,16 @@ New Zealand Medsafe,New Zealand Medicines and Medical Devices Safety Authority,h
 Singapore HSA,Singapore Health Sciences Authority,https://www.hsa.gov.sg/medical-devices/regulatory-overview
 South Korea Regulatory Agency,Ministry of Food and Drug Safety Regulations for Medical Devices,https://www.mfds.go.kr/eng/brd/m_40/list.do
 Taiwan FDA,Taiwan Food and Drug Administration,https://www.fda.gov.tw/ENG/law.aspx?cid=5063&cr=156044819
+India Medical Device Regulations,India / Bharat Medical Device Regulations - Central Drugs Standard Control Organization Directorate General of Health Services. Ministry of Health & Family Welfare Government of India / Bharat,https://cdsco.gov.in/opencms/opencms/en/Medical-Device-Diagnostics/Medical-Device-Diagnostics/
+Mexico Medical Device Regulations,Mexico Medical Devices COFEPRIS (Comision Federal para la Proteccion contra Riesgos Sanitari),https://www.gob.mx/cofepris/en
 Medtecheurope,"MedTech Europe, from diagnosis to cure",https://www.medtecheurope.org/
 AdvaMed,AdvaMed - Advanced Medical Technology Association,https://www.advamed.org/
+RAPS,RAPS: Regulatory Affairs Professionals Society,https://www.raps.org/
+ASQ,American Society For Quality ASQ: Excellence Through Quality,https://asq.org/quality-resources/ansi-standards
+TUV Medical Devices and IVDs,TUV Medical Devices and IVDs,https://www.tuvsud.com/en-us/industries/healthcare-and-medical-devices/medical-devices-and-ivd/medical-device-market-approval-and-certification/eu-in-vitro-diagnostic-medical-device-regulation
+TUV EU IVDR Information Center,TUV EU In Vitro Diagnostic Medical Device Regulation (IVDR),https://www.tuvsud.com/en-us/industries/healthcare-and-medical-devices/medical-devices-and-ivd/medical-device-market-approval-and-certification/eu-in-vitro-diagnostic-medical-device-regulation
+BSI EU MDR and IVDR Information Center,MDR and IVDR Resources,https://www.bsigroup.com/en-GB/medical-devices/our-services/Compliance-Navigator/mdr-and-ivdr-resources/
+BSI – GSPR,BSI – General Safety and Performance Requirements (Annex I) in the New Medical Device Regulation,
+BSI – MDR Classification Rules,BSI – MDR Classification Rules,https://www.medical-device-regulation.eu/wp-content/uploads/2019/05/bsi-mdr-classification-conformity-sprs-documentation.pdf
+SGS EU MDR Information Center,SGS EU Medical Devices Regulations Information Center,https://www.sgs.com/en/our-services/health-and-nutrition/health-science/eu-medical-devices-regulations-information-center
+SGS Health Sciences,SGS Health Sciences,https://www.sgs.com/en/our-services/health-and-nutrition/health-science/eu-medical-devices-regulations-information-center

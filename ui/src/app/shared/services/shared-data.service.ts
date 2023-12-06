@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +19,15 @@ export class SharedDataService {
   private isSelectChangeSource = new BehaviorSubject<boolean>(true);
   isSelect$ = this.isSelectChangeSource.asObservable();
 
-  constructor() {}
+  private isSelectPricingChangeSource = new BehaviorSubject<boolean>(true);
+  isSelectPricing$ = this.isSelectPricingChangeSource.asObservable();
+
+  constructor() {
+  }
 
   updateSelectedPricing(price: string, isSelect: boolean) {
     this.selectedPricingSource.next(price); //will store the price here
-    this.isSelectChangeSource.next(isSelect);
+    this.isSelectPricingChangeSource.next(isSelect);
   }
 
   updateSelectedProServices(proService: {

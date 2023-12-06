@@ -64,11 +64,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   TrackValueChange(value: string): void {
+    const searchLower = value.toLowerCase();
     this.filteredProducts = this.data.filter(
       (product: Products) =>
-        product.Name.includes(value) ||
-        product.Description.includes(value) ||
-        product.PartNumber.includes(value)
+        product.Name.toLowerCase().includes(searchLower) ||
+        product.Description.toLowerCase().includes(searchLower) ||
+        product.PartNumber.toLowerCase().includes(searchLower)
     );
   }
 

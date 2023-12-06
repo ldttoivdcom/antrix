@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -6,14 +6,15 @@ import {
   AbstractControl,
   ValidationErrors,
   FormControl,
+  ValidatorFn
 } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject, Subscription, takeUntil } from 'rxjs';
-import { Papa } from 'ngx-papaparse';
-import { CsvDataService } from 'src/app/shared/services/csv-data.service';
-import { SharedDataService } from '../../../services/shared-data.service';
-import { Products } from 'src/app/models/products.model';
-import { END_POINT } from '../../../const/end-point.const';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Subject, Subscription, takeUntil} from 'rxjs';
+import {Papa} from 'ngx-papaparse';
+import {CsvDataService} from 'src/app/shared/services/csv-data.service';
+import {SharedDataService} from '../../../services/shared-data.service';
+import {Products} from 'src/app/models/products.model';
+import {END_POINT} from '../../../const/end-point.const';
 
 interface ApiResponse {
   code: string;
@@ -27,7 +28,7 @@ const httpOptions = {
 };
 
 function captchaValidator(control: AbstractControl): ValidationErrors | null {
-  return control.value ? null : { captchaNotResolved: true };
+  return control.value ? null : {captchaNotResolved: true};
 }
 
 @Component({
@@ -46,13 +47,14 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   isHidden: boolean;
   isLoading: boolean = false;
   isSelectChange: boolean;
+  isPricingSelectChange: boolean;
   Pricings: string[] = [
     'Consulting Service - $200',
     'FREE Consultation Meeting - $0',
     'Product Purchase - $200',
-    'Regulatory Intelligence Report - $159 / month',
-    'Clinical Intelligence Report - $199 / month',
-    'PMS Intelligence Report - $249 / month',
+    'Regulatory Intelligence Report - $249 / month',
+    'Clinical Intelligence Report - $299 / month',
+    'PMS Intelligence Report - $349 / month',
   ];
 
   constructor(
@@ -78,13 +80,17 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       })
     );
     this.isSelectChange = true;
+    this.isPricingSelectChange = true;
     this.subscription.add(
       this._sharedDataService.isSelect$.subscribe((isSelect: boolean) => {
         this.isSelectChange = isSelect;
-        console.log('test' + this.isSelectChange);
       })
     );
-    console.log(this.isSelectChange);
+    this.subscription.add(
+      this._sharedDataService.isSelectPricing$.subscribe((isSelect: boolean) => {
+        this.isPricingSelectChange = isSelect;
+      })
+    );
   }
 
   handleCancel(): void {
@@ -101,11 +107,11 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       jobTitle: ['', [Validators.required]],
       Pricing: '',
       companyWeb: ['', [Validators.required]],
-      prodService: ['', [Validators.required]],
+      prodService: '',
       partNo: '',
       message: ['', [Validators.required]],
       captcha: ['', [captchaValidator]],
-    });
+    }, {validators: this.requireEitherFieldValidator('Pricing', 'prodService')});
   }
 
   onSubmit(): void {
@@ -184,33 +190,32 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   onProductServiceChange(event: Event) {
     this.isSelectChange = false;
+    this.isHidden = false;
     // Cast the event target to HTMLSelectElement to access the value property
     const selectElement = event.target as HTMLSelectElement;
     const selectedProductName = selectElement.value;
 
-    //check if has pricing will hide Part number
-    if (this.Pricings.includes(selectedProductName)) {
-      this.isHidden = true;
-    } else {
-      this.isHidden = false;
-      // combine 2 array Products and Services
-      let selectedProductOrService = this.Products.concat(this.Services).find(
-        (item) => item.Name === selectedProductName
-      );
+    // combine 2 array Products and Services
+    let selectedProductOrService = this.Products.concat(this.Services).find(
+      (item) => item.Name === selectedProductName
+    );
 
-      let partNumber = selectedProductOrService
-        ? selectedProductOrService.PartNumber
-        : '';
+    let partNumber = selectedProductOrService
+      ? selectedProductOrService.PartNumber
+      : '';
 
-      this.contactForm.get('partNo')!.setValue(partNumber);
-    }
+    this.contactForm.get('partNo')!.setValue(partNumber);
+  }
+
+  onPricingChange(event: Event) {
+    this.isPricingSelectChange = false;
   }
 
   setPricingValue(): void {
     this.subscription.add(
       this._sharedDataService.selectedPricing.subscribe((pricingName) => {
-        this.isHidden = true;
-        this.contactForm.get('prodService')?.setValue(pricingName);
+        // this.isHidden = true;
+        this.contactForm.get('Pricing')?.setValue(pricingName);
       })
     );
   }
@@ -226,6 +231,22 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         this.contactForm.get('partNo')?.setValue(partNumber);
       })
     );
+  }
+
+  requireEitherFieldValidator(field1: string, field2: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      // Cast the 'control' to FormGroup to access its individual controls
+      const formGroup = control as FormGroup;
+      const value1 = formGroup.get(field1)?.value;
+      const value2 = formGroup.get(field2)?.value;
+
+      if (value1 || value2) {
+        return null; // One of the fields is filled, so validation passes
+      } else {
+        // Neither field is filled, so validation fails
+        return {'requireEitherField': true};
+      }
+    };
   }
 
   ngOnDestroy() {
