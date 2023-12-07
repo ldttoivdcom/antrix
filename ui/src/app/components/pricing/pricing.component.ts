@@ -121,8 +121,8 @@ export class PricingComponent {
     },
   ];
 
-  onClick(headerAndprice: string, id: string, isSelect: boolean): void {
-    this._pricingServices.updateSelectedPricing(headerAndprice, isSelect);
+  onClick(headerAndprice: string, id: string): void {
+    this._pricingServices.updateSelectedPricing(headerAndprice);
     this._viewPortScroller.scrollToAnchor(id);
   }
 }

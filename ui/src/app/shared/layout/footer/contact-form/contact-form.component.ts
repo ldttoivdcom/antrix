@@ -74,23 +74,12 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.setPricingValue();
     this.setProdServiceValue();
     this.isHidden = true; //Init the value
-    this.subscription.add(
-      this._sharedDataService.isHidden$.subscribe((isHidden: boolean) => {
-        this.isHidden = isHidden;
-      })
-    );
+    // this.subscription.add(
+    //   this._sharedDataService.isHidden$.subscribe((isHidden: boolean) => {
+    //     this.isHidden = isHidden;
+    //   })
+    // );
     this.isSelectChange = true;
-    this.isPricingSelectChange = true;
-    this.subscription.add(
-      this._sharedDataService.isSelect$.subscribe((isSelect: boolean) => {
-        this.isSelectChange = isSelect;
-      })
-    );
-    this.subscription.add(
-      this._sharedDataService.isSelectPricing$.subscribe((isSelect: boolean) => {
-        this.isPricingSelectChange = isSelect;
-      })
-    );
   }
 
   handleCancel(): void {
@@ -189,6 +178,9 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   onProductServiceChange(event: Event) {
+    //Will set value of Pricing to null
+    this.isPricingSelectChange = true;
+    this.contactForm.get('Pricing')!.setValue('');
     this.isSelectChange = false;
     this.isHidden = false;
     // Cast the event target to HTMLSelectElement to access the value property
@@ -209,21 +201,36 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   onPricingChange(event: Event) {
     this.isPricingSelectChange = false;
+    this.isHidden = true;
+    //Will set value of ProbService to null
+    this.isSelectChange = true;
+    this.contactForm.get('prodService')!.setValue('');
   }
 
+
+  //Will get the value when user click btn in Pricing
   setPricingValue(): void {
     this.subscription.add(
       this._sharedDataService.selectedPricing.subscribe((pricingName) => {
-        // this.isHidden = true;
+        this.isHidden = true;
+        this.isSelectChange = true;
+        this.isPricingSelectChange = false;
         this.contactForm.get('Pricing')?.setValue(pricingName);
+        this.contactForm.get('prodService')!.setValue(''); //Will set value of prodService to null
       })
     );
   }
 
+
+  //Will get the value when user click btn in Products/Services
   setProdServiceValue(): void {
     this.subscription.add(
       this._sharedDataService.selectedProServiceName.subscribe((name) => {
+        this.isSelectChange = false;
+        this.isHidden = false;
+        this.isPricingSelectChange = true;
         this.contactForm.get('prodService')?.setValue(name);
+        this.contactForm.get('Pricing')?.setValue(''); //Will set value of Pricing to null
       })
     );
     this.subscription.add(
@@ -233,6 +240,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     );
   }
 
+  //One or 2 field selected Validate
   requireEitherFieldValidator(field1: string, field2: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       // Cast the 'control' to FormGroup to access its individual controls

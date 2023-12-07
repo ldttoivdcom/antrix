@@ -29,6 +29,8 @@
 
   .slider {
     white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
 
     .silde-track_right {
       display: inline-block;

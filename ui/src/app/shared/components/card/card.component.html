@@ -23,7 +23,7 @@
         <div class="d-flex flex-gap-24px">
           <button
             (click)="
-              onClick('contact', data.Name, data.PartNumber, false, false)
+              onClick('contact', data.Name, data.PartNumber)
             "
             class="first-btn"
           >
@@ -42,7 +42,7 @@
         >
           <div (click)="$event.stopPropagation()" class="details-modal">
             <div (click)="closeModal()" class="details-modal-close">
-              <img class="z-1" src="assets/icons/icon-x-close.svg" alt="" />
+              <img class="z-1" src="assets/icons/icon-x-close.svg" alt=""/>
             </div>
             <div class="details-modal-header">
               <h1 class="details-modal-header_name">{{ data.Name }}</h1>
@@ -77,7 +77,7 @@
 
               <button
                 (click)="
-                  onClick('contact', data.Name, data.PartNumber, false, false)
+                  onClick('contact', data.Name, data.PartNumber)
                 "
                 class="details-modal-content_btn"
               >
