@@ -71,7 +71,7 @@ exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourC
                                 <tr>
                                     <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Product / Service: ${prodService || "" } </span></td>
                                 </tr>` : ""}
-                                ${!pricing ? `<tr>
+                                ${pricing ? `<tr>
                                     <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Pricing: ${pricing || ""}</span></td>
                                 </tr>` : ""}
                                 ${!pricing ? `<tr>
