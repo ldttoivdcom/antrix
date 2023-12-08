@@ -96,6 +96,10 @@
         font-weight: 500;
         line-height: 170%; /* 27.2px */
       }
+
+      .subscriptions-header_text {
+        word-break: break-all;
+      }
     }
   }
 
@@ -176,6 +180,18 @@
 @include mobile {
   .subscriptions-list {
     min-height: 0 !important;
+  }
+
+  .subscriptions-header {
+    white-space: unset !important;
+  }
+
+  .pricing-header {
+    font-size: 32px !important;
+  }
+
+  .pricing-description {
+    width: 100% !important;
   }
 }
 

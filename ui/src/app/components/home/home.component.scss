@@ -120,6 +120,15 @@
     font-size: 16px;
   }
 
+  .advantage-btn {
+    padding: 16px 28px;
+    color: #fff;
+    border: 1px solid $color_primary--600;
+    background: $color_primary--600;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    font-weight: 500;
+  }
+
   .advantage-item {
     width: 325px;
     flex: 1 1 0px;
@@ -226,6 +235,7 @@
 
   .content-container-box {
     min-height: 0 !important;
+    height: unset !important;
   }
 }
 
