@@ -15,10 +15,11 @@ exports.sendMail = async (reqData) => {
     const transporter = nodeMailer.createTransport({
         host: process.env.SENDER_HOST,
         port: process.env.SENDER_HOST_PORT,
+        secure: false,
         auth: {
             user: process.env.SENDER,
             pass: process.env.SENDER_PASSWORD
-        }
+        },
     });
 
         await transporter.sendMail({
