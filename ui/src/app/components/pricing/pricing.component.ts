@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { SharedDataService } from '../../shared/services/shared-data.service';
-import { ViewportScroller } from '@angular/common';
+import {Component} from '@angular/core';
+import {SharedDataService} from '../../shared/services/shared-data.service';
+import {ViewportScroller} from '@angular/common';
 
 interface Pricings {
   header: string;
@@ -19,7 +19,8 @@ export class PricingComponent {
   constructor(
     private _pricingServices: SharedDataService,
     private _viewPortScroller: ViewportScroller
-  ) {}
+  ) {
+  }
 
   Pricing: Pricings[] = [
     {
@@ -65,58 +66,63 @@ export class PricingComponent {
   Subscriptions: Pricings[] = [
     {
       header: 'Regulatory Intelligence Report',
-      price: 159,
+      price: 249,
       text: 'Get a customized Regulatory Intelligence Report for your company product delivered  per month',
       listItems: [
-        '1 monthly report every month',
-        '1 annual report every year',
-        'List of all new predicates',
-        'List of all updated standards',
-        "List of all guidance's",
+        '1 monthly report',
+        '1 annual report',
+        'List of new predicates',
+        'List of updated standards',
+        "List of guidance's",
         'List of product codes and regulations',
         'List of brands',
         'List of UDI records',
+        'Updated Product Regulatory Plan',
         'Save 1 full time personnel work',
       ],
-      headerAndprice: 'Regulatory Intelligence Report - $159 / month',
+      headerAndprice: 'Regulatory Intelligence Report - $249 / month',
     },
     {
       header: 'Clinical Intelligence Report',
-      price: 199,
+      price: 299,
       text: 'Get a customized Clinical Intelligence Report for your company product delivered  per month',
       listItems: [
-        '1 monthly report every month',
-        '1 annual report every year',
+        '1 monthly report',
+        '1 annual report',
         'List of literature search report',
         'List of scientific validity report',
-        'List of all predicate device clinical trials',
-        "List of all new clinical guidance's",
+        'List of predicate device clinical trials',
+        "List of new clinical guidance's",
         'List of product codes and regulations',
+        'List of UDI records',
+        'Updated Product Postmarket Clinical',
+        'Follow up Report',
         'Save 1-2 full time personnel work',
       ],
-      headerAndprice: 'Clinical Intelligence Report - $199 / month',
+      headerAndprice: 'Clinical Intelligence Report - $299 / month',
     },
     {
       header: 'PMS Intelligence Report',
-      price: 249,
+      price: 349,
       text: 'Get a customized PMS Intelligence Report for your company product delivered  per month',
       listItems: [
-        '1 monthly report every month',
-        '1 annual report every year',
-        'List of all predicates adverse events',
-        'List of all recalls & field safety actions',
+        '1 monthly report',
+        '1 annual report',
+        'List of predicates adverse events',
+        'List of recalls & field safety actions',
         'List of warning letters',
         'List of product codes and regulations',
         'List of brands',
         'List of UDI records',
+        'Updated PMS and PSUR Plan and Reports',
         'Save 2-3 full time personnel work',
       ],
-      headerAndprice: 'PMS Intelligence Report - $249 / month',
+      headerAndprice: 'PMS Intelligence Report - $349 / month',
     },
   ];
 
-  onClick(headerAndprice: string, id: string, isSelect: boolean): void {
-    this._pricingServices.updateSelectedPricing(headerAndprice, isSelect);
+  onClick(headerAndprice: string, id: string): void {
+    this._pricingServices.updateSelectedPricing(headerAndprice);
     this._viewPortScroller.scrollToAnchor(id);
   }
 }

@@ -248,7 +248,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Product and Services*</label>
+            <label class="input-label">Product and Services</label>
             <div class="input-text_wraper">
               <select
                 type="text"
@@ -266,11 +266,6 @@
                 >
                   Select Products or Services
                 </option>
-                <optgroup class="select-outgroup" label="Pricing">
-                  <option *ngFor="let price of Pricings" [value]="price">
-                    {{ price }}
-                  </option>
-                </optgroup>
                 <optgroup class="select-outgroup" label="Services">
                   <option
                     *ngFor="let service of Services"
@@ -290,9 +285,7 @@
               </select>
               <img
                 *ngIf="
-                  contactForm.get('prodService')?.invalid &&
-                  (contactForm.get('prodService')?.dirty ||
-                    contactForm.get('prodService')?.touched)
+                  !(contactForm.get('prodService')?.dirty || contactForm.get('prodService')?.touched) && contactForm.errors?.['requireEitherField']
                 "
                 src="assets/icons/icon-alert-circle.svg"
                 alt=""
@@ -300,14 +293,51 @@
             </div>
             <div
               *ngIf="
-                contactForm.get('prodService')?.invalid &&
-                (contactForm.get('prodService')?.dirty ||
-                  contactForm.get('prodService')?.touched)
+                !(contactForm.get('prodService')?.dirty || contactForm.get('prodService')?.touched) && contactForm.errors?.['requireEitherField']
               "
               class="error-text"
             >
-              <p *ngIf="contactForm.get('prodService')?.errors?.['required']">
-                Please enter products or services
+              <p>
+                Either Pricing or Product/Service is required.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="form-input">
+            <label class="input-label">Pricing</label>
+            <div class="input-text_wraper">
+              <select
+                type="text"
+                class="select-text"
+                name="Select Product and Services"
+                formControlName="Pricing"
+                (change)="onPricingChange($event)"
+                [class.select-text--placeholder]="isPricingSelectChange"
+              >
+                <option
+                  class="select-text_placeholder"
+                  value=""
+                  disabled
+                  selected
+                >
+                  Select Pricings
+                </option>
+                <option *ngFor="let price of Pricings" [value]="price">
+                  {{ price }}
+              </select>
+              <img
+                *ngIf="!(contactForm.get('Pricing')?.dirty || contactForm.get('Pricing')?.touched) && contactForm.errors?.['requireEitherField']"
+                src="assets/icons/icon-alert-circle.svg"
+                alt=""
+              />
+            </div>
+            <div
+              *ngIf="!(contactForm.get('Pricing')?.dirty || contactForm.get('Pricing')?.touched) && contactForm.errors?.['requireEitherField']"
+              class="error-text"
+            >
+              <p>
+                Either Pricing or Product/Service is required.
               </p>
             </div>
           </div>

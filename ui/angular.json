@@ -28,7 +28,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/config"
+              "src/config",
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",

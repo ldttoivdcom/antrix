@@ -10,6 +10,5 @@ export class FooterComponent {
   version: string = environment['version'] || '';
 
   constructor() {
-    console.log('version', environment);
   }
 }

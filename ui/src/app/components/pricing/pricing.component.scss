@@ -96,6 +96,10 @@
         font-weight: 500;
         line-height: 170%; /* 27.2px */
       }
+
+      .subscriptions-header_text {
+        word-break: break-all;
+      }
     }
   }
 
@@ -120,7 +124,7 @@
     }
 
     .subscriptions-list {
-      min-height: 344px;
+      min-height: 424px;
     }
   }
 }
@@ -146,7 +150,7 @@
   }
 
   .subscriptions-list {
-    min-height: 469.2px !important;
+    min-height: 589.2px !important;
   }
 
   .subscriptions-header {
@@ -158,7 +162,7 @@
 
 @media (min-width: 1201px) and (max-width: 1399px) {
   .subscriptions-list {
-    min-height: 370px !important;
+    min-height: 447.6px !important;
   }
 
   .subscriptions-header_text {
@@ -176,6 +180,18 @@
 @include mobile {
   .subscriptions-list {
     min-height: 0 !important;
+  }
+
+  .subscriptions-header {
+    white-space: unset !important;
+  }
+
+  .pricing-header {
+    font-size: 32px !important;
+  }
+
+  .pricing-description {
+    width: 100% !important;
   }
 }
 
