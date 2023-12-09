@@ -36,16 +36,16 @@ exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourC
                 <p style="text-align: center; font-weight: 600; font-size: 24px; color: #0C3C60; margin: 15px 0 22px 0;">
                     ${thanksTitle}
                 </p>
-                <p style="border-top: 1px solid #EAECF0; padding-top: 15px;">
+                <p style="border-top: 1px solid #EAECF0; padding-top: 15px;color: #333333">
                     Dear ${firstName || ""},
                 </p>
-                <p style="margin: 9px 0">${topContent}</p>
-                <p style="margin: 0 0 9px 0">Here are the details you provided:</p>
+                <p style="margin: 9px 0;color: #333333">${topContent}</p>
+                <p style="margin: 0 0 9px 0;color: #333333">Here are the details you provided:</p>
 
                 <table style="width: 100%; background-color: #F9FAFB;">
                     <tr>
                         <td >
-                            <table style="margin-left: 12px">
+                            <table style="margin-left: 12px;color: #333333">
                                  <tr style="">
                                     <td style="text-align: left; padding-left: 12px ;padding-top: 12px; width: 100%"><span>First Name: ${firstName || ""}</span></td>
                                 </tr>
@@ -86,10 +86,10 @@ exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourC
 
                 </table>
 
-                <p style="margin: 9px 0">${bottomContent}</p>
-                <p style="margin: 9px 0">${ps}</p>
-                <p style="margin: 9px 0">Best Regards,</p>
-                <p style="margin: 9px 0">${yourCompanyName || ""} ${yourContactInformation || ""} ${additionalContact || ""}</p>
+                <p style="margin: 9px 0; color: #333333">${bottomContent}</p>
+                <p style="margin: 9px 0; color: #333333">${ps}</p>
+                <p style="margin: 9px 0; color: #333333;">Best Regards,</p>
+                <p style="margin: 9px 0; color: #333333">${yourCompanyName || ""} ${yourContactInformation || ""} ${additionalContact || ""}</p>
             </td>
         </tr>
 
