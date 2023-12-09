@@ -37,7 +37,7 @@ exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourC
                     ${thanksTitle}
                 </p>
                 <p style="border-top: 1px solid #EAECF0; padding-top: 15px;">
-                    Dear, ${firstName || ""}
+                    Dear ${firstName || ""},
                 </p>
                 <p style="margin: 9px 0">${topContent}</p>
                 <p style="margin: 0 0 9px 0">Here are the details you provided:</p>
