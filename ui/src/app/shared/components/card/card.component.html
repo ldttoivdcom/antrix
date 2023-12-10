@@ -5,11 +5,9 @@
     class="col-lg-4 col-md-6 pr-16px pl-16px mb-32px"
   >
     <div class="card">
-      <img
-        class="card-img-top"
-        src="assets/imgs/{{ data.imgPath }}"
-        alt="Card image cap"
-      />
+      <div class="card-img-top" [style.backgroundImage]="'url(assets/imgs/'+ data.imgPath+')'">
+
+      </div>
       <div class="card-body">
         <h5 class="card-title m-0">{{ data.Name }}</h5>
         <div>
