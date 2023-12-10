@@ -228,6 +228,25 @@
 }
 
 @include mobile {
+
+  .details-modal-header {
+    padding: 8px 20px !important;
+  }
+
+  .details-modal-header_name {
+    font-size: 18px !important;
+  }
+
+  .card-subTitle {
+    font-size: 14px !important;
+  }
+  .details-modal-content_img {
+    max-width: 300px !important;
+    width: 100%;
+  }
+}
+
+@include tablet {
   .details-modal-content_img {
     max-width: 300px !important;
     width: 100%;

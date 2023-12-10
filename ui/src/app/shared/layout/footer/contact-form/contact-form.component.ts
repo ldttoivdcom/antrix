@@ -93,7 +93,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [
         Validators.required,
-        Validators.pattern(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/)
+        Validators.pattern(/^[0-9\-()+\s]+$/)
       ]],
       company: ['', [Validators.required]],
       jobTitle: ['', [Validators.required]],
