@@ -88,19 +88,22 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   initContactForm(): void {
     this.contactForm = this._formBuilder.group({
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]),
+      lastName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]),
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required]],
+      phone: ['', [
+        Validators.required,
+        Validators.pattern(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/)
+      ]],
       company: ['', [Validators.required]],
       jobTitle: ['', [Validators.required]],
-      Pricing: '',
+      pricing: '',
       companyWeb: ['', [Validators.required]],
       prodService: '',
       partNo: '',
       message: ['', [Validators.required]],
       captcha: ['', [captchaValidator]],
-    }, {validators: this.requireEitherFieldValidator('Pricing', 'prodService')});
+    }, {validators: this.requireEitherFieldValidator('pricing', 'prodService')});
   }
 
   onSubmit(): void {
@@ -180,7 +183,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   onProductServiceChange(event: Event) {
     //Will set value of Pricing to null
     this.isPricingSelectChange = true;
-    this.contactForm.get('Pricing')!.setValue('');
+    this.contactForm.get('pricing')!.setValue('');
     this.isSelectChange = false;
     this.isHidden = false;
     // Cast the event target to HTMLSelectElement to access the value property
@@ -215,7 +218,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         this.isHidden = true;
         this.isSelectChange = true;
         this.isPricingSelectChange = false;
-        this.contactForm.get('Pricing')?.setValue(pricingName);
+        this.contactForm.get('pricing')?.setValue(pricingName);
         this.contactForm.get('prodService')!.setValue(''); //Will set value of prodService to null
       })
     );
@@ -230,7 +233,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         this.isHidden = false;
         this.isPricingSelectChange = true;
         this.contactForm.get('prodService')?.setValue(name);
-        this.contactForm.get('Pricing')?.setValue(''); //Will set value of Pricing to null
+        this.contactForm.get('pricing')?.setValue(''); //Will set value of Pricing to null
       })
     );
     this.subscription.add(

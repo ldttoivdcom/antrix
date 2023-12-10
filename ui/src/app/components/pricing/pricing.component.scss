@@ -177,6 +177,7 @@
   }
 }
 
+
 @include mobile {
   .subscriptions-list {
     min-height: 0 !important;
@@ -189,9 +190,6 @@
   .pricing-header {
     font-size: 32px !important;
   }
-
-  .pricing-description {
-    width: 100% !important;
-  }
+  
 }
 

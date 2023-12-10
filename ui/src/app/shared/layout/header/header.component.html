@@ -63,19 +63,18 @@
       <li class="nav-item">
         <a
           class="header-navbar_link nav-link"
-          data-bs-dismiss="offcanvas"
-          (click)="onClick('contact')"
+          href="#contact"
         >Contact</a
         >
       </li>
     </ul>
-    <button
+    <a
       type="button"
-      (click)="onClick('contact')"
+      href="#contact"
       class="header-navbar_btn nav_list-btn d-lg-flex d-none"
     >
       Book Now
-    </button>
+    </a>
     <!--    MOBILE NAVBAR-->
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="/info/services">Services</a>
@@ -93,7 +92,7 @@
       <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="about">About</a>
         <hr>
       </li>
-      <li class="dropdown-menu_item"><a class="dropdown-menu_link" (click)="onClick('contact')">Contact</a>
+      <li class="dropdown-menu_item"><a class="dropdown-menu_link" href="#contact">Contact</a>
         <hr>
       </li>
     </ul>

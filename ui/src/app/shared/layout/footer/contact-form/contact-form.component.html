@@ -41,6 +41,9 @@
               <p *ngIf="contactForm.get('firstName')?.errors?.['required']">
                 Please enter your first name
               </p>
+              <p *ngIf="contactForm.get('firstName')?.errors?.['pattern']">
+                Please enter your first name without special characters and numbers.
+              </p>
             </div>
           </div>
           <div class="form-input col-lg-6 col-md-12 col-sm-12">
@@ -73,6 +76,9 @@
             >
               <p *ngIf="contactForm.get('lastName')?.errors?.['required']">
                 Please enter your last name
+              </p>
+              <p *ngIf="contactForm.get('lastName')?.errors?.['pattern']">
+                Please enter your last name without special characters and numbers.
               </p>
             </div>
           </div>
@@ -142,6 +148,9 @@
             >
               <p *ngIf="contactForm.get('phone')?.errors?.['required']">
                 Please enter your phone number
+              </p>
+              <p *ngIf="contactForm.get('phone')?.errors?.['pattern']">
+                Please enter a valid US phone number.
               </p>
             </div>
           </div>
@@ -259,7 +268,7 @@
                 [class.select-text--placeholder]="isSelectChange"
               >
                 <option
-                  class="select-text_placeholder"
+                  class="select-text_placeholder text-white"
                   value=""
                   disabled
                   selected
@@ -285,7 +294,7 @@
               </select>
               <img
                 *ngIf="
-                  !(contactForm.get('prodService')?.dirty || contactForm.get('prodService')?.touched) && contactForm.errors?.['requireEitherField']
+                  !(contactForm.get('prodService')?.dirty) && contactForm.errors?.['requireEitherField']
                 "
                 src="assets/icons/icon-alert-circle.svg"
                 alt=""
@@ -293,7 +302,7 @@
             </div>
             <div
               *ngIf="
-                !(contactForm.get('prodService')?.dirty || contactForm.get('prodService')?.touched) && contactForm.errors?.['requireEitherField']
+                !(contactForm.get('prodService')?.dirty) && contactForm.errors?.['requireEitherField']
               "
               class="error-text"
             >
@@ -311,7 +320,7 @@
                 type="text"
                 class="select-text"
                 name="Select Product and Services"
-                formControlName="Pricing"
+                formControlName="pricing"
                 (change)="onPricingChange($event)"
                 [class.select-text--placeholder]="isPricingSelectChange"
               >
@@ -327,13 +336,13 @@
                   {{ price }}
               </select>
               <img
-                *ngIf="!(contactForm.get('Pricing')?.dirty || contactForm.get('Pricing')?.touched) && contactForm.errors?.['requireEitherField']"
+                *ngIf="!(contactForm.get('pricing')?.dirty) && contactForm.errors?.['requireEitherField']"
                 src="assets/icons/icon-alert-circle.svg"
                 alt=""
               />
             </div>
             <div
-              *ngIf="!(contactForm.get('Pricing')?.dirty || contactForm.get('Pricing')?.touched) && contactForm.errors?.['requireEitherField']"
+              *ngIf="!(contactForm.get('pricing')?.dirty) && contactForm.errors?.['requireEitherField']"
               class="error-text"
             >
               <p>
@@ -443,8 +452,8 @@
           class="d-flex justify-content-between align-items-center flex-column flex-gap-16px w-100"
         >
           <img class="close-icon" src="assets/icons/icon-circle-check-2.svg"/>
-          <p class="popup-title">Thank you for submitting the form.Our team will review your message and get back to you
-            shortly.</p>
+          <p class="popup-title">Thank you for submitting the form. Our team will review your message and get back to
+            you shortly.</p>
           <p class="popup-title">Thank you for considering Antrix. We look forward to assisting you.</p>
         </div>
       </div>
