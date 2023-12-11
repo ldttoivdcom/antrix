@@ -312,6 +312,20 @@
             </div>
           </div>
         </div>
+        <div *ngIf="!isHidden" class="form-container">
+          <div class="form-input">
+            <label class="input-label">Part No*</label>
+            <div class="input-text_wraper">
+              <input
+                type="text"
+                class="input-text pe-none fs-14px"
+                readonly
+                placeholder="Select Part No"
+                formControlName="partNo"
+              />
+            </div>
+          </div>
+        </div>
         <div class="form-container">
           <div class="form-input">
             <label class="input-label">Pricing</label>
@@ -351,20 +365,7 @@
             </div>
           </div>
         </div>
-        <div *ngIf="!isHidden" class="form-container">
-          <div class="form-input">
-            <label class="input-label">Part No*</label>
-            <div class="input-text_wraper">
-              <input
-                type="text"
-                class="input-text pe-none fs-14px"
-                readonly
-                placeholder="Select Part No"
-                formControlName="partNo"
-              />
-            </div>
-          </div>
-        </div>
+        
         <div class="form-container">
           <div class="form-input">
             <label class="input-label">Message*</label>

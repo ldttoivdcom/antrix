@@ -88,8 +88,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   initContactForm(): void {
     this.contactForm = this._formBuilder.group({
-      firstName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]),
-      lastName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]),
+      firstName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]),
+      lastName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]),
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [
         Validators.required,
@@ -203,11 +203,21 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   }
 
   onPricingChange(event: Event) {
+    const pricingValue = this.contactForm.get('pricing')?.value;
     this.isPricingSelectChange = false;
-    this.isHidden = true;
+    this.isHidden = false;
     //Will set value of ProbService to null
     this.isSelectChange = true;
     this.contactForm.get('prodService')!.setValue('');
+    if (pricingValue == 'Regulatory Intelligence Report - $249 / month') {
+      this.contactForm.get('partNo')!.setValue('SUB-RAR');
+    } else if (pricingValue == 'Clinical Intelligence Report - $299 / month') {
+      this.contactForm.get('partNo')!.setValue('SUB-CIR');
+    } else if (pricingValue == 'PMS Intelligence Report - $349 / month') {
+      this.contactForm.get('partNo')!.setValue('SUB-PIR');
+    } else {
+      this.isHidden = true;
+    }
   }
 
 

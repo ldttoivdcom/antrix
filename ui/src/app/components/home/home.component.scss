@@ -61,6 +61,13 @@
     white-space: nowrap;
   }
 
+  .content-container_img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 260px;
+  }
+
   .content-container-box {
     min-height: 385px;
   }
