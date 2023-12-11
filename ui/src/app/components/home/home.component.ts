@@ -5,8 +5,9 @@ import AOS from 'aos';
 interface HomeContent {
   header: string;
   description: string;
-  list?: string[];
+  list: string[];
   link: string;
+  imgPath: string;
 }
 
 interface HomeAdvantage {
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
         'Develop Product Post Market Surveillance, Vigilance, Complaints, and Field Actions Process and Procedures',
       ],
       link: '/info/services',
+      imgPath: 'our_services.JPG'
     },
     {
       header: 'OUR PRODUCTS',
@@ -52,6 +54,8 @@ export class HomeComponent implements OnInit {
         'Procedures, Forms and Process for Post Market Surveillance, Vigilance, Complaints, and Field Actions',
       ],
       link: '/info/products',
+      imgPath: 'our_products.jpg'
+
     },
     {
       header: 'OUR CLIENTS',
@@ -63,6 +67,7 @@ export class HomeComponent implements OnInit {
         'Our clients range from small startups to large multinational corporations. We have helped our clients achieve their goals and improve patient safety and effectiveness outcomes.',
       ],
       link: '',
+      imgPath: 'our_clients.JPG'
     },
   ];
 
@@ -89,8 +94,4 @@ export class HomeComponent implements OnInit {
     },
 
   ];
-
-  onClick(id: string): void {
-    this.viewportScroller.scrollToAnchor(id);
-  }
 }

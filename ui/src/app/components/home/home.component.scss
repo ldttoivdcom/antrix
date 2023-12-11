@@ -27,6 +27,7 @@
       font-style: normal;
       font-weight: 400;
       line-height: 30px; /* 150% */
+      text-align: center;
     }
 
     .home-banner_btn {
@@ -47,6 +48,7 @@
     color: $color_primary--900;
     font-size: 16px;
     font-weight: 400;
+    min-height: 75.42px;
   }
 
   &_header {
@@ -57,6 +59,13 @@
     letter-spacing: 1.7px;
     margin-bottom: 0;
     white-space: nowrap;
+  }
+
+  .content-container_img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 260px;
   }
 
   .content-container-box {
@@ -225,9 +234,6 @@
       gap: 16px !important;
     }
 
-    &_header {
-    }
-
     &_btn:last-child {
       margin-top: 12px !important;
     }
@@ -236,6 +242,14 @@
   .content-container-box {
     min-height: 0 !important;
     height: unset !important;
+  }
+
+  .slider-header {
+    margin: 0 !important;
+  }
+
+  .advantage-banner_card-header {
+    white-space: unset !important;
   }
 }
 
@@ -249,10 +263,18 @@
   .content-container-box {
     min-height: 435px !important;
   }
+
+  .content-description {
+    min-height: 100.56px !important;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .content-container-box {
     min-height: 530px !important;
+  }
+
+  .content-description {
+    min-height: 125.7px !important;
   }
 }

@@ -7,6 +7,9 @@
   .card-img-top {
     border-radius: 0;
     min-height: 277px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .card-body {
@@ -218,10 +221,46 @@
   .first-btn, .second-btn {
     font-size: 12px !important;
   }
+
+  .card-title {
+    min-height: 112px !important;
+  }
 }
 
 @include mobile {
+
+  .details-modal-header {
+    padding: 8px 20px !important;
+  }
+
+  .details-modal-header_name {
+    font-size: 18px !important;
+  }
+
+  .card-subTitle {
+    font-size: 14px !important;
+  }
   .details-modal-content_img {
-    width: 300px !important;
+    max-width: 300px !important;
+    width: 100%;
+  }
+}
+
+@include tablet {
+  .details-modal-content_img {
+    max-width: 300px !important;
+    width: 100%;
+  }
+}
+
+@media (min-width: 990px) and (max-width: 1200px) {
+  .card-img-top {
+    min-height: 199.36px !important;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1399px) {
+  .card-img-top {
+    min-height: 240.92px !important;
   }
 }

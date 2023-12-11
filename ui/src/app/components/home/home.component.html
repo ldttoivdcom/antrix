@@ -8,9 +8,9 @@
       <p class="home-banner_text m-0 fs-20px">
         We Guarantee 0 Major Inspection Findings*
       </p>
-      <button (click)="onClick('contact')" class="home-banner_btn">
+      <a href="#contact" class="home-banner_btn">
         Book Now
-      </button>
+      </a>
     </div>
   </div>
 </div>
@@ -24,6 +24,7 @@
           <h2 class="content-container_header text-center">
             {{ content.header }}
           </h2>
+          <div class="content-container_img" [style.backgroundImage]="'url(assets/imgs/'+ content.imgPath+')'"></div>
           <div
             class="wraper d-flex flex-column flex-gap-24px content-container-box"
           >
@@ -51,7 +52,7 @@
           </button>
           <a
             *ngIf="content.link === ''"
-            (click)="onClick('clients')"
+            href="#clients"
             class="content-container_btn"
           >Learn more</a
           >
@@ -73,7 +74,7 @@
       adverse events, and quality issues. Recognize revenue faster. Saving depends on classification and number of
       products.
     </p>
-    <a routerLink="pricing" class="advantage-banner_description advantage-btn">Subscribe Now</a>
+    <a href="#contact" class="advantage-banner_description advantage-btn">Subscribe Now</a>
     <div class="d-flex flex-wrap flex-gap-32px w-100">
       <div *ngFor="let advan of Advantages" class="advantage-item">
         <div class="advantage-banner_card text-center text-white">

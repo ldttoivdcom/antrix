@@ -87,6 +87,7 @@
         line-height: 170%;
         margin-bottom: 16px;
         font-weight: 400;
+        min-height: 47.59px
       }
 
       &-description {
@@ -189,8 +190,8 @@
 
     &_img {
       flex: 1;
-      max-width: 400px;
-      max-height: 400px;
+      width: 50%;
+      height: 50%;
     }
 
     &_description {
@@ -230,8 +231,17 @@
     width: 100% !important;
   }
 
+  .team-member_info-title {
+    min-height: unset !important;
+  }
+
   .details-modal-content_img {
     width: 250px !important;
+  }
+
+  .team-section_text {
+    width: 100% !important;
+    margin: 0 0 48px 0 !important;
   }
 }
 
