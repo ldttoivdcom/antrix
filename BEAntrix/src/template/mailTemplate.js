@@ -71,11 +71,11 @@ exports.mailTemplate = (thanksTitle, topContent,bottomContent, ps,reqData, yourC
                                 <tr>
                                     <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Product / Service: ${prodService || "" } </span></td>
                                 </tr>` : ""}
-                                ${pricing ? `<tr>
-                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Pricing: ${pricing || ""}</span></td>
-                                </tr>` : ""}
                                 ${partNo ? `<tr>
                                     <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Part Number: ${partNo || ""}</span></td>
+                                </tr>` : ""}
+                                ${pricing ? `<tr>
+                                    <td style="text-align: left; padding-left: 12px ; padding-top: 15px"><span>Pricing: ${pricing || ""}</span></td>
                                 </tr>` : ""}
                                 <tr>
                                     <td style="text-align: left; padding-left: 12px ; padding-top: 15px; padding-bottom: 12px"><span>Message: ${message|| ""}</span></td>
