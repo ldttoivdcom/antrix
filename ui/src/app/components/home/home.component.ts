@@ -94,4 +94,8 @@ export class HomeComponent implements OnInit {
     },
 
   ];
+
+  scrollToClients(id: string): void {
+    this.viewportScroller.scrollToAnchor(id);
+  }
 }

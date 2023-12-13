@@ -257,7 +257,7 @@
         </div>
         <div class="form-container">
           <div class="form-input">
-            <label class="input-label">Product and Services</label>
+            <label class="input-label">Product and Services*</label>
             <div class="input-text_wraper">
               <select
                 type="text"
@@ -291,10 +291,20 @@
                     {{ product.Name }}
                   </option>
                 </optgroup>
+                <optgroup class="select-outgroup" label="Subscriptions">
+                  <option
+                    *ngFor="let sub of Subscriptions"
+                    [value]="sub.Name"
+                  >
+                    {{ sub.Name }}
+                  </option>
+                </optgroup>
               </select>
               <img
                 *ngIf="
-                  !(contactForm.get('prodService')?.dirty) && contactForm.errors?.['requireEitherField']
+                  contactForm.get('prodService')?.invalid &&
+                  (contactForm.get('prodService')?.dirty ||
+                    contactForm.get('prodService')?.touched)
                 "
                 src="assets/icons/icon-alert-circle.svg"
                 alt=""
@@ -302,17 +312,19 @@
             </div>
             <div
               *ngIf="
-                !(contactForm.get('prodService')?.dirty) && contactForm.errors?.['requireEitherField']
-              "
+                  contactForm.get('prodService')?.invalid &&
+                  (contactForm.get('prodService')?.dirty ||
+                    contactForm.get('prodService')?.touched)
+                "
               class="error-text"
             >
-              <p>
-                Either Pricing or Product/Service is required.
+              <p *ngIf="contactForm.get('companyWeb')?.errors?.['required']">
+                Please select Products or Services
               </p>
             </div>
           </div>
         </div>
-        <div *ngIf="!isHidden" class="form-container">
+        <div class="form-container">
           <div class="form-input">
             <label class="input-label">Part No*</label>
             <div class="input-text_wraper">
@@ -320,15 +332,15 @@
                 type="text"
                 class="input-text pe-none fs-14px"
                 readonly
-                placeholder="Select Part No"
+                placeholder="Please select Products or Services first"
                 formControlName="partNo"
               />
             </div>
           </div>
         </div>
-        <div class="form-container">
+        <div *ngIf="!isPricingHidden" class="form-container">
           <div class="form-input">
-            <label class="input-label">Pricing</label>
+            <label class="input-label">Pricing*</label>
             <div class="input-text_wraper">
               <select
                 type="text"
@@ -344,28 +356,37 @@
                   disabled
                   selected
                 >
-                  Select Pricings
+                  Please select Products or Services first
                 </option>
-                <option *ngFor="let price of Pricings" [value]="price">
+                <option [hidden]="isHidden" *ngFor="let price of Pricings" [value]="price">
                   {{ price }}
+                </option>
               </select>
               <img
-                *ngIf="!(contactForm.get('pricing')?.dirty) && contactForm.errors?.['requireEitherField']"
+                *ngIf="
+                  contactForm.get('pricing')?.invalid &&
+                  (contactForm.get('pricing')?.dirty ||
+                    contactForm.get('pricing')?.touched)
+                "
                 src="assets/icons/icon-alert-circle.svg"
                 alt=""
               />
             </div>
             <div
-              *ngIf="!(contactForm.get('pricing')?.dirty) && contactForm.errors?.['requireEitherField']"
+              *ngIf="
+                  contactForm.get('pricing')?.invalid &&
+                  (contactForm.get('pricing')?.dirty ||
+                    contactForm.get('pricing')?.touched)
+                "
               class="error-text"
             >
               <p>
-                Either Pricing or Product/Service is required.
+                Please select Pricings
               </p>
             </div>
           </div>
         </div>
-        
+
         <div class="form-container">
           <div class="form-input">
             <label class="input-label">Message*</label>

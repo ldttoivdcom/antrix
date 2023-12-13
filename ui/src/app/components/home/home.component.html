@@ -50,13 +50,122 @@
           >
             Learn more
           </button>
-          <a
+          <button
             *ngIf="content.link === ''"
-            href="#clients"
+            (click)="scrollToClients('clients')"
             class="content-container_btn"
-          >Learn more</a
+          >Learn more
+          </button
           >
         </div>
+      </div>
+    </div>
+    <div class="content-container d-flex flex-column flex-gap-24px">
+      <h2 class="content-container_header text-center">
+        OUR EXPERTISE
+      </h2>
+      <p class="content-container_header content-container_subHeader text-center fs-22px">
+        Antrix is Your Trusted Partner for Medical Device Quality, Clinical, and Regulatory Success
+      </p>
+      <div class="content-container_img content-container_img--EXPERTISE"
+           [style.backgroundImage]="'url(assets/imgs/our_expertise.jpg)'"></div>
+      <div
+        class="wraper d-flex flex-column flex-gap-24px content-container-box"
+      >
+        <p class="text-center content-description">
+          Antrix provides unparalleled expertise in quality, clinical, and regulatory consulting services for diverse
+          medical device specialties. We work with doctors in the respective medical specialty to get further insight
+          into the intended use and patient safety. The regulatory pathway services include Pre-Submission,
+          Q-Submission, Breakthrough device designation Premarket Notification 510(k), Premarket Approval (PMA), De
+          Novo, Humanitarian Device Exemption (HDE), Custom Device Exemption (CDE), Expanded Access Program (EAP),
+          Product Development Protocol (PDP) and EU CE MDR and IVDR technical file approval and registrations.<br/>
+          <br/>
+          Antrix have experts who specialize in digital health technology regulatory requirements for Cybersecurity,
+          Augmented Reality / Virtual Reality in medical devices, Wireless, and Artificial Intelligence and Machine
+          Learning in Software as a Medical Device including Predetermined Change Control Plan for Artificial
+          Intelligence/Machine Learning (AI/ML)-Enabled Device Software Functions.<br/> <br/>
+          Antrix consultants have excellent knowledge of In Vitro Diagnostic (IVD) devices which include instruments,
+          reagents, DNA, protein and peptide microarray, and software.
+        </p>
+        <ul style="list-style-type: disc"
+            class="content-list p-0 m-0"
+        >
+          <li class="content-list_item">
+            Hematologists: Access advanced instruments and reagents for blood analysis, complying with all regulatory
+            requirements.
+          </li>
+          <li class="content-list_item">
+            Immunologists: Leverage state-of-the-art technology for accurate diagnosis of immune system disorders,
+            supported by rigorous validation processes.
+          </li>
+          <li class="content-list_item">
+            Microbiologists: Utilize cutting-edge instruments and reagents for rapid and precise microbial
+            identification and antimicrobial susceptibility testing.
+          </li>
+          <li class="content-list_item">
+            Neurologists: Benefit from advanced technology for diagnosis and treatment of neurological disorders, backed
+            by robust clinical studies.
+          </li>
+          <li class="content-list_item">
+            Toxicologists: Rely on highly accurate instruments and reagents for reliable detection of toxins after
+            validation studies.
+          </li>
+          <li class="content-list_item">
+            Geneticists: Access innovative tools for genetic testing, including carrier screening, pre-natal,
+            pre-implantation, post-natal, and cancer testing, as well as cutting-edge gene editing applications like
+            CRISPR Cas9 after CE IVD registration.
+          </li>
+        </ul>
+        <p class="text-center content-description">
+          Antrix further extends its expertise to the realm of medical devices, offering a comprehensive portfolio of
+          quality, regulatory and clinical consulting services for various specialties. The services encompass medical
+          devices in Anesthesiology , Cardiovascular, Chemistry, Dental, Ear, Nose, and Throat, Gastroenterology and
+          Urology, General and Plastic Surgery, General Hospital, Obstetrical and Gynecological, Ophthalmic, Orthopedic,
+          Pathology, Physical Medicine, and Radiology.
+          <br/>
+          <br/>
+          Our experts have regulatory, clinical, and technical expertise for the medical devices in the field of:
+        </p>
+        <ul style="list-style-type: disc"
+            class="content-list p-0 m-0"
+        >
+          <li class="content-list_item">
+            Anesthesia, where advanced technologies include patient monitoring and pain management.
+          </li>
+          <li class="content-list_item">
+            Cardiovascular specialists using cutting-edge diagnostic and therapeutic tools.
+          </li>
+          <li class="content-list_item">
+            Dental professionals can leverage advanced equipment for diagnosis and treatment. ENT specialists are
+            equipped with specialized ear, nose, and throat instruments for optimal patient care.
+          </li>
+          <li class="content-list_item">
+            Gastroenterologists and Urologists rely on reliable imaging and minimally invasive procedures based medical
+            devices.
+          </li>
+          <li class="content-list_item">
+            General surgeons and plastic surgeons have access to a full range of instruments for various surgical needs.
+          </li>
+          <li class="content-list_item">
+            Obstetrical and Gynecological specialists utilize technologies for prenatal care and women's health.
+          </li>
+          <li class="content-list_item">
+            Ophthalmologists have access to diagnostic and surgical tools for eye care.
+          </li>
+          <li class="content-list_item">
+            Orthopedic surgeons rely on reliable equipment and implants for joint replacement and other procedures.
+          </li>
+          <li class="content-list_item">
+            Physical medicine specialists utilize technology for rehabilitation and pain management.
+          </li>
+          <li class="content-list_item">
+            Radiologists benefit from advanced imaging systems for accurate diagnosis.
+          </li>
+        </ul>
+        <p class="text-center content-description">Antrix's in-depth knowledge of medical device regulations in various
+          international markets, coupled with our extensive experience across diverse specialties, makes us the ideal
+          partner for your medical device journey. Antrix empowers you to bring your medical innovation to life with
+          confidence. to life with confidence.</p>
       </div>
     </div>
   </div>
@@ -66,6 +175,8 @@
   <!--Advantage banner-->
   <div class="advantage-banner">
     <h2 class="advantage-banner_header">YOUR SAVINGS</h2>
+    <div class="advantage-banner_img mb-12px "
+         [style.backgroundImage]="'url(assets/imgs/your_savings.jpg)'"></div>
     <p class="advantage-banner_description mb-24px">
       Subscribe to regulatory, clinical, PMS intelligence reports work. Get customized reports for your company products
       every month delivered to you via email or deposited into shared site. Powered by Generative AI, ML, and NPL - Data

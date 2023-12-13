@@ -7,4 +7,10 @@ import {ViewportScroller} from '@angular/common';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  constructor(private viewportScroller: ViewportScroller) {
+  }
+
+  onClick(id: string) {
+    this.viewportScroller.scrollToAnchor(id)
+  }
 }

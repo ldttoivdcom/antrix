@@ -63,18 +63,18 @@
       <li class="nav-item">
         <a
           class="header-navbar_link nav-link"
-          href="#contact"
+          (click)="onClick('contact')"
         >Contact</a
         >
       </li>
     </ul>
-    <a
+    <button
       type="button"
-      href="#contact"
+      (click)="onClick('contact')"
       class="header-navbar_btn nav_list-btn d-lg-flex d-none"
     >
       Book Now
-    </a>
+    </button>
     <!--    MOBILE NAVBAR-->
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li class="dropdown-menu_item"><a class="dropdown-menu_link" routerLink="/info/services">Services</a>
