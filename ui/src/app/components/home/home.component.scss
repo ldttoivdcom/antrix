@@ -61,11 +61,21 @@
     white-space: nowrap;
   }
 
+  &_subHeader {
+    white-space: unset;
+  }
+
   .content-container_img {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     min-height: 260px;
+
+    &--EXPERTISE {
+      width: 100%;
+      margin: auto;
+      background-size: auto !important;
+    }
   }
 
   .content-container-box {
@@ -118,6 +128,15 @@
     line-height: 150%;
     margin-bottom: 24px;
     font-size: 34px;
+  }
+
+  .advantage-banner_img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto !important;
+    min-height: 260px;
+    width: 100%;
+    margin: auto;
   }
 
   .advantage-banner_description {

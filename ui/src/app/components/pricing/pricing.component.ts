@@ -1,14 +1,7 @@
 import {Component} from '@angular/core';
 import {SharedDataService} from '../../shared/services/shared-data.service';
 import {ViewportScroller} from '@angular/common';
-
-interface Pricings {
-  header: string;
-  price: number;
-  text: string;
-  listItems: string[];
-  headerAndprice: string;
-}
+import {Pricings} from "../../models/pricings.model";
 
 @Component({
   selector: 'app-pricing',
@@ -81,6 +74,7 @@ export class PricingComponent {
         'Save > 2 full time personnel work',
       ],
       headerAndprice: 'Regulatory Intelligence Report - $249 / month',
+      partNo: 'SUB-RAR'
     },
     {
       header: 'Clinical Intelligence Report',
@@ -100,6 +94,7 @@ export class PricingComponent {
         'Save > 4 full time personnel work',
       ],
       headerAndprice: 'Clinical Intelligence Report - $299 / month',
+      partNo: 'SUB-CIR'
     },
     {
       header: 'PMS Intelligence Report',
@@ -118,11 +113,16 @@ export class PricingComponent {
         'Save > 6 full time personnel work',
       ],
       headerAndprice: 'PMS Intelligence Report - $349 / month',
+      partNo: 'SUB-PIR'
     },
   ];
 
-  onClick(headerAndprice: string, id: string): void {
-    this._pricingServices.updateSelectedPricing(headerAndprice);
+  onPricingClick(id: string): void {
+    this._viewPortScroller.scrollToAnchor(id);
+  }
+
+  onSubscriptionsClick(name: string, partNumber: string, id: string): void {
+    this._pricingServices.updateSelectedProServices({name, partNumber});
     this._viewPortScroller.scrollToAnchor(id);
   }
 }

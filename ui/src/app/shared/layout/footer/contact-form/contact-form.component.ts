@@ -42,9 +42,11 @@ export class ContactFormComponent implements OnInit, OnDestroy {
   captcha: string;
   Products: Products[] = [];
   Services: Products[] = [];
+  Subscriptions: Products[] = [];
   contactForm: FormGroup;
   isConfirmRequestPopupOpened: boolean = false;
   isHidden: boolean;
+  isPricingHidden: boolean;
   isLoading: boolean = false;
   isSelectChange: boolean;
   isPricingSelectChange: boolean;
@@ -52,9 +54,6 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     'Consulting Service - $200',
     'FREE Consultation Meeting - $0',
     'Product Purchase - $200',
-    'Regulatory Intelligence Report - $249 / month',
-    'Clinical Intelligence Report - $299 / month',
-    'PMS Intelligence Report - $349 / month',
   ];
 
   constructor(
@@ -71,14 +70,10 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.initContactForm();
     this.initCsvProductsData();
     this.initCsvServicesData();
-    this.setPricingValue();
+    this.initSubscriptionsData();
     this.setProdServiceValue();
     this.isHidden = true; //Init the value
-    // this.subscription.add(
-    //   this._sharedDataService.isHidden$.subscribe((isHidden: boolean) => {
-    //     this.isHidden = isHidden;
-    //   })
-    // );
+    this.isPricingHidden = false;
     this.isSelectChange = true;
   }
 
@@ -88,8 +83,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   initContactForm(): void {
     this.contactForm = this._formBuilder.group({
-      firstName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]),
-      lastName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]),
+      firstName: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]],
+      lastName: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [
         Validators.required,
@@ -97,13 +92,13 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       ]],
       company: ['', [Validators.required]],
       jobTitle: ['', [Validators.required]],
-      pricing: '',
+      pricing: ['', [Validators.required]],
       companyWeb: ['', [Validators.required]],
-      prodService: '',
+      prodService: ['', [Validators.required]],
       partNo: '',
       message: ['', [Validators.required]],
       captcha: ['', [captchaValidator]],
-    }, {validators: this.requireEitherFieldValidator('pricing', 'prodService')});
+    });
   }
 
   onSubmit(): void {
@@ -180,18 +175,36 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     });
   }
 
+  initSubscriptionsData(): void {
+    const csvFileUrl = '../../../../assets/csv/Subscriptions.csv';
+    this._csvDataService.getCsvData(csvFileUrl).subscribe((csvData) => {
+      this._papa.parse(csvData, {
+        header: true,
+        complete: (result) => {
+          this.Subscriptions = result.data
+            .filter((row: Products) => row.PartNumber && row.Name)
+            .map((row: Products) => ({
+              PartNumber: row.PartNumber,
+              Name: row.Name,
+              imgPath: row.imgPath,
+              Description: row.Description,
+            }));
+        },
+      });
+    });
+  }
+
   onProductServiceChange(event: Event) {
     //Will set value of Pricing to null
-    this.isPricingSelectChange = true;
-    this.contactForm.get('pricing')!.setValue('');
     this.isSelectChange = false;
     this.isHidden = false;
+    this.isPricingHidden = false;
     // Cast the event target to HTMLSelectElement to access the value property
     const selectElement = event.target as HTMLSelectElement;
     const selectedProductName = selectElement.value;
 
     // combine 2 array Products and Services
-    let selectedProductOrService = this.Products.concat(this.Services).find(
+    let selectedProductOrService = this.Products.concat(this.Services, this.Subscriptions).find(
       (item) => item.Name === selectedProductName
     );
 
@@ -200,50 +213,24 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       : '';
 
     this.contactForm.get('partNo')!.setValue(partNumber);
+    this.replacePricingName(selectedProductName);
   }
 
   onPricingChange(event: Event) {
-    const pricingValue = this.contactForm.get('pricing')?.value;
     this.isPricingSelectChange = false;
     this.isHidden = false;
-    //Will set value of ProbService to null
-    this.isSelectChange = true;
-    this.contactForm.get('prodService')!.setValue('');
-    if (pricingValue == 'Regulatory Intelligence Report - $249 / month') {
-      this.contactForm.get('partNo')!.setValue('SUB-RAR');
-    } else if (pricingValue == 'Clinical Intelligence Report - $299 / month') {
-      this.contactForm.get('partNo')!.setValue('SUB-CIR');
-    } else if (pricingValue == 'PMS Intelligence Report - $349 / month') {
-      this.contactForm.get('partNo')!.setValue('SUB-PIR');
-    } else {
-      this.isHidden = true;
-    }
   }
-
-
-  //Will get the value when user click btn in Pricing
-  setPricingValue(): void {
-    this.subscription.add(
-      this._sharedDataService.selectedPricing.subscribe((pricingName) => {
-        this.isHidden = true;
-        this.isSelectChange = true;
-        this.isPricingSelectChange = false;
-        this.contactForm.get('pricing')?.setValue(pricingName);
-        this.contactForm.get('prodService')!.setValue(''); //Will set value of prodService to null
-      })
-    );
-  }
-
 
   //Will get the value when user click btn in Products/Services
   setProdServiceValue(): void {
     this.subscription.add(
       this._sharedDataService.selectedProServiceName.subscribe((name) => {
-        this.isSelectChange = false;
-        this.isHidden = false;
-        this.isPricingSelectChange = true;
-        this.contactForm.get('prodService')?.setValue(name);
         this.contactForm.get('pricing')?.setValue(''); //Will set value of Pricing to null
+        this.isSelectChange = false;
+        this.isPricingSelectChange = true;
+        this.isHidden = false;
+        this.contactForm.get('prodService')?.setValue(name);
+        this.replacePricingName(name);
       })
     );
     this.subscription.add(
@@ -253,21 +240,19 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     );
   }
 
-  //One or 2 field selected Validate
-  requireEitherFieldValidator(field1: string, field2: string): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      // Cast the 'control' to FormGroup to access its individual controls
-      const formGroup = control as FormGroup;
-      const value1 = formGroup.get(field1)?.value;
-      const value2 = formGroup.get(field2)?.value;
-
-      if (value1 || value2) {
-        return null; // One of the fields is filled, so validation passes
-      } else {
-        // Neither field is filled, so validation fails
-        return {'requireEitherField': true};
-      }
-    };
+  replacePricingName(name: string) {
+    const ServiceName = this.Services.find(service => service.Name === name)?.Name;
+    const ProductName = this.Products.find(product => product.Name === name)?.Name;
+    const SubscriptionsName = this.Subscriptions.find(subscriptions => subscriptions.Name === name)?.Name;
+    if (name === ServiceName) {
+      this.Pricings = ['Consulting Service - $200',
+        'FREE Consultation Meeting - $0',]
+    } else if (name === ProductName) {
+      this.Pricings = ['Product Purchase - $200',
+        'FREE Consultation Meeting - $0',]
+    } else if (name === SubscriptionsName) {
+      this.isPricingHidden = true;
+    }
   }
 
   ngOnDestroy() {

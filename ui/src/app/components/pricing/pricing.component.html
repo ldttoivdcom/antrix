@@ -20,7 +20,7 @@
             </p>
             <div class="card-header_supportingText">Valid for one month</div>
             <button
-              (click)="onClick(item.headerAndprice, 'contact')"
+              (click)="onPricingClick('contact')"
               class="card-header_btn w-100 fw-medium"
             >
               Select
@@ -71,7 +71,7 @@
             </p>
             <div class="card-header_supportingText">Valid for one month</div>
             <button
-              (click)="onClick(item.headerAndprice, 'contact')"
+              (click)="onSubscriptionsClick(item.headerAndprice, item.partNo ?? '', 'contact')"
               class="card-header_btn w-100 fw-medium"
             >
               Select

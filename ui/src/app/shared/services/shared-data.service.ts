@@ -5,9 +5,6 @@ import {BehaviorSubject} from 'rxjs';
   providedIn: 'root',
 })
 export class SharedDataService {
-  private selectedPricingSource = new BehaviorSubject<string>(''); //will save last value and emits for subscribers
-  selectedPricing = this.selectedPricingSource.asObservable(); // the subscribers only read data, cant use next() or error()
-
   private selectedProServiceNameSource = new BehaviorSubject<string>(''); // to save the selected pro service name
   selectedProServiceName = this.selectedProServiceNameSource.asObservable();
 
@@ -15,10 +12,6 @@ export class SharedDataService {
   selectedPartNumber = this.selectedPartNumberSource.asObservable();
 
   constructor() {
-  }
-
-  updateSelectedPricing(price: string) {
-    this.selectedPricingSource.next(price); //will store the price here
   }
 
   updateSelectedProServices(proService: {
